@@ -2,6 +2,7 @@
 
 puts "Destroy all datas"
 Chatroom.destroy_all
+Review.destroy_all
 User.destroy_all
 
 louis    = User.create!(name: ' louis', email:'louiss@gmail.com', password:'password', born_at: '12/09/1989', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a laydy boy', user_type: 'student')
@@ -56,28 +57,23 @@ student_review_contents = [
   "Monsieur Cascou porte bien son nom, ce propriétaire s'invite à l'improviste sous prétexte de prendre des nouvelles (trop) souvent. #harceleur."
 ]
 
-owners = User.where(user_type: 'owner')
+owners   = User.where(user_type: 'owner')
 students = User.where(user_type: 'student')
 
 User.all.each do |user|
   rand(2...5).times do
     if user.user_type == 'student'
-      # content = owner_review[rand(0...4)]
-      # reviewer = owners[rand(0...owners.length)]
+      content  = owner_review_contents[rand(0...4)]
+      reviewer = owners[rand(0...owners.length)]
     else
-      # content = student_review[rand(0...4)]
-      # reviewer = students[rand(0...students.length)]
+      content  = student_review_contents[rand(0...4)]
+      reviewer = students[rand(0...students.length)]
     end
-    review = Review.new(
-      rating:      rand(1...5),
-      content:     owner_review_contents[0],
-      reviewer_id: User.last.id,
-      receiver_id: User.last.id
-      #reviewer_id: reviewer.id,
-      #receiver_id: user.id
+    Review.create!(
+      rating:    rand(1...5),
+      content:  content,
+      reviewer: reviewer,
+      receiver: user
     )
-    p review
-    p review.errors.messages
-    p review.save!
   end
 end

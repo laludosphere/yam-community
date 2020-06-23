@@ -7,7 +7,6 @@ class User < ApplicationRecord
   has_many :preferences, dependent: :destroy
   has_many :flats, dependent: :destroy
   has_many :messages, dependent: :destroy
-  # has_many :reviews, dependent: :destroy
 
   def received_reviews
     Review.where(receiver_id: self.id)
