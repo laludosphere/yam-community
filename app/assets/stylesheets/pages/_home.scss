@@ -1,11 +1,18 @@
 // Specific CSS for your home-page
+
+body {
+    background-attachment: #ffffff;
+}
 h1{
     font-family: Poppins-Bold;
     font-size: 50px;
-    color: #1D3461
+    color: #1D3461;
+    margin: 5%;
+    
 }
 
 h2{
+    text-align: center;
     font-family: Poppins-Medium;
     font-size: 35px;
     color: #1D3461;
@@ -22,7 +29,18 @@ p {
     font-family: Poppins-Regular;
     font-size: 22px;
     color: #5A6169;
+    text-align: left;
 
+}
+
+a {
+    text-decoration: none;
+}
+
+.banner-bottom{
+    display:flex;
+    justify-content: space-around;
+    margin: 5%;
 }
 
 .btn-inscription{
@@ -37,7 +55,6 @@ p {
 }
 
 .btn-video{
-    text-decoration: none;
     text-align: center;
     color:#1D3461;
     background-color: white;
@@ -47,5 +64,39 @@ p {
     width: 300px;
     height:50px;
     padding-top:8px;
+}
 
+.research {
+    text-align: center;
+    margin: 5%;
+}
+
+.mde1-details {
+    display:flex;
+}
+
+
+.card{
+    border-radius:30px;
+    background-color:white;
+    box-shadow: 5px 5px 5px #9c97ad;
+    width:300px;
+    height:450px;
+
+}
+
+.card-bottom{
+    display:flex;
+    
+}
+
+.btn-details{
+    text-decoration: none;
+    text-align: center;
+    color:white;
+    background-color: #00d7a7;
+    border-radius: 20px;
+    width: 100px;
+    height:50px;
+    padding-top:8px;
 }
