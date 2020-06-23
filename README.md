@@ -1,1 +1,6 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+### Useful Links
+
+- [Trello](https://trello.com/b/Ufl8eVM1/yam-dev)
+- [Heroku](#)
+- [Whemisical](https://whimsical.com/MTz4JKuQPNuku4yVofFFSC)
+- [Sketch](#)
