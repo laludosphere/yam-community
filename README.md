@@ -9,5 +9,5 @@
 ### Sign In
 
 - [Link](#)
-- Login : `toto@mgail.com`
-- Password :`azerty`
+- `toto@mgail.com`
+- `azerty`
