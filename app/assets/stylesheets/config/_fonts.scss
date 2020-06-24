@@ -20,11 +20,14 @@ h1{
     font-size: 50px;
     color: $green;
     margin: 5%;
+    font-weight: 700;
+
 }
 
 h2{
     text-align: center;
     font-family: Poppins-Medium;
+    font-weight: 700;
     font-size: 35px;
     color: $blue;
 }
@@ -44,7 +47,6 @@ h4{
 
 
 p {
-    font-family: Poppins-Regular;
     font-size: 22px;
     color: $grey;
     text-align: left;
@@ -55,9 +57,9 @@ p {
     font-size: 15px;
     color: $grey;
     text-align: left;
-
 }
 
 a {
     text-decoration: none;
 }
+
