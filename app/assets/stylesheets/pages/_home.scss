@@ -16,6 +16,15 @@ body {
     width: 100%;
 }
 
+
+.special-word-title{
+    color:#00d7a7;
+}
+
+.special-word-premium{
+    color: #f5a623;
+}
+
 .banner-bottom{
     display:flex;
     justify-content: space-around;
@@ -90,6 +99,7 @@ body {
 .step-yam{
     display:flex;
     justify-content: space-around;
+    margin: 20px;
 }
 
 .banner-top-right {
@@ -108,4 +118,8 @@ body {
 
   a {
     text-decoration: none;
+}
+
+.home-contact {
+    display:flex;
 }
