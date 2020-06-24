@@ -16,16 +16,14 @@ sam      = User.create!(name: ' sam', email:'sam@gmail.com', password:'password'
 
 
 Flat.create!(
-  city:            'lille',
+  city:            'Lille',
   flat_type:       't4',
   price_per_month: 1200,
   available_at:    '12/09/2020',
   surface_area:    50,
   user:            gasp,
   zip_code:        59000,
-  address:         '2 avenue des Saules',
-  longitude:       3.217661,
-  latitude:        50.644487
+  address:         '60 boulevard vauban'
 )
 
 Flat.create!(city:'boulogne', flat_type:'t3', price_per_month: 2200, available_at: '12/11/2020', surface_area: 40, user: aurel, zip_code: 92100, address:'147 rue de silly', longitude: 2.23425, latitude: 48.833241)
