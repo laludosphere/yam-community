@@ -1,35 +1,30 @@
 <div class="background" style="height: 100%;">
 
-  <div class="container">
+  <div class="container fixed-footer">
     <h1>Vos appartements</h1>
 
-  <div class="main-container">
-      <% @flats.each do |flat| %>
-        <a class=text href=<%= flat_path(flat)%>>
-          <div class="thecard">
-              <div class="card-img">
-              <% if flat.photos.attached? %>
-                <%= cl_image_tag flat.photos.key, width: 400, height: 300, crop: :fill  %>
-              <% else %>
-                <%= image_tag 'https://assets.savills.com/awaiting/ENAwaitingImage_Card_L.jpg' %>
-              <% end %>
-              </div>
-
-            <!-- <img class="pic" src="https://source.unsplash.com/random"> -->
+    <div class="main-container">
+       <div class="cards-container">
+          <% @flats.each do |flat| %>
+            <a class=text href=<%= flat_path(flat)%>>
               <div class="card-flat">
-                <h5 class="card-title"><%= flat.flat_type %> | <%= flat.surface_area %>m2  </h5>
-                  <p class="card-text"> 📍 <%= flat.surface_area %></p>
-                    <div class="info-details">
-                      <p class="card-date">💰 : <%= flat.price_per_month %>€/mois</p>
+                <div class="card-img">
+                  <% if flat.photos.attached? %>
+                    <%= cl_image_tag flat.photos.key, width: 400, height: 300, crop: :fill  %>
+                  <% else %>
+                    <%= image_tag 'https://assets.savills.com/awaiting/ENAwaitingImage_Card_L.jpg' %>
+                  <% end %>
+                </div>
 
-              <!-- </div> -->
-                <div class="row align-items-center">
+                <h4 class="card-title"> <%= flat.flat_type %> | <%= flat.surface_area %> M2 | <%= flat.city %> </h4>
+
+                <div class="container d-flex align-item">
+                  <p class="card-text">💰 : <%= flat.price_per_month %>€/mois</p>
+                  <%= button_to "En savoir plus", flat_path(flat), class: "btn-primary" %>
                 </div>
               </div>
+          <%end%>
         </div>
-      </div>
-      <%end%>
-      </div>
+    </div>
   </div>
-
 </div>
