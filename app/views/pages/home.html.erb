@@ -2,6 +2,7 @@
 <p>Find me in app/views/pages/home.html.erb</p> %>
 <div class="container">
   <div class="banner-content">
+
     <div class="banner-top-left">
             <h1>La communauté de <span class="special-word-title">confiance</span> pour trouver son logement étudiant.</h1>
                  <p> Yam, c’est l’application qui favorise vos chances de trouver l’appartement idéal grâce à votre réseau étudiant ! <p>
@@ -17,6 +18,7 @@
 
 
     <div class="search-home">
+
       <h2>Trouver un <span class="special-word-premium">appartement</span> près de votre école</h2>
       <div class="research">>> inserer la barre de recheche codée par Ludo <<</div>
       <h2>Comment ça marche <span class="special-word-title">marche</span> ?</h2>
@@ -37,7 +39,9 @@
                     <p>Finies les recherches interminables sur les centaines de sites. Remplissez, vos critères, et laissez Yam trouver l’appartement de vos rêves.</p>
                 </div>
             </div>
-              <%= image_tag "match.png" %>
+
+            <%= image_tag "match.png", alt: "alttext" %>
+
         </div>
         <div class="mde2">
             <h2 class="mdr-title"><span class="dot">2</span> Choisissez parmi votre <span class="special-word-title">sélection</span> </h2> 
@@ -56,7 +60,9 @@
             <h2 class="mdr-title"><span class="dot">3</span> Postulez et laissez parler votre  <span class="special-word-title">réputation </span> </h2>
             <p>Envoyez votre profil ainsi que votre dossier complet. Affichez votre bonne conduite grâce aux recommandations de vos anciens propriétaires et amis.</p>
             <div class="mdr3-images">
-                <%= image_tag "dossier.png" %>
+
+                <%= image_tag "dossier.png", alt: "alttext" %>
+
             </div>
         </div>
         <div class="mde4">
@@ -66,7 +72,7 @@
         </div>
          <div class="mde5">
             <h2><span class="dot">5</span>Besoin d’aide ? Laissez <span class="special-word-premium">Yam Premium</span> faire le travail</h2>
-            <p>Des visites à la remise des clés, avec Yam premium nous vous proposons une solution simple et complète où nous gérons votre recherche. Et si vous ne trouvez pas votre appartement avec nous ? On vous rembourse.</p>
+            <p>Des visites à la remise des clés, avec Yam premium nous vous proposons une solution simple et complète où nous gérons votre recherche. Et si vous ne trouvez pas votre appartement avec nous ? On vous rembourse.</p>"
             <div class="step-yam">
                 <%= image_tag "sans-yam.png" %>
                 <%= image_tag "avec-yam.png" %>
@@ -85,5 +91,5 @@
           <p class="btn-inscription">Envoyer</p>
         </div>
     </div>
-    
+
 </div>

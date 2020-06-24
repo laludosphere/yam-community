@@ -1,6 +1,10 @@
 class FlatsController < ApplicationController
   def index
-    @flats = Flat.all
+    if params[:query].present?
+      @flats = Flat.near(params[:query], 10)
+    else
+      @flats = Flat.all
+    end
   end
 
   def show
