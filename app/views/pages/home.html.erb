@@ -6,6 +6,32 @@
     <h1></h1>
 
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <div id="flats">
+        <% @flats.each do |flat| %>
+          <h4><%= flat.address %></h4>
+          <p><%= flat.city %></p>
+        <% end %>
+      </div>
+        <%= form_tag flats_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "What is your school ?"%>
+        <% end %>
+          </div>
+        </div>
+     </div>
+
+
+<!-- <div class="wrapper">
+  <div class="search_box">
+      <input type="text" placeholder="what are you looking for?">
+      <i class="fas fa-search"></i>
+  </div>
+</div> -->
 
 
 
