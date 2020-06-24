@@ -2,9 +2,9 @@ class FlatsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @preferences = current_user.preferences
+    # filter_flats
+    @preference = current_user.preference
     @flats = Flat.all
-    raise
   end
 
   def show
@@ -35,9 +35,14 @@ class FlatsController < ApplicationController
     redirect_to flat_path(@flat)
   end
 
+  def filter_flats
+    @preference = current_user.preference
+    @flats = Flat.where(flat_type: @preference.flat_type)
+  end
+
   private
 
   def flat_params
-    params.require(:flat).permit(:user)
+    params.require(:flat).permit(:user, :photos)
   end
 end

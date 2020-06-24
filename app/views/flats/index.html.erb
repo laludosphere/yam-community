@@ -1,2 +1,35 @@
-<h1>Flat index</h1>
-<%= @preferences %>
+<div class="background" style="height: 100%;">
+
+  <div class="container">
+    <h1>Vos appartements</h1>
+
+  <div class="main-container">
+      <% @flats.each do |flat| %>
+        <a class=text href=<%= flat_path(flat)%>>
+          <div class="thecard">
+              <div class="card-img">
+              <% if flat.photos.attached? %>
+                <%= cl_image_tag flat.photos.key, width: 400, height: 300, crop: :fill  %>
+              <% else %>
+                <%= image_tag 'https://assets.savills.com/awaiting/ENAwaitingImage_Card_L.jpg' %>
+              <% end %>
+              </div>
+
+            <!-- <img class="pic" src="https://source.unsplash.com/random"> -->
+              <div class="card-flat">
+                <h5 class="card-title"><%= flat.flat_type %> | <%= flat.surface_area %>m2  </h5>
+                  <p class="card-text"> 📍 <%= flat.surface_area %></p>
+                    <div class="info-details">
+                      <p class="card-date">💰 : <%= flat.price_per_month %>€/mois</p>
+
+              <!-- </div> -->
+                <div class="row align-items-center">
+                </div>
+              </div>
+        </div>
+      </div>
+      <%end%>
+      </div>
+  </div>
+
+</div>
