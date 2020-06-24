@@ -12,9 +12,17 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <%   if user_signed_in? %>
+    <%= render 'shared/login_navbar' %>
+    <% else %>
+    <%= render 'shared/logout_navbar' %>
+    <% end %>
     <%= render 'shared/flashes' %>
 
     <%= yield %>
+    <footer>
+      <%= render 'shared/footer' %>
+    </footer>
   </body>
+
 </html>
