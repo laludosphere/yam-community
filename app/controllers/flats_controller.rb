@@ -1,6 +1,10 @@
 class FlatsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
+    @preferences = current_user.preferences
     @flats = Flat.all
+    raise
   end
 
   def show
