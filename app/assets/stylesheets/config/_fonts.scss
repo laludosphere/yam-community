@@ -18,10 +18,10 @@ $headers-font: "Poppins", "Helvetica", "sans-serif";
 
 h1{
     font-family: Poppins-Bold;
-    font-size: 60px;
+    font-size: 50px;
     color: #1D3461;
     margin: 5%;
-    
+    font-weight: 700;
 }
 
 h2{
@@ -44,8 +44,4 @@ p {
     color: #5A6169;
     text-align: left;
 
-}
-
-a {
-    text-decoration: none;
 }

@@ -9,16 +9,11 @@ body {
 }
 .banner-content{
     display:flex;
-    justify-content: space-around;
-    position:relative;
-    // margin-top:5% 25% 5% 25%;
+    // justify-content: space-around;
 }
 
 .container{
-    // width: 1440px;
-    // height: 100%;
-    // position: relative;
-    // margin: auto;
+    width: 100%;
 }
 
 .banner-bottom{
@@ -110,3 +105,7 @@ body {
     border-radius: 50%;
     display: inline-block;
   }
+
+  a {
+    text-decoration: none;
+}
