@@ -16,5 +16,10 @@
 // }
 
 .navbar-yam  a:hover {
-    color: #27D7A7 !important;
+  color: #27D7A7 !important;
+}
+
+.fixed-footer{
+  min-height: calc(100vh)
+  // footer à ajouter puis calculer les bons pixels
 }
