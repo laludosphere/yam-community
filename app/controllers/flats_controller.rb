@@ -2,10 +2,10 @@ class FlatsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    filter_flats
+    @flats = policy_scope(Flat)
+    # filter_flats
     @preference = current_user.preference
     # @flats = Flat.all
-    @flats = policy_scope(Flat)
   end
 
   def show
