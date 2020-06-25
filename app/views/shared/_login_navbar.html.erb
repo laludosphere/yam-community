@@ -25,7 +25,7 @@
          <% end %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "Mon profile", root_path, class: "dropdown-item" %>
-          <%= link_to "Messagerie", root_path, class: "dropdown-item" %>
+          <%= link_to "Messagerie", chatrooms_path(current_user.chatrooms), class: "dropdown-item" %>
           <%= link_to "Ma recherche", root_path, class: "dropdown-item" %>
           <%= link_to "Logout",destroy_user_session_path, method: :delete, class: "dropdown-item" %>
 
