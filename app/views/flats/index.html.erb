@@ -1,31 +1,6 @@
 <div class="background" style="height: 100%;">
   <div class="container fixed-footer">
-    <div class="container mt-2 mb-5">
-      <h1>Vos appartements</h1>
-    </div>
-
-    <div class="main-container">
-       <div class="cards-container">
-          <% @flats.each do |flat| %>
-            <a class=text href=<%= flat_path(flat)%>>
-              <div class="card-flat">
-                <div class="card-img">
-                  <% if flat.photos.attached? %>
-                    <%= cl_image_tag flat.photos.key, width: 400, height: 300, crop: :fill  %>
-                  <% else %>
-                    <%= image_tag 'https://assets.savills.com/awaiting/ENAwaitingImage_Card_L.jpg' %>
-                  <% end %>
-                </div>
-
-                <h4 class="card-title mt-3 ml-3"> <%= flat.flat_type %> | <%= flat.surface_area %> M2 | <%= flat.city %> </h4>
-                <div class="card-text mt-2 ml-3"> Disponible dès maintenant</div>
-                <div class="container d-flex align-self-end mt-4">
-                  <p class="card-price mt-1">💰 <%= flat.price_per_month %></p><p id="per-month" class="card-text ml-1 mr-2 mt-3">€/mois</p>
-                  <%= button_to "En savoir plus", flat_path(flat), class: "btn-primary " %>
-                </div>
-              </div>
-            <%end%>
-        </div>
-    </div>
+      <h1 class="pt-4 pb-4">Vos appartements</h1>
+      <%= render 'shared/display_flats' %>
   </div>
 </div>

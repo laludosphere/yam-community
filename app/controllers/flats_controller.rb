@@ -2,9 +2,7 @@ class FlatsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    # filter_flats
-    @preference = current_user.preference
-    @flats = Flat.all
+    filter_flats
   end
 
   def show
