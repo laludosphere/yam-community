@@ -16,4 +16,14 @@ class User < ApplicationRecord
   def reviewers
     Review.where(reviewer_id: self.id)
   end
+  def average_ratings
+    rating = 0
+    receive_reviews = self.received_reviews
+    receive_reviews.each do |review|
+        rating += review.rating
+        puts rating
+    end
+    rating /= receive_reviews.length
+  end
+
 end
