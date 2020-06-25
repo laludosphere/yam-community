@@ -1,6 +1,4 @@
-<!--  pe render 'shared/search-bar' %> -->
-
-<%= form_tag flats_path, method: :get do %>
+<%= form_tag home_search_path, method: :get do %>
   <span class="fas fa-search"></span>
   <%= text_field_tag :query, params[:query], class: "search_box", placeholder: "What is your school ?"%>
 <% end %>

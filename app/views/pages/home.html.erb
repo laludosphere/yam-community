@@ -1,5 +1,3 @@
-<%# <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p> %>
 <div class="container">
   <div class="banner-content">
 
@@ -10,7 +8,7 @@
                   <p class="btn-inscription">S'inscrire</p>
                   <p class="btn-video"><a href="https://www.youtube.com/watch?v=1-SkIIbjiuk&feature=youtu.be">Regarder la vidéo</a></p>
                 </div>
-    </div>   
+    </div>
     <div class="banner-top-right">
         <%= image_tag "droit.svg" %>
     </div>
@@ -20,12 +18,15 @@
     <div class="search-home">
 
       <h2>Trouver un <span class="special-word-premium">appartement</span> près de votre école</h2>
-      <div class="research">>> inserer la barre de recheche codée par Ludo <<</div>
+          <%= form_tag home_search_path, method: :get do %>
+                <span class="fas fa-search"></span>
+                <%= text_field_tag :query, params[:query], class: "search_box", placeholder: "What is your school ?"%>
+              <% end %> %>
       <h2>Comment ça marche <span class="special-word-title">marche</span> ?</h2>
     </div>
 
     <div class="mde">
-        
+
         <div class="mde1">
             <h2 class="mdr-title"><span class="dot">1</span>  Remplissez vos critères<h2>
             <p>Your Apartment Mate utilise la force du réseau étudiant en mettant en relation locataire sortant et étudiant en recherche.</p>
@@ -44,8 +45,8 @@
 
         </div>
         <div class="mde2">
-            <h2 class="mdr-title"><span class="dot">2</span> Choisissez parmi votre <span class="special-word-title">sélection</span> </h2> 
-            
+            <h2 class="mdr-title"><span class="dot">2</span> Choisissez parmi votre <span class="special-word-title">sélection</span> </h2>
+
             <p>Yam vous propose uniquement les appartements qui vous correspondent. Chattez avec les locataires actuels, visitez, et le tour est joué !</p>
              <div class="card">
       >>> cards ici <<<

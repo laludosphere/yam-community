@@ -2,7 +2,14 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
-  resources :flats, only: [:index, :show]
+  get '/search', to: 'pages#search', as: :home_search
+  resources :flats
   resources :profiles, only: :show
+
+  resources :chatrooms, only: [:index, :show] do
+    resources :messages, only: :create
+end
+
+
 
 end
