@@ -1,0 +1,27 @@
+a:hover {
+  text-decoration: none;
+}
+
+.cards-container {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wraps;
+  justify-content: space-between;
+}
+
+.card-flat {
+  width: 400px;
+  max-height: 470px;
+  box-shadow: 0 15px 22px 0 rgba(90,97,105,0.10);
+  text-decoration:none;
+  flex: 0 0 33%;
+}
+
+.card-img {
+  overflow: hidden;
+}
+
+.card-img img {
+  width:100%;
+  border-radius: 20px 20px 0px 0px;
+}

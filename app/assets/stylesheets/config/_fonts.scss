@@ -1,7 +1,6 @@
 // Import Google fonts
 // @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
 // Define fonts for body and headers
 $body-font: "Poppins", "Helvetica", "sans-serif";
 $headers-font: "Poppins", "Helvetica", "sans-serif";
@@ -19,33 +18,48 @@ $headers-font: "Poppins", "Helvetica", "sans-serif";
 h1{
     font-family: Poppins-Bold;
     font-size: 50px;
-    color: #1D3461;
+    color: $green;
     margin: 5%;
-    
+    font-weight: 700;
+
 }
 
 h2{
     text-align: center;
     font-family: Poppins-Medium;
+    font-weight: 700;
     font-size: 35px;
-    color: #1D3461;
+    color: $blue;
 }
 
 h3{
     font-family: Poppins-Bold;
     font-size: 38px;
-    color: #1D3461;
-
+    color: $blue;
 }
 
-p {
-    font-family: Poppins-Regular;
-    font-size: 22px;
-    color: #5A6169;
-    text-align: left;
+h4{
+    font-family: Poppins-Bold;
+    font-size: 12px;
+    color: $card-grey;
+    text-transform: uppercase;
+}
 
+
+p {
+    font-size: 22px;
+    color: $grey;
+    text-align: left;
+}
+
+.card-text {
+    font-family: Poppins-Regular;
+    font-size: 15px;
+    color: $grey;
+    text-align: left;
 }
 
 a {
     text-decoration: none;
 }
+
