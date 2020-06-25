@@ -43,6 +43,12 @@ Chatroom.create!(
   flat: Flat.first,
   user: louis
 )
+
+Chatroom.create!(
+  name: 'General',
+  flat: Flat.last,
+  user: yann
+)
 puts "Chatroom created"
 
 Message.create!(
