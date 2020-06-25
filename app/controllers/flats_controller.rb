@@ -4,6 +4,7 @@ class FlatsController < ApplicationController
   def index
     # filter_flats
     @preference = current_user.preference
+    raise
     @flats = Flat.all
   end
 
