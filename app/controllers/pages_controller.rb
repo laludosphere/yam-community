@@ -13,7 +13,6 @@ class PagesController < ApplicationController
     else
       @flats = Flat.all
     end
-    raise
     redirect_to root_path
   end
 end
