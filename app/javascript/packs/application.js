@@ -33,6 +33,7 @@ import {initChatroomCable} from '../channels/chatroom_channel';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  stopCarousel();
   initAutocomplete();
   initChatroomCable();
 });

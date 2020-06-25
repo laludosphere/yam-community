@@ -1,5 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "show-flat";
 
 .main-container {
 display: flex;
@@ -7,4 +8,5 @@ display: flex;
 
 .background {
   background-image: image-url('background-page.svg'), linear-gradient(0deg, #FFFFFF 94%, #D3ECFF 100%);
+  background-repeat: no-repeat;
 }
