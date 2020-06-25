@@ -8,7 +8,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    filter_flats
+    @flats = Flat.all
+    # filter_flats
   end
 
   def search
