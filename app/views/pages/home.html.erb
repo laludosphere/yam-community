@@ -18,10 +18,13 @@
     <div class="search-home">
 
       <h2>Trouver un <span class="special-word-premium">appartement</span> près de votre école</h2>
-          <%= form_tag home_search_path, method: :get do %>
+          <%= form_tag root_path, method: :get do %>
                 <span class="fas fa-search"></span>
                 <%= text_field_tag :query, params[:query], class: "search_box", placeholder: "What is your school ?"%>
               <% end %> %>
+          <% if params[:query].present? %>
+          <%= render 'shared/display_flats' %>
+          <% end %>
       <h2>Comment ça marche <span class="special-word-title">marche</span> ?</h2>
     </div>
 

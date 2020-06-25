@@ -5,16 +5,21 @@ a:hover {
 .cards-container {
   flex-grow: 1;
   display: flex;
-  flex-wrap: wraps;
+  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+  align-content: center;
+
 }
 
 .card-flat {
-  width: 400px;
-  max-height: 470px;
+  width: 350px;
+  height: 374px;
+  border-radius: 20px;
   box-shadow: 0 15px 22px 0 rgba(90,97,105,0.10);
   text-decoration:none;
-  flex: 0 0 33%;
+  flex: 0 0 30%;
+  background-color: white;
 }
 
 .card-img {
@@ -24,4 +29,19 @@ a:hover {
 .card-img img {
   width:100%;
   border-radius: 20px 20px 0px 0px;
+}
+
+
+.card-title {
+  margin: 15px 0px 0px 15px;
+}
+
+.card-price {
+  font-family: Poppins-Medium;
+  font-size: 25px;
+  color: $primary;
+}
+
+#per-month {
+  color: $primary;
 }
