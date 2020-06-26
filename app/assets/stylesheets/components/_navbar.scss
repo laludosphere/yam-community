@@ -1,29 +1,18 @@
 .navbar-yam {
   justify-content: space-between;
   background: white;
+  align-item: flex-end;
+  color: $secondary !important;
+  padding-bottom: 0px !important;
 }
 
 .navbar-yam .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-yam .navbar-brand svg {
-  width: 40px;
-}
-
-.navbar-yam  a .active {
-  color: #27D7A7 !important;
-  border-bottom: 3px solid $primary;
-}
-
 .navbar-yam  a:hover {
-  color: #27D7A7 !important;
+  color: $primary !important;
   border-bottom: 3px solid $primary;
-}
-
-.navbar-brand a:hover {
-  color: white;
-  border-bottom: none;
 }
 
 .fixed-footer{
@@ -34,3 +23,24 @@
 #nav-premium {
   color: $premium;
 }
+
+.active a:hover  {
+  color: $primary !important;
+  border-bottom: none;
+}
+
+.nav-link {
+  color: $secondary !important;
+}
+
+.nav-active  {
+  color: $primary !important;
+  border-bottom: 3px solid $primary;
+}
+
+.nav-item .active  {
+  color: $primary !important;
+  border-bottom: 3px solid $primary;
+}
+
+
