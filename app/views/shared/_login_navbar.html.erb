@@ -14,17 +14,17 @@
         <%= link_to "Dashboard",  dashboard_path, class: "nav-link" %>
       </li>
       <li class="nav-item active">
-        <%= link_to "Mes Appartements",  new_user_registration_path, class: "nav-link" %>
+        <%= link_to "Mes Appartements",  flats_path, class: "nav-link" %>
       </li>
        <li class="nav-item active">
-        <%= link_to "Passer Premium",   new_user_registration_path, class: "nav-link" %>
+        <%= link_to "Passer Premium",   passer_premium_path, class: "nav-link", id: "nav-premium"  %>
       </li>
        <li class="nav-item dropdown">
         <%  if current_user %>
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
          <% end %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Mon profile", root_path, class: "dropdown-item" %>
+          <%= link_to "Mon profil", profile_path(current_user), class: "dropdown-item" %>
           <%= link_to "Messagerie", chatrooms_path(current_user.chatrooms), class: "dropdown-item" %>
           <%= link_to "Ma recherche", root_path, class: "dropdown-item" %>
           <%= link_to "Logout",destroy_user_session_path, method: :delete, class: "dropdown-item" %>
