@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
   get '/search', to: 'pages#search', as: :home_search
+  get '/passer-premium', to: 'pages#premium'
   resources :flats
   resources :profiles, only: :show
 

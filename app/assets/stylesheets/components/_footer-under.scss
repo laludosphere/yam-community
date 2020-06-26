@@ -1,11 +1,13 @@
 .footer-under {
   background: $blue;
-  display: flex-start;
+  display: flex;
+  justify-content: space-between ;
   align-items: center;
-  justify-content: space-around;
-  height: 40px;
-  padding: 10px 50px;
+  height: 60px;
+  padding: 10px 30px;
   color: rgba(0,0,0,0.3);
+  font-family: Poppins;
+
 }
 
 .footer-u-links a:hover{
