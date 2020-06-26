@@ -1,9 +1,45 @@
 <div class="container">
-  <div class="message-container" id="message-<%= message.id %>">
+  <div class="card-body-message-container" id="message-<%= message.id %>">
     <i class="author">
       <span><%= message.user.name %></span>
       <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
     </i>
     <p><%= message.content %></p>
   </div>
+</div>
+
+
+
+<div class="container">
+
+  <div class="chat-index ">
+    <div class="d-flex">
+      <p> Mes Messages</p>
+      <i class="fas fa-search"></i>
+    </div>
+    <div class="chatrooms">
+      <% if  current_user == user%>
+        <div class="d-flex">
+          <img src="" alt="">
+          <%= @chatroom.flat.user.name %>
+        </div>
+        <div>
+          <%= @chatroom.content.last %>
+        </div>
+      <% else %>
+        <div class="d-flex">
+          <img src="" alt="">
+          <%= user.name %>
+        </div>
+        <div>
+          <%= @chatroom.content.last %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="message">
+    <%= render'messages' %>
+  </div>
+
 </div>

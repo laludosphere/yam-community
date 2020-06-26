@@ -10,6 +10,12 @@ class MessagesController < ApplicationController
     else
       render "chatrooms/show"
     end
+
+    def mark_as_seen
+      @chatroom = Chatroom.find(params[:chatroom_id])
+      @message = Message.find(params[:id])
+      @message.mark_as_seen!
+    end
   end
 
   private
