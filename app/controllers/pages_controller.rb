@@ -6,6 +6,7 @@ class PagesController < ApplicationController
     if params[:query].present?
       @flats = Flat.near(params[:query], 10).limit(3)
     end
+
   end
 
   def dashboard

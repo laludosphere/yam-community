@@ -23,7 +23,7 @@
                 <%= text_field_tag :query, params[:query], class: "search_box", placeholder: "What is your school ?"%>
               <% end %> %>
           <% if params[:query].present? %>
-          <%= render 'shared/display_flats' %>
+            <%= render 'shared/display_flats'%>
           <% end %>
       <h2>Comment ça marche <span class="special-word-title">marche</span> ?</h2>
     </div>
