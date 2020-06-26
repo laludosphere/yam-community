@@ -9,16 +9,19 @@
           <div class="card" style="height: 28rem;">
             <div class="card-body">
               <div class="card-top">
-                <%# <div class="profile-avatar"><%= image_tag "anonym.jpg"</div>   %>
+              <%= image_tag "anonym.jpg", class: "avatar-large", alt: "avatar-large" %>
+
+
                 <div class="avatar-bubble"></div>
                 <h2><small> <%= current_user.name %></small></h2>
                     <%= '<i class="fas fa-star"></i>'.html_safe * current_user.average_ratings %>
-                     5-= average_ratings * '<i class="far fa-star"></i>'.html_safe
+                    <%# <%= '<i class="far fa-star"></i>'.html_safe * 5-= average_ratings %>
+                    <%# <%= 5-= average_ratings * '<i class="far fa-star"></i>'.html_safe  %>
 
               </div>
                 <div class="card-top-details">
-                 <%= current_user.user_type %>
-                 <%= current_user.status_verified %>
+                 <span class ="user_type"><%= current_user.user_type %></span>
+                 <span class="status-verifed"><%= current_user.status_verified %><span>
                 </div>
                 <p>COURTE DESCRIPTION</p>
                 <div class="description">
@@ -29,27 +32,16 @@
                 <div class="description">
                   <%= @last_review.content %>
                   <div class="description-right">
+                    <%= image_tag "anonyme2.jpg", class: "avatar-small", alt: "avatar-small" %>
                     <%= @reviewer.name %>
                   </div>
                 </div>
-                <div class="owner-details">
-
-              </div>
             </div>
           </div>
         </div>
         <div class="col-12 col-lg-6">
           <div class="card mt-4 mt-lg-0" id="yam-pre" style="height: 18rem;">
-            <div id="premium">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">PASSER PREMIUM</h5>
-              <p class="card-text">Des visites à la remise des clés, avec Yam premium nous vous proposons une solution simple et complète où nous gérons votre recherche.  Et c’est satisfait ou remboursé.</p>
-                <div class="d-flex m-4 ">
-                  <a href="#" class="btn btn-primary mr-4" >C'est parti</a>
-                  <a href="#" class="btn btn-primary" >En savoir plus</a>
-                </div>
-            </div>
+            <%= render 'shared/subscribe-premium' %>
           </div>
           <div class="card mt-4 justify-content-center d-none d-md-block" style="height: 8rem;">
             <div class="card-body d-flex h-100 align-items-center justify-content-center">
