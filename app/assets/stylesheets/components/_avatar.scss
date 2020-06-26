@@ -3,8 +3,26 @@
   border-radius: 50%;
 }
 .avatar-large {
-  width: 56px;
+  margin:0px 10px 10px 0px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
+  border-color: #00D7A7;
+  border-style: solid;
+  border-width: 3px;
+  object-fit: cover;
+}
+
+.avatar-small{
+  margin:0px 10px 10px 0px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border-color: #00D7A7;
+  border-style: solid;
+  border-width: 3px;
+  object-fit: cover;
+
 }
 .avatar-bordered {
   width: 40px;
