@@ -7,6 +7,8 @@
   background-color: $primary;
   border-radius: 28px;
   width: 150px;
+  min-height: 2.5rem;
+  border: none;
 }
 
 .btn-details{
@@ -16,7 +18,7 @@
   background-color: #00d7a7;
   border-radius: 20px;
   width: 100px;
-  height:50px;
+  min-height: 2.5rem;
   padding-top:8px;
 }
 
@@ -29,6 +31,7 @@
   background-color: $premium;
   border-radius: 28px;
   width: 150px;
+  min-height: 2.5rem;
 }
 
 .btn-secondary{
@@ -40,4 +43,5 @@
   background-color: $secondary;
   border-radius: 28px;
   width: 150px;
+  min-height: 2.5rem;
 }
