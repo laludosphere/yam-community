@@ -13,6 +13,9 @@ class PagesController < ApplicationController
     # filter_flats
   end
 
+  def premium
+  end
+
   def search
     if params[:query].present?
       @flats = Flat.near(params[:query], 10)
