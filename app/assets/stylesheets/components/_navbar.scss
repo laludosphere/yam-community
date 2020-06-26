@@ -1,8 +1,23 @@
+#nav-premium {
+  color: $premium;
+}
+
+#nav-standard {
+  color: $secondary;
+}
+
+.navbar-brand:hover  {
+  border-bottom: 0px !important;
+}
+
+.navbar-brand {
+  font-size: 0rem !important;
+}
+
 .navbar-yam {
   justify-content: space-between;
   background: white;
   align-item: flex-end;
-  color: $secondary !important;
   padding-bottom: 0px !important;
 }
 
@@ -11,8 +26,12 @@
 }
 
 .navbar-yam  a:hover {
-  color: $primary !important;
-  border-bottom: 3px solid $primary;
+  color: $secondary !important;
+  border-bottom: 3px solid $secondary;
+}
+
+.nav-active a:hover {
+  border-bottom: 0px;
 }
 
 .fixed-footer{
@@ -20,27 +39,10 @@
   // footer à ajouter puis calculer les bons pixels
 }
 
-#nav-premium {
-  color: $premium;
-}
-
-.active a:hover  {
-  color: $primary !important;
-  border-bottom: none;
-}
-
-.nav-link {
-  color: $secondary !important;
-}
-
 .nav-active  {
   color: $primary !important;
-  border-bottom: 3px solid $primary;
+  border-bottom: 3px solid $secondary;
 }
 
-.nav-item .active  {
-  color: $primary !important;
-  border-bottom: 3px solid $primary;
-}
 
 
