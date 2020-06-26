@@ -2,8 +2,8 @@
 // @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 // Define fonts for body and headers
-$body-font: "Poppins", "Helvetica", "sans-serif";
-$headers-font: "Poppins", "Helvetica", "sans-serif";
+$body-font: "Poppins";
+$headers-font: "Poppins";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -16,26 +16,24 @@ $headers-font: "Poppins", "Helvetica", "sans-serif";
 // $my-font: "Font Name";
 
 h1{
-    font-family: Poppins-Bold !important;
     font-size: 50px;
     color: $green;
-    font-weight: 700;
+    font-weight: 700 !important;
 }
 
 h2{
-    font-family: Poppins-Bold !important;
     font-size: 100px;
     color: $blue;
+    font-weight: 700 !important;
 }
 
 h3{
-    font-family: Poppins-Bold !important;
     font-size: 38px;
     color: $blue;
+    font-weight: 700 !important;
 }
 
 h4{
-    font-family: Poppins-Bold !important;
     font-size: 12px;
     color: $card-grey;
     text-transform: uppercase;
@@ -49,7 +47,6 @@ p {
 }
 
 .card-text {
-    font-family: Poppins-Regular;
     font-size: 15px;
     color: $card-grey;
     text-align: left;

@@ -32,7 +32,7 @@
                 <div class="description">
                   <%= @last_review.content %>
                   <div class="description-right">
-                    <%= image_tag "anonyme2.jpg", class: "avatar-small", alt: "avatar-small" %> 
+                    <%= image_tag "anonyme2.jpg", class: "avatar-small", alt: "avatar-small" %>
                     <%= @reviewer.name %>
                   </div>
                 </div>
@@ -41,16 +41,7 @@
         </div>
         <div class="col-12 col-lg-6">
           <div class="card mt-4 mt-lg-0" id="yam-pre" style="height: 18rem;">
-            <div id="premium">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">PASSER PREMIUM</h5>
-              <p class="card-text">Des visites à la remise des clés, avec Yam premium nous vous proposons une solution simple et complète où nous gérons votre recherche.  Et c’est satisfait ou remboursé.</p>
-                <div class="d-flex m-4 ">
-                  <a href="#" class="btn btn-primary mr-4" >C'est parti</a>
-                  <a href="#" class="btn btn-primary" >En savoir plus</a>
-                </div>
-            </div>
+            <%= render 'shared/subscribe-premium' %>
           </div>
           <div class="card mt-4 justify-content-center d-none d-md-block" style="height: 8rem;">
             <div class="card-body d-flex h-100 align-items-center justify-content-center">
