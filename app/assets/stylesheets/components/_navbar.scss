@@ -2,7 +2,7 @@
   justify-content: space-between;
   background: white;
   align-item: flex-end;
-  color: $secondary;
+  color: $secondary !important;
   padding-bottom: 0px !important;
 }
 
@@ -10,23 +10,9 @@
   flex-grow: 0;
 }
 
- .navbar-brand:hover {
-  border-bottom: 0px !important;
-}
-
-
-.logo-yam a:hover {
-  border-bottom: 0px !important;
-}
-
 .navbar-yam  a:hover {
-  color: #27D7A7 !important;
+  color: $primary !important;
   border-bottom: 3px solid $primary;
-}
-
-.navbar-brand a:hover {
-  color: white;
-  border-bottom: none;
 }
 
 .fixed-footer{
@@ -39,12 +25,22 @@
 }
 
 .active a:hover  {
-  color: #27D7A7 !important;
+  color: $primary !important;
   border-bottom: none;
 }
 
-.active  {
-  color: #27D7A7 !important;
+.nav-link {
+  color: $secondary !important;
+}
+
+.nav-active  {
+  color: $primary !important;
   border-bottom: 3px solid $primary;
 }
+
+.nav-item .active  {
+  color: $primary !important;
+  border-bottom: 3px solid $primary;
+}
+
 
