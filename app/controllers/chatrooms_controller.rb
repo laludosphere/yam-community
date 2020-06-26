@@ -7,5 +7,6 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
     authorize @chatroom
+    @chatroom.mark_messages_as_seen(current_user)
   end
 end

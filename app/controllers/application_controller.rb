@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  before_action :notification
   include Pundit
 
   # Pundit: white-list approach.
@@ -17,5 +18,12 @@ class ApplicationController < ActionController::Base
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+
+  def notification
+    if user_signed_in?
+      unread_messages = current_user.chatrooms.map { |chatroom| chatroom.unread_messages_for_user(current_user) }.flatten
+      @notification = unread_messages.count > 0
+    end
   end
 end
