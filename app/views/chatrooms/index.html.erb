@@ -1,6 +1,8 @@
 <div class="background">
-  <h2 class="page-h2">Vos messages</h2>
-    <% @chatrooms.each do |chatroom| %>
-     <%= link_to chatroom.name, chatroom_path(chatroom, anchor: "envoie") %></li>
-    <% end %>
+  <div class="container">
+    <h2 class="page-h2">Vos messages</h2>
+      <% @chatrooms.each do |chatroom| %>
+       <%= link_to chatroom.name, chatroom_path(chatroom, anchor: "envoie") %></li>
+      <% end %>
+  </div>
 </div>
