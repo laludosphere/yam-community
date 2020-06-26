@@ -1,0 +1,44 @@
+.card-body-message-container{
+  height: 60px;
+  border-radius: 15px !important;
+  background-color: $green;
+  padding: 6px;
+  width: 350px;
+  margin:16px;
+    p {
+    font-size: 16px;
+    padding: 4px;
+    color: black;
+    }
+}
+
+.container small {
+  color: black;
+}
+.detail{
+  display-flex:end;
+}
+
+.message-top{
+  display:flex;
+  justify-content: space-between;
+}
+
+.card-body-other-message-container{
+  height: 60px;
+  border-radius: 15px !important;
+  background-color: #adb5bd;
+  padding: 6px;
+  width: 350px;
+  margin: 16px;
+
+   p {
+    font-size: 16px;
+    padding: 4px;
+    color: black;
+    }
+}
+
+#messages {
+  width: 550px;
+}
