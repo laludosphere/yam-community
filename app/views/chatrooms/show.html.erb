@@ -1,12 +1,14 @@
-<div class="container">
+<div class="container justify-content-center align-item-center">
   <h1>#<%= @chatroom.name %></h1>
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
-      <hr><%= render 'messages/message', message: message %>
+    <% if message.user == current_user %>
+      <%= render 'messages/my_message', message: message %>
+     <% else %>
+      <%= render 'messages/other_message', message: message %>
+     <% end %>
     <% end %>
   </div>
-
-
   <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
     <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
     <%= f.button :submit, value:"Envoyer",class: "btn-primary", id: "envoie" %>
