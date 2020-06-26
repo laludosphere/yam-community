@@ -27,7 +27,10 @@ Flat.create!(
   address:         '60 boulevard vauban'
 )
 
-Flat.create!(city:'boulogne', flat_type:'t3', price_per_month: 2200, available_at: '12/11/2020', surface_area: 40, user: aurel, zip_code: 92100, address:'147 rue de silly', longitude: 2.23425, latitude: 48.833241)
+Flat.create!(city:'Lille', flat_type:'t2', price_per_month: 780, available_at: '12/11/2020', surface_area: 40, user: aurel, zip_code: 92100, address:'147 rue de silly', longitude: 2.23425, latitude: 48.833241)
+Flat.create!(city:'Lille', flat_type:'t1', price_per_month: 2200, available_at: '12/11/2020', surface_area: 40, user: edouard, zip_code: 92100, address:'147 rue de silly', longitude: 2.23425, latitude: 48.833241)
+Flat.create!(city:'boulogne', flat_type:'t2', price_per_month: 2200, available_at: '12/11/2020', surface_area: 40, user: francois, zip_code: 92100, address:'147 rue de silly', longitude: 2.23425, latitude: 48.833241)
+Flat.create!(city:'boulogne', flat_type:'t3', price_per_month: 2200, available_at: '12/11/2020', surface_area: 40, user: jean michel, zip_code: 92100, address:'147 rue de silly', longitude: 2.23425, latitude: 48.833241)
 Flat.create!(city:'Paris', flat_type:'t5', price_per_month: 7200, available_at: '12/10/2020', surface_area: 100, user: sam, zip_code: 75008, address:'15 Avenue des Champs-Elisée', longitude: 2.308757, latitude: 48.869043)
 
 Preference.create!(flat_type:'t2', price_per_month: 1200, roomates: 2, surface_area: 39, user: yann, school_location: 'Place du Maréchal de Lattre de Tassigny, Paris, 75016', school_longitude: 2.2757516, school_latitude: 48.8714403, active:true, moving_at:'12/12/2020', surrounding_area: 10, city: 'Paris' )

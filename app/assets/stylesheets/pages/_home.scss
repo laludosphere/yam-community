@@ -4,34 +4,34 @@ body {
     background-color: #ffffff;
 }
 
-.banner{
-    
+.banner {
+
 }
-.banner-content{
+.banner-content {
     display:flex;
     // justify-content: space-around;
 }
 
-.container{
+.container {
     width: 100%;
 }
 
 
-.special-word-title{
+.special-word-title {
     color:#00d7a7;
 }
 
-.special-word-premium{
+.special-word-premium {
     color: #f5a623;
 }
 
-.banner-bottom{
+.banner-bottom {
     display:flex;
     justify-content: space-around;
     margin: 5%;
 }
 
-.btn-inscription{
+.btn-inscription {
     text-decoration: none;
     text-align: center;
     color:white;
@@ -42,7 +42,7 @@ body {
     padding-top:8px;
 }
 
-.btn-video{
+.btn-video {
     text-align: center;
     color:#1D3461;
     background-color: white;
@@ -54,7 +54,7 @@ body {
     padding-top:12px;
 }
 
-.search-home{
+.search-home {
     margin-top:10%;
     background: linear-gradient(#d4edff, #ffffff);
     padding : 5%;
@@ -71,30 +71,19 @@ body {
 }
 
 
-.card{
+.card {
     border-radius:30px;
     background-color:white;
     box-shadow: 5px 5px 5px #9c97ad;
     height:450px;
 }
 
-.card-bottom{
+.card-bottom {
     display:flex;
 
 }
 
-.btn-details{
-    text-decoration: none;
-    text-align: center;
-    color:white;
-    background-color: #00d7a7;
-    border-radius: 20px;
-    width: 100px;
-    height:50px;
-    padding-top:8px;
-}
-
-.step-yam{
+.step-yam {
     display:flex;
     justify-content: space-around;
     margin: 20px;
@@ -121,3 +110,4 @@ body {
 .home-contact {
     display:flex;
 }
+
