@@ -13,6 +13,11 @@ body {
     // justify-content: space-around;
 }
 
+
+h2{
+    text-align: center;
+}
+
 .special-word-title {
     color:#00d7a7;
 }
@@ -23,8 +28,7 @@ body {
 
 .banner-bottom {
     display:flex;
-    justify-content: space-around;
-    margin: 5%;
+    justify-content: space-between;
 }
 
 .btn-inscription {
@@ -53,7 +57,7 @@ body {
 .search-home {
     margin-top:10%;
     background: linear-gradient(#d4edff, #ffffff);
-    padding : 5%;
+    padding : 10%;
     border-radius: 100% 100% 0px 0px;
 }
 
@@ -68,23 +72,26 @@ body {
 
 .mde1-details {
     display:flex;
-    margin: 50px 0px 50px 0px;
+    margin: 10% 0% 10% 0%;
 }
 
+.mde1{
+    margin: 0px 50px 0px 0px;
+}
 .mde2{
-    margin: 50px 0px 50px 0px;
+    margin: 10% 0% 10% 0%;
 }
 
 .mde3{
-    margin: 50px 0px 50px 0px;
+    margin: 10% 0% 10% 0%;
 }
 
 .mde4{
-    margin: 50px 0px 50px 0px;
+    margin: 10% 0% 10% 0%;
 }
 
 .mde5{
-    margin: 50px 0px 100px 0px;
+    margin: 10% 0% 10% 0%;
 }
 
 .card {
