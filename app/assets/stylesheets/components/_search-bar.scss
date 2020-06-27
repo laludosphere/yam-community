@@ -2,13 +2,15 @@
 width: 100%;
 top: 50%;
 left: 50%;
-background: rgba(0,0,0,0.3);
+background:white;
 border-radius: 30px;
 padding: 10px;
 border: 2px solid #fff;
+border-color: $blue-third;
 font-size: 18px;
-color: #fff;
+color: $blue;
 outline: none;
+
 }
 
 .someclass i {

@@ -5,6 +5,7 @@ body {
 }
 
 .banner {
+    margin-top: auto;
 
 }
 .banner-content {
@@ -46,7 +47,7 @@ body {
     border-style: solid;
     width: 300px;
     height:50px;
-    padding-top:12px;
+    padding-top:5px;
 }
 
 .search-home {
@@ -61,10 +62,30 @@ body {
     margin: 5%;
 }
 
-.mde1-details {
-    display:flex;
+.mde{
+ margin-top: 50px;
 }
 
+.mde1-details {
+    display:flex;
+    margin: 50px 0px 50px 0px;
+}
+
+.mde2{
+    margin: 50px 0px 50px 0px;
+}
+
+.mde3{
+    margin: 50px 0px 50px 0px;
+}
+
+.mde4{
+    margin: 50px 0px 50px 0px;
+}
+
+.mde5{
+    margin: 50px 0px 100px 0px;
+}
 
 .card {
     border-radius:30px;
@@ -96,6 +117,9 @@ body {
     background-color: #00d7a7;
     border-radius: 50%;
     display: inline-block;
+    text-align: center;
+    padding-top: 5px;
+    margin:10px;
   }
 
   a {
