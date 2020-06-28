@@ -1,12 +1,12 @@
 .card-body-message-container{
-  height: 60px;
   border-radius: 15px !important;
-  background-color: $green;
+  background-color: $blue-third;
   padding: 6px;
   width: 350px;
   margin-right: 100px !important;
   margin-left: 100px !important;
   margin:16px;
+  overflow-wrap: break-word;
     p {
     font-size: 16px;
     padding: 4px;
@@ -16,6 +16,10 @@
 
 .container small {
   color: black;
+}
+
+.container {
+  justify-content: space-around;
 }
 .detail{
   display-flex:end;
@@ -27,12 +31,15 @@
 }
 
 .card-body-other-message-container{
-  height: 60px;
   border-radius: 15px !important;
-  background-color: #adb5bd;
+  background-color: #E9EBEE;
   padding: 6px;
   width: 350px;
   margin: 16px;
+  height: auto;
+  overflow-wrap: break-word;
+
+
 
    p {
     font-size: 16px;
@@ -43,4 +50,23 @@
 
 #messages {
   width: 550px;
+  margin-top: 24px;
 }
+
+.mes-messages{
+
+  position: relative;
+  border-right: 1px solid;
+  border-color: linear-gradient(#FFFFFF, #145871, #FFFFFF);
+  border-radius: 2px;
+  margin: 24px 24px 24px 24px;
+  padding: 16px;
+  margin-right: 20px;
+  h4{
+    color: #145871 !important;
+  }
+}
+.mes-chatrooms{
+  flex-direction:column;
+}
+
