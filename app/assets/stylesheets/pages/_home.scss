@@ -1,5 +1,10 @@
 // Specific CSS for your home-page
 
+.home-container{
+    max-width: fit-content;
+    margin:5% 10% 10% 10%;
+}
+
 body {
     background-color: #ffffff;
 }
@@ -16,6 +21,7 @@ body {
 
 h2{
     text-align: center;
+    padding-bottom: 2%;
 }
 
 .special-word-title {
@@ -28,7 +34,6 @@ h2{
 
 .banner-bottom {
     display:flex;
-    justify-content: space-between;
 }
 
 .btn-inscription {
@@ -40,6 +45,11 @@ h2{
     width: 150px;
     height:50px;
     padding-top:8px;
+    margin : 0% 5% 0% 0%;
+}
+
+.droit.svg {
+    width:800px;
 }
 
 .btn-video {
@@ -47,12 +57,13 @@ h2{
     color:#1D3461;
     background-color: white;
     border-radius: 50px;
-    border-color: #1D3461;
+    border-color: #00D7A7;
     border-style: solid;
     width: 300px;
     height:50px;
     padding-top:5px;
 }
+
 
 .search-home {
     margin-top:10%;
@@ -116,6 +127,10 @@ h2{
     margin:auto;
 }
 
+.banner-top-left {
+    margin-top: 5%;
+    margin-right:10%;
+}
 
 .dot {
     color:white;
@@ -133,7 +148,16 @@ h2{
     text-decoration: none;
 }
 
+p {
+    text-align: center;
+    padding-bottom: 2%;
+}
+
 .home-contact {
     display:flex;
+}
+
+.home-contact-txt{
+    width: 50%;
 }
 
