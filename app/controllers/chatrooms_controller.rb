@@ -4,6 +4,7 @@ class ChatroomsController < ApplicationController
   end
 
   def show
+    @chatrooms = policy_scope(Chatroom).where(user: current_user).or(Chatroom.where(flat: current_user.flats))
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
     authorize @chatroom
