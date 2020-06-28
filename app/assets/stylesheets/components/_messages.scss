@@ -1,5 +1,4 @@
 .card-body-message-container{
-  height: 60px;
   border-radius: 15px !important;
   background-color: $blue-third;
   padding: 6px;
@@ -7,6 +6,7 @@
   margin-right: 100px !important;
   margin-left: 100px !important;
   margin:16px;
+  overflow-wrap: break-word;
     p {
     font-size: 16px;
     padding: 4px;
@@ -20,8 +20,6 @@
 
 .container {
   justify-content: space-around;
-  background-image: image-url('background-page.svg'), linear-gradient(0deg, #FFFFFF 94%, #D3ECFF 100%);
-  background-repeat: no-repeat;
 }
 .detail{
   display-flex:end;
@@ -33,12 +31,15 @@
 }
 
 .card-body-other-message-container{
-  height: 60px;
   border-radius: 15px !important;
   background-color: #E9EBEE;
   padding: 6px;
   width: 350px;
   margin: 16px;
+  height: auto;
+  overflow-wrap: break-word;
+
+
 
    p {
     font-size: 16px;
