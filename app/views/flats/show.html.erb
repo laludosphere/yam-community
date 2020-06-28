@@ -37,7 +37,7 @@
     <tr>
 
       <td>
-        <%  if policy(@flat).edit?  %>
+        <% if policy(@flat).edit?  %>
           <%= link_to "Edit", edit_flat_path(@flat) %>
         <% end %>
       </td>
@@ -45,6 +45,8 @@
         <% if policy(@flat).destroy? %>
           <%= link_to 'Destroy', flat_path(@flat), method: :delete, data: { confirm: 'are you sure ?'} %>
          <% end %>
+
+           <td><%= link_to 'Message', flat_chatrooms_path(@flat), method: :post %></td>
        </td>
     </tr>
 </tbody>

@@ -4,13 +4,13 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
   get '/search', to: 'pages#search', as: :home_search
   get '/passer-premium', to: 'pages#premium'
-  resources :flats
+
+  resources :flats do
+    resources :chatrooms, only: :create
+  end
   resources :profiles, only: :show
 
   resources :chatrooms, only: [:index, :show] do
     resources :messages, only: :create
-end
-
-
-
+  end
 end

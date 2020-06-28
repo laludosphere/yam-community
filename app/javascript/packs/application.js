@@ -27,7 +27,7 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { initAutocomplete } from '../plugins/init_autocomplete';
+// import { initAutocomplete } from '../plugins/init_autocomplete';
 import {initChatroomCable} from '../channels/chatroom_channel';
 import {initStopCarousel} from '../plugins/init_stop_carousel';
 document.addEventListener('turbolinks:load', () => {
