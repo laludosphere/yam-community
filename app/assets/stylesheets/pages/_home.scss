@@ -1,15 +1,27 @@
 // Specific CSS for your home-page
 
+.home-container{
+    max-width: fit-content;
+    margin:5% 10% 10% 10%;
+}
+
 body {
     background-color: #ffffff;
 }
 
 .banner {
+    margin-top: auto;
 
 }
 .banner-content {
     display:flex;
     // justify-content: space-around;
+}
+
+
+h2{
+    text-align: center;
+    padding-bottom: 2%;
 }
 
 .special-word-title {
@@ -22,8 +34,6 @@ body {
 
 .banner-bottom {
     display:flex;
-    justify-content: space-around;
-    margin: 5%;
 }
 
 .btn-inscription {
@@ -35,6 +45,11 @@ body {
     width: 150px;
     height:50px;
     padding-top:8px;
+    margin : 0% 5% 0% 0%;
+}
+
+.droit.svg {
+    width:800px;
 }
 
 .btn-video {
@@ -42,17 +57,18 @@ body {
     color:#1D3461;
     background-color: white;
     border-radius: 50px;
-    border-color: #1D3461;
+    border-color: #00D7A7;
     border-style: solid;
     width: 300px;
     height:50px;
-    padding-top:12px;
+    padding-top:5px;
 }
+
 
 .search-home {
     margin-top:10%;
     background: linear-gradient(#d4edff, #ffffff);
-    padding : 5%;
+    padding : 10%;
     border-radius: 100% 100% 0px 0px;
 }
 
@@ -61,10 +77,33 @@ body {
     margin: 5%;
 }
 
-.mde1-details {
-    display:flex;
+.mde{
+ margin-top: 50px;
 }
 
+.mde1-details {
+    display:flex;
+    margin: 10% 0% 10% 0%;
+}
+
+.mde1{
+    margin: 0px 50px 0px 0px;
+}
+.mde2{
+    margin: 10% 0% 10% 0%;
+}
+
+.mde3{
+    margin: 10% 0% 10% 0%;
+}
+
+.mde4{
+    margin: 10% 0% 10% 0%;
+}
+
+.mde5{
+    margin: 10% 0% 10% 0%;
+}
 
 .card {
     border-radius:30px;
@@ -88,6 +127,10 @@ body {
     margin:auto;
 }
 
+.banner-top-left {
+    margin-top: 5%;
+    margin-right:10%;
+}
 
 .dot {
     color:white;
@@ -96,13 +139,25 @@ body {
     background-color: #00d7a7;
     border-radius: 50%;
     display: inline-block;
+    text-align: center;
+    padding-top: 5px;
+    margin:10px;
   }
 
   a {
     text-decoration: none;
 }
 
+p {
+    text-align: center;
+    padding-bottom: 2%;
+}
+
 .home-contact {
     display:flex;
+}
+
+.home-contact-txt{
+    width: 50%;
 }
 

@@ -1,4 +1,5 @@
-<div class="container mt-5">
+<div class="container home-container">
+<!-- <div class="container mt-5">-->
   <div class="banner-content">
 
     <div class="banner-top-left">
@@ -10,24 +11,22 @@
                 </div>
     </div>
     <div class="banner-top-right">
-        <%= image_tag "droit.svg" %>
+       <%= image_tag "droit.svg" %>
     </div>
   </div>
-
-
     <div class="search-home">
 
       <h2>Trouver un <span class="special-word-premium">appartement</span> près de votre école</h2>
           <%= form_tag root_path, method: :get do %>
-                <span class="fas fa-search"></span>
-                <%= text_field_tag :query, params[:query], class: "search_box", placeholder: "What is your school ?"%>
-              <% end %> %>
+                
+                <%= text_field_tag :query, params[:query],  class: "search_box" , placeholder: "What is your school ?" %> <span class="fas fa-search"></span>
+              <% end %>
           <% if params[:query].present? %>
             <%= render 'shared/display_flats'%>
-          <% end %>
-      <h2>Comment ça marche <span class="special-word-title">marche</span> ?</h2>
+          <% end %> 
     </div>
 
+    <div class="titre-home"><h2>Comment ça marche <span class="special-word-title">marche</span> ?</h2></div>
     <div class="mde">
 
         <div class="mde1">
@@ -36,11 +35,11 @@
             <div class="mde1-details">
                 <div class="mde-details-left">
                     <h2> Je cherche un logement </h2>
-                    <p>Soyez acteur de la communauté en postant l’appartement que vous libérez en trois clics.  En retour, Yam s'occupe de votre préavis.</p>
+                    <p>Soyez acteur de la communauté en postant l’appartement que vous libérez en trois clics. En retour, Yam s'occupe de votre préavis.</p>
                 </div>
                 <div class="mde-details-right">
                     <h2>Je libère un logement</h2>
-                    <p>Finies les recherches interminables sur les centaines de sites. Remplissez, vos critères, et laissez Yam trouver l’appartement de vos rêves.</p>
+                    <p>Finies les recherches interminables sur les centaines de sites.Remplissez, vos critères, et laissez Yam trouver l’appartement de vos rêves.</p>
                 </div>
             </div>
 
@@ -50,19 +49,14 @@
         <div class="mde2">
             <h2 class="mdr-title"><span class="dot">2</span> Choisissez parmi votre <span class="special-word-title">sélection</span> </h2>
 
-            <p>Yam vous propose uniquement les appartements qui vous correspondent. Chattez avec les locataires actuels, visitez, et le tour est joué !</p>
-             <div class="card">
-      >>> cards ici <<<
+            <p>Yam vous propose uniquement les appartements qui vous correspondent. <br>Chattez avec les locataires actuels, visitez, et le tour est joué !</p>
+           
+                
 
-            <h4>T2 | 30m²</h4>
-                <div class="card-bottom">600€/mois
-                    <div class="btn-details">Details</div>
-                </div>
-             </div>
         </div>
         <div class="mde3">
             <h2 class="mdr-title"><span class="dot">3</span> Postulez et laissez parler votre  <span class="special-word-title">réputation </span> </h2>
-            <p>Envoyez votre profil ainsi que votre dossier complet. Affichez votre bonne conduite grâce aux recommandations de vos anciens propriétaires et amis.</p>
+            <p>Envoyez votre profil ainsi que votre dossier complet. <br>Affichez votre bonne conduite grâce aux recommandations de vos anciens propriétaires et amis.</p>
             <div class="mdr3-images">
 
                 <%= image_tag "dossier.png", alt: "alttext" %>
@@ -71,12 +65,12 @@
         </div>
         <div class="mde4">
             <h2><span class="dot">4</span>Vous avez été <span class="special-word-title">choisi</span> par le propriétaire</h2>
-            <p><strong>Bravo ! </strong>Le propriétaire a sélectionné votre dossier. Vous n’avez plus qu’à vous installer, et profiter des services d’une application entièrement digitale.</p>
+            <p><strong>Bravo ! </strong>Le propriétaire a sélectionné votre dossier. <br>Vous n’avez plus qu’à vous installer, et profiter des services d’une application entièrement digitale.</p>
             <%= image_tag "4.png" %>
         </div>
          <div class="mde5">
             <h2><span class="dot">5</span>Besoin d’aide ? Laissez <span class="special-word-premium">Yam Premium</span> faire le travail</h2>
-            <p>Des visites à la remise des clés, avec Yam premium nous vous proposons une solution simple et complète où nous gérons votre recherche. Et si vous ne trouvez pas votre appartement avec nous ? On vous rembourse.</p>"
+            <p>Des visites à la remise des clés, avec Yam premium nous vous proposons une solution simple et complète où nous gérons votre recherche. Et si vous ne trouvez pas votre appartement avec nous ? On vous rembourse.</p>
             <div class="step-yam">
                 <%= image_tag "sans-yam.png" %>
                 <%= image_tag "avec-yam.png" %>
