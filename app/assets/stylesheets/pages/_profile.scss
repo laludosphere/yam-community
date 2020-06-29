@@ -1,12 +1,55 @@
 .card-top{
-  display:flex;
+  display: flex;
   justify-content: space-around;
+  // align-items: baseline;
 }
 
 .description{
   display:flex;
+  justify-content: space-between;
+  align-items: center;
   border-style: solid;
   border-radius: 15px;
   border-width: 2px;
   padding : 5px;
+  border-color: $blue-third;
+  text-align: center;
+}
+
+.fa-star:before {
+  content: "\f005";
+  color: #F5A623;
+  font-size: 25px;
+}
+
+.description-right{
+  display: flex;
+  flex-direction: column;
+}
+
+.title-profile{
+  margin-top:10px;
+  margin-bottom:0px !important;
+}
+
+.card-form{
+  margin: 2%;
+  padding: 5%;
+  height: auto;
+  display:flex;
+  flex-direction: column;
+}
+
+.pref-2{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+}
+
+.input #preference {
+  border-radius: 100px;
+}
+
+.form-control{
+  border-radius: 50px;
 }
