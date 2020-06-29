@@ -1,4 +1,5 @@
-<div class="card-body-message-container" id="message-<%= message.id %>">
+<div id= "sender" data-id="<%= message.user.id %>"></div>
+<div class="card-body-other-message-container" id="message-<%= message.id %>">
   <i class="author">
     <div class="message-top">
       <div class="message-name">
@@ -11,3 +12,4 @@
   </i>
   <p><%= message.content %></p>
 </div>
+
