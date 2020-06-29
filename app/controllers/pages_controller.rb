@@ -9,8 +9,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @flats = Flat.all
-    # filter_flats
+    filter_flats
   end
 
   def premium

@@ -27,17 +27,13 @@
 }
 
 .btn-details{
-  text-decoration: none;
-  text-align: center;
-  color:white;
-  background-color: #00d7a7;
-  border-radius: 20px;
   font-size: 15px;
-  font-family: Poppins;
-  font-weight: 500;
-  width: 100px;
-  padding-top:8px;
+  border-radius: 28px !important;
+  color: $card-grey;
+  border-color: $card-grey;
+  width: 210px;
 }
+
 
 .btn-premium{
   text-decoration: none;
