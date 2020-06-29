@@ -31,3 +31,21 @@
   margin-top:10px;
   margin-bottom:0px !important;
 }
+
+.card-form{
+  margin: 2%;
+  padding: 5%;
+  height: auto;
+  display:flex;
+  flex-direction: column;
+}
+
+.pref-2{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+}
+
+.input #preference {
+  border-radius: 100px;
+}
