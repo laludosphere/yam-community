@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   def notification
     if user_signed_in?
       unread_messages = current_user.chatrooms.map { |chatroom| chatroom.unread_messages_for_user(current_user) }.flatten
-      @notification = unread_messages.count > 0
+      @notification = unread_messages.count
     end
   end
 end

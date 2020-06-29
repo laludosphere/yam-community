@@ -51,22 +51,18 @@ Chatroom.create!(
   user: yann
 )
 Chatroom.create!(
-  name: 'General',
+  name: 'Imo',
   flat: Flat.second,
   user: louis
 )
 Chatroom.create!(
-  name: 'General',
+  name: 'Imovert',
   flat: Flat.last,
   user: louis
 )
 puts "Chatroom created"
 
-Message.create!(
-  content:  'You are the one',
-  user:     louis ,
-  chatroom: Chatroom.first
-)
+
 puts "Message created"
 
 owner_review_contents = ["Etudiant très serieux ", "Etudiant un petit peu bruyant", "Cet étudiant est super sympa ","Cet étudiant est très mignon et sexy ", "Cet étudiant est très réservé et un petit peu chelou"]

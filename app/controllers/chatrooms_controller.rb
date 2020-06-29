@@ -4,6 +4,7 @@ class ChatroomsController < ApplicationController
     @chatrooms = policy_scope(Chatroom).where(user: current_user).or(Chatroom.where(flat: current_user.flats))
     @last_chatroom = Message.last.chatroom
     @chatroom_sorted = chatroom.order("messages.created_at")
+
     redirect_to chatroom_path(@last_chatroom)
   end
 
