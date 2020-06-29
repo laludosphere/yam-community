@@ -1,16 +1,33 @@
 .card-top{
-  display:flex;
+  display: flex;
   justify-content: space-around;
+  // align-items: baseline;
 }
 
 .description{
   display:flex;
+  justify-content: space-between;
+  align-items: center;
   border-style: solid;
   border-radius: 15px;
   border-width: 2px;
   padding : 5px;
+  border-color: $blue-third;
+  text-align: center;
 }
 
-// .description-right{
-//   display:block;
-// }
+.fa-star:before {
+  content: "\f005";
+  color: #F5A623;
+  font-size: 25px;
+}
+
+.description-right{
+  display: flex;
+  flex-direction: column;
+}
+
+.title-profile{
+  margin-top:10px;
+  margin-bottom:0px !important;
+}
