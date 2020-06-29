@@ -8,16 +8,17 @@ class ReviewsController < ApplicationController
   end
 
   def new
-
     @review = Review.new
+    @review.receiver = User.find(params[:profile_id])
+    @reviewer = current_user
   end
 
   def create
-    @review = current_user.reviews.build(review_params)
-    if @review.save
-      redirect_to profile_reviews_path(@review)
-    else
-      render 'new'
-    end
+  end
+
+  private
+
+  def review_params
+    params.require(:review).permit(:user, :profile_id, :receiver, :reviewer)
   end
 end
