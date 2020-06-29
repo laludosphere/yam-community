@@ -19,7 +19,9 @@
             <%= render 'shared/premium-proposal' %>
           </div>
           <div class="card mt-4 justify-content-center d-none d-md-block" style="height: 8rem;">
-            <%= render 'shared/create_student_file_card' %>
+            <%=  link_to subscribe_premium_path, "data-toggle" => "modal", 'data-target' => '#premiumModal' do %>
+              <%= render 'shared/create_student_file_card' %>
+            <% end %>
           </div>
         </div>
       </div>
