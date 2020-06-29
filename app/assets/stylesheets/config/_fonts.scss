@@ -52,6 +52,16 @@ p {
     text-align: left;
 }
 
+.card-tile {
+  margin: 15px 0px 0px 15px;
+}
+
+.card-premium {
+  margin: 15px 0px 0px 15px;
+  color: $premium ;
+}
+
+
 a {
     text-decoration: none;
 }

@@ -8,8 +8,22 @@
   background-color: $primary;
   border-radius: 28px;
   width: 150px;
-  min-height: 2.5rem;
   border: none;
+}
+
+
+.btn-flats{
+  text-decoration: none;
+  text-align: center;
+  font-size: 15px;
+  font-family: Poppins;
+  font-weight: 500;
+  color:white;
+  background-color: $primary;
+  border-radius: 28px;
+  width: 150px;
+  border: none;
+  min-height: 2.5em;
 }
 
 .btn-details{
@@ -22,7 +36,6 @@
   font-family: Poppins;
   font-weight: 500;
   width: 100px;
-  min-height: 2.5rem;
   padding-top:8px;
 }
 
@@ -37,7 +50,6 @@
   background-color: $premium;
   border-radius: 28px;
   width: 150px;
-  min-height: 2.5rem;
 }
 
 .btn-secondary{
@@ -50,5 +62,4 @@
   background-color: $secondary;
   border-radius: 28px;
   width: 150px;
-  min-height: 2.5rem;
 }

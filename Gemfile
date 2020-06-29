@@ -33,6 +33,7 @@ gem 'pundit'
 gem 'cloudinary', '~> 1.12.0'
 gem 'geocoder'
 gem 'pg_search', '~> 2.3.0'
+I18n.l(DateTime.now, format: :long, locale: :'en-FR')
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
