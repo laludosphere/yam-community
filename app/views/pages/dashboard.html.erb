@@ -16,7 +16,7 @@
         </div>
         <div class="col-12 col-lg-6">
           <div class="card mt-4 mt-lg-0" id="yam-pre" style="height: 18rem;">
-            <%= render 'shared/subscribe-premium' %>
+            <%= render 'shared/premium-proposal' %>
           </div>
           <div class="card mt-4 justify-content-center d-none d-md-block" style="height: 8rem;">
             <%= render 'shared/create_student_file_card' %>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="container">
-      <h2 class="page-h2">Votre séléction d'appartements à <%= current_user%></h2>
+      <h2 class="page-h2">Votre séléction d'appartements à <%= current_user.preference.city%></h2>
       <%= render 'shared/display_flats' %>
     </div>
   </div>
