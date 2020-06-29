@@ -30,10 +30,12 @@ import "bootstrap";
 // import { initAutocomplete } from '../plugins/init_autocomplete';
 import {initChatroomCable} from '../channels/chatroom_channel';
 import {initStopCarousel} from '../plugins/init_stop_carousel';
+import {initPremiumModal} from '../plugins/init_premium_modal';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  // initAutocomplete();
   initStopCarousel();
-  initAutocomplete();
   initChatroomCable();
 });

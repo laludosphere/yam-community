@@ -44,5 +44,22 @@
   border-bottom: 3px solid $secondary;
 }
 
+#notif{
+  border-radius: 50%;
+  background-color: $red;
+  color:white;
+  align-items:flex-end !important;
+  min-width: 1.2em;
+  min-height:1.2em;
+}
 
+#notif-message{
+  border-radius: 50%;
+  background-color: $red;
+  color:white;
+  margin-right: 16px;
+  margin-top: 7px;
+  min-width: 1.2em;
+  min-height:1.2em;
+}
 

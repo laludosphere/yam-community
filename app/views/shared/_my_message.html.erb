@@ -1,0 +1,31 @@
+<% if message.user == current_user %>
+  <div class="card-body-message-container" id="message-<%= message.id %>">
+    <i class="author">
+      <div class="message-top">
+        <div class="message-name">
+          <span><%= message.user.name %></span>
+        </div>
+        <div class="message-date">
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </div>
+      </div>
+    </i>
+    <p><%= message.content %></p>
+  </div>
+<% else %>
+  <div class="card-body-other-message-container" id="message-<%= message.id %>">
+    <i class="author">
+      <div class="message-top">
+        <div class="message-name">
+          <span><%= message.user.name %></span>
+        </div>
+        <div class="message-date">
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </div>
+      </div>
+    </i>
+    <p><%= message.content %></p>
+  </div>
+<% end %>
+
+

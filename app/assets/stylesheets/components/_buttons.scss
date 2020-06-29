@@ -8,23 +8,32 @@
   background-color: $primary;
   border-radius: 28px;
   width: 150px;
-  min-height: 2.5rem;
   border: none;
 }
 
-.btn-details{
+
+.btn-flats{
   text-decoration: none;
   text-align: center;
-  color:white;
-  background-color: #00d7a7;
-  border-radius: 20px;
   font-size: 15px;
   font-family: Poppins;
   font-weight: 500;
-  width: 100px;
-  min-height: 2.5rem;
-  padding-top:8px;
+  color:white;
+  background-color: $primary;
+  border-radius: 28px;
+  width: 150px;
+  border: none;
+  min-height: 2.5em;
 }
+
+.btn-details{
+  font-size: 15px;
+  border-radius: 28px !important;
+  color: $card-grey;
+  border-color: $card-grey;
+  width: 210px;
+}
+
 
 .btn-premium{
   text-decoration: none;
@@ -37,7 +46,6 @@
   background-color: $premium;
   border-radius: 28px;
   width: 150px;
-  min-height: 2.5rem;
 }
 
 .btn-secondary{
@@ -50,5 +58,4 @@
   background-color: $secondary;
   border-radius: 28px;
   width: 150px;
-  min-height: 2.5rem;
 }
