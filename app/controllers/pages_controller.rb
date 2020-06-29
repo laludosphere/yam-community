@@ -6,15 +6,16 @@ class PagesController < ApplicationController
     if params[:query].present?
       @flats = Flat.near(params[:query], 10).limit(3)
     end
-
   end
 
   def dashboard
-    @flats = Flat.all
-    # filter_flats
+    filter_flats
   end
 
   def premium
+  end
+
+  def subscribe_premium
   end
 
   def search

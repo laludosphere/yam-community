@@ -8,5 +8,6 @@ class ProfilesController < ApplicationController
     @current_user
     @last_review = Review.where(receiver_id: current_user).last
     @reviewer = User.find(@last_review.reviewer_id)
+    @preference = current_user.preference
   end
 end

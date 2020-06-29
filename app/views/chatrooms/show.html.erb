@@ -1,3 +1,4 @@
+<div id= "current_user" data-id="<%= current_user.id %>"></div>
 <div class="background">
  <div class="container d-flex space-between">
     <div class="mes-messages">
@@ -24,11 +25,7 @@
 
     <div  id="messages" data-chatroom-id="<%= @chatroom.id %>">
       <% @chatroom.messages.each do |message| %>
-        <% if message.user == current_user %>
-         <%= render 'messages/my_message', message: message %>
-        <% else %>
-          <%= render 'messages/other_message', message: message %>
-        <% end %>
+         <%= render 'shared/my_message', message: message %>
       <% end %>
       <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
         <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
