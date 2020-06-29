@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :flats do
     resources :chatrooms, only: :create
   end
-  resources :profiles, only: :show
+  resources :profiles, only: :show do
+    resources :reviews, only: [:index, :create, :new]
+  end
 
   resources :chatrooms, only: [:index, :show] do
     resources :messages, only: :create

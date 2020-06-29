@@ -18,37 +18,32 @@
           <div class="card-content">
            <h2> <%= @flat.flat_type %> | <%= @flat.surface_area %> M2 | <%= @flat.city %></h2>
            <p><%=  @flat.description%></p>
+              <tr>
+                <td>
+                  <% if policy(@flat).edit?  %>
+                    <%= link_to "Edit", edit_flat_path(@flat), class: 'btn btn-primary' %>
+                  <% end %>
+                </td>
+                <td>
+                  <% if policy(@flat).destroy? %>
+                    <%= link_to 'Destroy', flat_path(@flat), method: :delete, data: { confirm: 'are you sure ?'}, class: 'btn btn-primary' %>
+                  <% end %>
+                     <td><%= link_to 'Message', flat_chatrooms_path(@flat), method: :post, class: 'btn btn-primary' %></td>
+                 </td>
+              </tr>
           </div>
       </div>
-
-
-
-
-
-      </div>
+    </div>
   </div>
+</div>
 
 <tbody>
   <% @flat.photos.each do |photo| %>
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-
-</div>
-    <tr>
-
-      <td>
-        <% if policy(@flat).edit?  %>
-          <%= link_to "Edit", edit_flat_path(@flat) %>
-        <% end %>
-      </td>
-      <td>
-        <% if policy(@flat).destroy? %>
-          <%= link_to 'Destroy', flat_path(@flat), method: :delete, data: { confirm: 'are you sure ?'} %>
-         <% end %>
-
-           <td><%= link_to 'Message', flat_chatrooms_path(@flat), method: :post %></td>
-       </td>
-    </tr>
+  <% end %>
 </tbody>
-</div>
+
+
+
+
 
