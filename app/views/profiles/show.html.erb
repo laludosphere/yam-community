@@ -55,23 +55,6 @@
         </div>
       </div>
     </div>
-
-    <div class="card card-form">
-      <h2 class="page-h2">Mes préférences de recherche</h2>
-      <%= simple_form_for @preference, url: root_path do |f| %>
-        <%= f.input :school_location, placeholder: "Indiquez l'adresse ici", label: "Où se trouve votre établissement scolaire ?" %>
-        <div class="pref-2">
-          <%= f.input :flat_type,  placeholder: "T1 ou T2 ou T3 ...", label: "Nombre de pièces" %>
-          <%= f.input :surface_area, placeholder: "Par exemple : 30", label: "Surface en m² ?" %>
-          <%= f.input :surrounding_area, placeholder: "Par exemple : 10", label: "ALentours en Km" %>
-        </div>
-          <%= f.input :moving_at, label: "À la date du :"  %>
-          <%= f.input :price_per_month, as: :range, label: "Prix par mois" %>
-          <%= f.input :roomates, as: :radio_buttons, label: "En collocation ?" %>
-          <%= f.button :submit, class: "btn-primary" %>
-          <% end %>
-      </div>
-
   </div>
 </div>
 
