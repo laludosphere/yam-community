@@ -36,7 +36,6 @@
                       <%= image_tag "anonyme2.jpg", class: "avatar-small", alt: "avatar-small" %>
                       <%= @reviewer.name %>
                     </div>
-
                 </div>
                 <%= link_to 'Add Reviews',  new_profile_review_path(@reviewer), class: "btn btn-primary" %>
             </div>
@@ -47,13 +46,14 @@
             <div class="review-of d-flex justify-content-center align-items-center">
               <i class="fas fa-pencil-alt mt-3 mr-4"></i>
               <h5 class="mt-3">Avis à propos de <strong><%= @user.name %></strong></h5>
-            </div>
+            </div><hr>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 
 

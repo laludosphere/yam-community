@@ -2,8 +2,13 @@
 
   padding:22px;
 }
-.review-of  i {
-  height:16px;
+.fa-pencil-alt:before {
+  height:16px !important;
   width:16px;
+  margin-left: 8px;
 }
+ .review-of{
+  margin-right: 124px;
+  margin-left: -12px;
+ }
 
