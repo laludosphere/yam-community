@@ -1,10 +1,6 @@
-
-
 puts "Destroy all datas"
 Chatroom.destroy_all
-Review.destroy_all
 User.destroy_all
-
 
 louis    = User.create!(name: ' Louis Adam', email:'louis@gmail.com', password:'password', born_at: '12/09/1989', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a laydy boy', user_type: 'student')
 lorraine = User.create!(name: ' Lorraine Lafayette', email:'lorraine@gmail.com', password:'password', born_at: '14/09/1999', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a graphist designer', user_type: 'student')
