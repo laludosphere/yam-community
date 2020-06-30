@@ -1,0 +1,21 @@
+<div class="container d-flex align-items-center justify-content-around">
+    <div class="pref-details">
+        <div class="preference">
+            <i class="fas fa-euro-sign fa-1x"></i>
+            Prix par mois :
+            <%= @preference.price_per_month %>
+        </div>
+        <div class="preference">
+            <div class="fas fa-building fa-1x" style="color:#8F9BB3;"></div>
+            Nombre de pièces :
+            <%= @preference.flat_type %>
+        </div>
+        <div class="preference">
+            <i class="fas fa-cube"></i>
+            Surface en m² :
+            <%= @preference.surface_area %>
+        </div>
+    </div>
+        <%= link_to "Modifier ma recherche", profile_path(current_user), class: "btn btn-outline-secondary btn-details" %>
+
+</div>
