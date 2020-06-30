@@ -7,9 +7,9 @@
   width: 100px;
   height: 100px;
   margin-top: 0.7rem;
-  border-radius: 50%;
+  border-radius: 70%;
   border-width: 5px !important ;
-  border-color: #00D7A7;
+  border-color: $primary;
   border-style: solid;
   border-width: 3px;
   object-fit: cover;
@@ -17,10 +17,10 @@
 
 .avatar-small{
   margin:0px 10px 10px 0px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border-color: #00D7A7;
+  width: 40px;
+  height: 40px;
+  border-radius: 70%;
+  border-color: $primary;
   border-style: solid;
   border-width: 3px;
   object-fit: cover;
