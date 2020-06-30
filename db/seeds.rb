@@ -1,19 +1,15 @@
-
-
 puts "Destroy all datas"
 Chatroom.destroy_all
-Review.destroy_all
 User.destroy_all
 
-
-louis    = User.create!(name: ' Louis', email:'louis@gmail.com', password:'password', born_at: '12/09/1989', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a laydy boy', user_type: 'student')
-lorraine = User.create!(name: ' Lorraine', email:'lorraine@gmail.com', password:'password', born_at: '14/09/1999', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a graphist designer', user_type: 'student')
-ludo     = User.create!(name: ' Ludo', email:'ludo@gmail.com', password:'password', born_at: '13/09/2000', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a hockey professional player ', user_type: 'student')
-yann     = User.create!(name: ' Yann', email:'yann@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a such a serious guy', user_type: 'student')
+louis    = User.create!(name: ' Louis Adam', email:'louis@gmail.com', password:'password', born_at: '12/09/1989', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a laydy boy', user_type: 'student')
+lorraine = User.create!(name: ' Lorraine Lafayette', email:'lorraine@gmail.com', password:'password', born_at: '14/09/1999', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a graphist designer', user_type: 'student')
+ludo     = User.create!(name: ' Ludo Chong', email:'ludo@gmail.com', password:'password', born_at: '13/09/2000', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a hockey professional player ', user_type: 'student')
+yann     = User.create!(name: ' Yann Ching', email:'yann@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a such a serious guy', user_type: 'student')
 demo     = User.create!(name: 'John Doe', email:'demo@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a such a serious guy', user_type: 'student')
-gasp     = User.create!(name: ' Gasp', email:'gasp@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: true, phone_number: '0689827381', gender: 'male', description: 'I am a such a serious guy', user_type: 'owner')
-aurel    = User.create!(name: ' Aurel', email:'aurel@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: true, phone_number: '0689827381', gender: 'male', description: 'I am a such a serious guy', user_type: 'owner')
-sam      = User.create!(name: ' Sam', email:'sam@gmail.com', password:'password', born_at: '04/09/1954', yam_premium: true, phone_number: '0689827381', gender: 'male', description: 'My name is sasa', user_type: 'owner')
+gasp     = User.create!(name: ' Gaspard Gland', email:'gasp@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: true, phone_number: '0689827381', gender: 'male', description: 'I am a such a serious guy', user_type: 'owner')
+aurel    = User.create!(name: ' Aurel Glee', email:'aurel@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: true, phone_number: '0689827381', gender: 'male', description: 'I am a such a serious guy', user_type: 'owner')
+sam      = User.create!(name: ' Sam Lesbrises', email:'sam@gmail.com', password:'password', born_at: '04/09/1954', yam_premium: true, phone_number: '0689827381', gender: 'male', description: 'My name is sasa', user_type: 'owner')
 edouard  = User.create!(name: ' Edouard', email:'edouard@gmail.com', password:'password', born_at: '04/09/1954', yam_premium: true, phone_number: '0689827381', gender: 'male', description: 'My name is ed', user_type: 'owner')
 jean     = User.create!(name: ' Jean', email:'jean@gmail.com', password:'password', born_at: '04/09/1954', yam_premium: true, phone_number: '0689827381', gender: 'male', description: 'My name is jeanot', user_type: 'owner')
 
@@ -62,6 +58,12 @@ Chatroom.create!(
 )
 puts "Chatroom created"
 
+Message.create!(
+  content: "Bonjour j'aimerai avoir plus d'information par rapport à votre appartement svp ",
+  user: louis,
+  chatroom: Chatroom.second,
+  seen: false
+  )
 
 puts "Message created"
 

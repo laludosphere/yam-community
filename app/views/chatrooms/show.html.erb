@@ -1,10 +1,13 @@
 <div id= "current_user" data-id="<%= current_user.id %>"></div>
 <div class="background">
- <div class="container d-flex space-between">
+  <div class="container">
+    <h2 class="page-h2">Mes Messages</h2>
+  </div>
+  <div class="container d-flex space-between">
     <div class="mes-messages">
       <div class="d-flex mt-4 mb-4">
         <img class= "avatar-small" src="" alt="">
-        <h4>Mes messages</h4>
+        <h4>Discussions</h4>
       </div>
       <div class="mes-chatrooms d-flex">
           <% @chatrooms.each do |chatroom| %>

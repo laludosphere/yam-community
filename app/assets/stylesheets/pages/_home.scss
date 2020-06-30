@@ -1,9 +1,7 @@
-// Specific CSS for your home-page
-
-// .home-container{
-//     max-width: fit-content;
-//     margin:5% 10% 10% 10%;
-// }
+#centered {
+  width: 100%;
+  padding: 0% 25%;
+}
 
 body {
     background-color: #ffffff;
@@ -19,8 +17,8 @@ body {
 }
 
 .banner-top-right img{
-    width:900px;
-    padding-right:5%;
+    width:40rem;
+    padding: 0% 5%;
 }
 
 .banner-top-left {
@@ -147,7 +145,7 @@ h2{
 
 .banner-top-left {
     margin-top: 5%;
-    margin-right:10%;
+    margin-right: 5%;
 }
 
 .dot {
@@ -195,3 +193,6 @@ p {
     width: 50%;
 }
 
+.searched-flats{
+  display: none;
+}
