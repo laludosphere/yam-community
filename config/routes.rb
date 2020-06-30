@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
   resources :autocompletes
-  root to: 'autocompletes#new'
+  get '/autocompletes-new', to: 'autocompletes#new'
+
 end
