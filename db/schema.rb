@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_26_113500) do
+ActiveRecord::Schema.define(version: 2020_06_30_143812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(version: 2020_06_26_113500) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "chatrooms", force: :cascade do |t|
     t.string "name"
     t.bigint "flat_id", null: false
@@ -59,7 +65,6 @@ ActiveRecord::Schema.define(version: 2020_06_26_113500) do
     t.float "latitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "description"
     t.index ["user_id"], name: "index_flats_on_user_id"
   end
 
@@ -72,6 +77,19 @@ ActiveRecord::Schema.define(version: 2020_06_26_113500) do
     t.boolean "seen", default: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "premium_subscription_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.bigint "user_id", null: false
+    t.bigint "premium_subscription_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["premium_subscription_id"], name: "index_orders_on_premium_subscription_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "preferences", force: :cascade do |t|
@@ -90,6 +108,17 @@ ActiveRecord::Schema.define(version: 2020_06_26_113500) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "city"
     t.index ["user_id"], name: "index_preferences_on_user_id"
+  end
+
+  create_table "premium_subscriptions", force: :cascade do |t|
+    t.string "sku"
+    t.string "name"
+    t.bigint "category_id", null: false
+    t.string "photo_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "price_cents", default: 0, null: false
+    t.index ["category_id"], name: "index_premium_subscriptions_on_category_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -119,7 +148,7 @@ ActiveRecord::Schema.define(version: 2020_06_26_113500) do
     t.boolean "yam_premium"
     t.string "user_type"
     t.boolean "status_verified", default: false
-    t.boolean "owner"
+    t.boolean "owner", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -130,7 +159,10 @@ ActiveRecord::Schema.define(version: 2020_06_26_113500) do
   add_foreign_key "flats", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "orders", "premium_subscriptions"
+  add_foreign_key "orders", "users"
   add_foreign_key "preferences", "users"
+  add_foreign_key "premium_subscriptions", "categories"
   add_foreign_key "reviews", "users", column: "receiver_id"
   add_foreign_key "reviews", "users", column: "reviewer_id"
 end
