@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   get '/passer-premium', to: 'pages#premium'
   get '/subscribe-premium', to: 'pages#subscribe_premium'
 
-
   resources :flats do
     resources :chatrooms, only: :create
   end
+
+  resources :preferences, only: [:update, :edit]
 
   resources :profiles, only: :show do
     resources :reviews, only: [:index, :create, :new]
