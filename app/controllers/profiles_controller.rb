@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
     @user = User.find(params[:id])
     @last_review = @user.received_reviews.last
     @reviewer = @last_review.reviewer
-    @prefere
+    @reviews = Review.where(receiver_id: @user)
   end
 
   def my_profile
