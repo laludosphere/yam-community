@@ -1,0 +1,17 @@
+.pref-details{
+    display:flex;
+    justify-content: space-between;
+    margin:1%;
+}
+
+.preference{
+    border-width: 2px;
+    padding: 4px 5px;
+    color: $card-grey;
+    margin: 5px;
+    font-size: 18px;
+}
+
+.green-detail{
+    color:$green;
+}
