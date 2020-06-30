@@ -1,15 +1,28 @@
 <div class="card mt-3 justify-content-center d-none d-md-block" style="height: 12rem;">
-  <div class="card-body d-flex h-100 align-items-center justify-content-center">
-    <i class="fas fa-external-link-alt"></i>
-    <p class="m-0">
-      <div class="card-body">
-      <p><small> <%= @flat.user.name %></small></p>
-
-      <p><small> <%= @flat.user.email %></small></p>
-
-      <p> <small><%= @flat.user.user_type  %></small></p>
+ <div class="card-body h-100 align-items-center justify-content-center">
+    <div class="card-top d-flex">
+      <div class="avatar-bubble-owner">
+        <%= image_tag "anonym.jpg", class: "avatar-large", alt: "avatar-large" %>
       </div>
-    </p>
-      <%= link_to 'Reviews', profile_reviews_path(@flat.user), class: "btn btn-primary" %>
-  </div>
+      <div class="header-card-name">
+        <p><small> <%= @flat.user.name %></small></p>
+      </div>
+      <div class="owner-stars">
+          <%= '<i class="fas fa-star"></i>'.html_safe * @flat.user.average_ratings %>
+          <%= '<i class="far fa-star"></i>'.html_safe * ( 5- @flat.user.average_ratings) %>
+      </div>
+    </div>
+        <div class="status-ver">
+          <% if @flat.user.status_verified  %>
+            <span class="status-verified">PROFIL VÉRIFIÉ</span>
+          <% else %>
+            <span class="status-not-verified">PROFIL NON VÉRIFIÉ</span>
+          <% end %>
+            <span class="user_type"><%= @flat.user .user_type %></span>
+        </div><hr>
+        <div class="btn-show-owner d-flex justify-content-center mt-4">
+            <%= link_to 'Voir le profil', profile_path(@flat.user), class: "btn btn-primary" %>
+            <%= link_to 'Message', flat_chatrooms_path(@flat), method: :post, class: 'btn btn-primary' %>
+        </div>
 </div>
+
