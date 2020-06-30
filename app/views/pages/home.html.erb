@@ -12,23 +12,20 @@
       <%= image_tag "droit.svg" %>
     </div>
   </div>
-
+  
   <div class="search-home">
-    <h2>Trouver un <span class="special-word-title">appartement</span> près de votre école</h2>
-        <%= form_tag root_path, method: :get do %>
-            <div class="container">
-              <%= text_field_tag :query, params[:query],  class: "search_box", placeholder: "Quelle est votre école ?" %> <span class="fas fa-search"></span>
-            </div>
-          <% end %>
-        <% if params[:query].present? %>
-          <%= render 'shared/display_flats'%>
-        <% end %>
+
+    <h2>Trouver un <span class="special-word-premium">appartement</span> près de votre école</h2>
+      <%=  form_tag root_path, id: "flat-form", method: :get do %>
+        <div class="container">
+          <%= text_field_tag :query, params[:query],  class: "search_box", placeholder: "Quelle est votre école ?" %> <span class="fas fa-search"></span>
+        </div>
+        <%= render 'shared/display_flats'%>
+      <% end %>
   </div>
 
-  <div class="titre-home">
-    <h2>Comment ça marche <span class="special-word-title">marche</span> ?</h2>
-  </div>
-
+    <div class="titre-home"><h2>Comment ça marche <span class="special-word-title">marche</span> ?</h2></div>
+  
   <div class="mde">
     <div class="mde1">
       <h2 class="mdr-title"><span class="dot">1</span>Remplissez vos critères<h2>
@@ -75,12 +72,12 @@
        <div class="avec-YP"><p>Yam Premium</p> <%= image_tag "yam_premium.png"%></div>
     </div>
   </div>
-
   <div class="home-contact">
     <div class="home-contact-txt">
       <p>Vous ne trouvez pas la réponse à votre question ? Vous souhaitez soutenir notre projet ? En savoir plus sur notre plateforme ?</p>
       <br>
       <p>Nous sommes à votre disposition via notre formulaire de contact ou par téléphone au : +33 6 73 55 95 36</p>
+
     </div>
     <div class="home-contact-form">
      <!--  >>>>> FORM <<<<< -->

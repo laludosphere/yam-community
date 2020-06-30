@@ -1,35 +1,35 @@
 <div class="background">
-
   <div class="container profile-container fixed-footer">
       <h2 class="page-h2">Profil de <%=  @user.name %></h2>
-
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-6">
           <div class="card" style="height: 28rem;">
             <div class="card-body">
-
               <div class="card-top">
-
-                <div class="avatar-bubble"></div>
+                <div class="avatar-bubble">
                   <%= image_tag "anonym.jpg", class: "avatar-large", alt: "avatar-large" %>
-                  <div class="header-card">
-                    <h2><small> <%= current_user.name %></small></h2>
-                    <div class="card-top-details">
-                    <span class ="user_type"><%= current_user.user_type %></span>
-                    <span class="status-verifed"><%= current_user.status_verified %><span>
-                    </div>
-                  </div>
-
-                  <%= '<i class="fas fa-star"></i>'.html_safe * current_user.average_ratings %>
-                  <%= '<i class="far fa-star"></i>'.html_safe * ( 5- current_user.average_ratings) %>
+                </div>
+                <div class="header-card">
+                  <h2><small> <%= @reviewer.name %></small></h2>
+                      <div class="card-top-details">
+                        <span class ="user_type"><%= @reviewer.user_type %></span>
+                        <span class="status-verifed"><%= @reviewer.status_verified %></span>
+                      </div>
+                </div>
+                  <%= '<i class="fas fa-star"></i>'.html_safe * @reviewer.average_ratings %>
+                  <%= '<i class="far fa-star"></i>'.html_safe * ( 5- @reviewer.average_ratings) %>
+              </div>
+                <div >
+                  <p class="title-profile">COURTE DESCRIPTION</p>
                 </div>
 
-                <div ><p class="title-profile">COURTE DESCRIPTION</p></div>
                 <div class="description">
-                  <%= current_user.description %>
+                  <%= @reviewer.description %>
                 </div>
-                <div ><p class="title-profile">DERNIER AVIS</p></div>
+                <div >
+                  <p class="title-profile">DERNIER AVIS</p>
+                </div>
                 <div class="description">
                   <%= @last_review.content %>
                     <div class="description-right">
@@ -38,7 +38,7 @@
                     </div>
 
                 </div>
-                <%= link_to 'Reviews', profile_reviews_path(current_user), class: "btn btn-primary" %>
+                <%= link_to 'Add Reviews',  new_profile_review_path(@reviewer), class: "btn btn-primary" %>
             </div>
           </div>
         </div>
@@ -55,7 +55,25 @@
         </div>
       </div>
     </div>
+
+    <div class="card card-form">
+      <h2 class="page-h2">Mes préférences de recherche</h2>
+      <%= simple_form_for @preference, url: root_path do |f| %>
+        <%= f.input :school_location, placeholder: "Indiquez l'adresse ici", label: "Où se trouve votre établissement scolaire ?" %>
+        <div class="pref-2">
+          <%= f.input :flat_type,  placeholder: "T1 ou T2 ou T3 ...", label: "Nombre de pièces" %>
+          <%= f.input :surface_area, placeholder: "Par exemple : 30", label: "Surface en m² ?" %>
+          <%= f.input :surrounding_area, placeholder: "Par exemple : 10", label: "ALentours en Km" %>
+        </div>
+          <%= f.input :moving_at, label: "À la date du :"  %>
+          <%= f.input :price_per_month, as: :range, label: "Prix par mois" %>
+          <%= f.input :roomates, as: :radio_buttons, label: "En collocation ?" %>
+          <%= f.button :submit, class: "btn-primary" %>
+          <% end %>
+      </div>
+
   </div>
 </div>
+
 
 
