@@ -8,24 +8,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_SERVER_KEY']}" %>
   </head>
 
   <body>
-    <%   if user_signed_in? %>
-    <%= render 'shared/login_navbar' %>
+
+    <% if user_signed_in? %>
+      <%= render 'shared/login_navbar' %>
     <% else %>
-    <%= render 'shared/logout_navbar' %>
+      <%= render 'shared/logout_navbar' %>
     <% end %>
+
     <%= render 'shared/flashes' %>
 
     <%= yield %>
+
     <footer>
       <%= render 'shared/footer' %>
     </footer>
+
     <footer>
       <%= render'shared/footer-under' %>
     </footer>
-     <%= render 'pages/subscribe_premium' %>
+    <%= render 'pages/subscribe_premium' %>
   </body>
 
 </html>
