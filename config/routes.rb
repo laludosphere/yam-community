@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   get '/subscribe-premium', to: 'pages#subscribe_premium'
   resources :teddies, only: [:index, :show]
 
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
+
   resources :flats do
     resources :chatrooms, only: :create
   end

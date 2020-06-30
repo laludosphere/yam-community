@@ -39,6 +39,7 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'stripe'
+gem 'stripe_event'
 
 
 
