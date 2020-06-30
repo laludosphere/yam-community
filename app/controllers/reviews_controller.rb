@@ -3,13 +3,13 @@ class ReviewsController < ApplicationController
 
   def index
     @reviews = policy_scope(Review).where(receiver_id: params[:profile_id]) # destiné au current_user
-
     # @reviews = Review.where(receiver_id: params[:profile_id])
   end
 
   def new
     @review = Review.new
-    @review.receiver = User.find(params[:profile_id])
+    @receiver = User.find(params[:profile_id])
+    @review.receiver = @receiver
     @reviewer = current_user
   end
 
