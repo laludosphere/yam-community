@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get '/search', to: 'pages#search', as: :home_search
   get '/passer-premium', to: 'pages#premium'
   get '/subscribe-premium', to: 'pages#subscribe_premium'
-  resources :teddies, only: [:index, :show]
+  resources :premium_subscriptions, only: [:index, :show]
+
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new

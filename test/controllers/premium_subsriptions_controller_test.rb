@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class premium_subscriptionTest < ActiveSupport::TestCase
+class PremiumSubsriptionsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

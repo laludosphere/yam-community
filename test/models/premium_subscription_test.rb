@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TeddiesControllerTest < ActionDispatch::IntegrationTest
+class PremiumSubscriptionTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -65,7 +65,6 @@ ActiveRecord::Schema.define(version: 2020_06_30_131344) do
     t.float "latitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "description"
     t.index ["user_id"], name: "index_flats_on_user_id"
   end
 
@@ -82,14 +81,14 @@ ActiveRecord::Schema.define(version: 2020_06_30_131344) do
 
   create_table "orders", force: :cascade do |t|
     t.string "state"
-    t.string "teddy_sku"
+    t.string "premium_subscription_sku"
     t.integer "amount_cents", default: 0, null: false
     t.string "checkout_session_id"
     t.bigint "user_id", null: false
-    t.bigint "teddy_id", null: false
+    t.bigint "premium_subscription_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["teddy_id"], name: "index_orders_on_teddy_id"
+    t.index ["premium_subscription_id"], name: "index_orders_on_premium_subscription_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -111,6 +110,16 @@ ActiveRecord::Schema.define(version: 2020_06_30_131344) do
     t.index ["user_id"], name: "index_preferences_on_user_id"
   end
 
+  create_table "premium_subscriptions", force: :cascade do |t|
+    t.string "sku"
+    t.string "name"
+    t.bigint "category_id", null: false
+    t.string "photo_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_premium_subscriptions_on_category_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.text "content"
     t.integer "rating"
@@ -120,16 +129,6 @@ ActiveRecord::Schema.define(version: 2020_06_30_131344) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["receiver_id"], name: "index_reviews_on_receiver_id"
     t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
-  end
-
-  create_table "teddies", force: :cascade do |t|
-    t.string "sku"
-    t.string "name"
-    t.bigint "category_id", null: false
-    t.string "photo_url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_teddies_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -148,7 +147,7 @@ ActiveRecord::Schema.define(version: 2020_06_30_131344) do
     t.boolean "yam_premium"
     t.string "user_type"
     t.boolean "status_verified", default: false
-    t.boolean "owner"
+    t.boolean "owner", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -159,10 +158,10 @@ ActiveRecord::Schema.define(version: 2020_06_30_131344) do
   add_foreign_key "flats", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "orders", "teddies"
+  add_foreign_key "orders", "premium_subscriptions"
   add_foreign_key "orders", "users"
   add_foreign_key "preferences", "users"
+  add_foreign_key "premium_subscriptions", "categories"
   add_foreign_key "reviews", "users", column: "receiver_id"
   add_foreign_key "reviews", "users", column: "reviewer_id"
-  add_foreign_key "teddies", "categories"
 end

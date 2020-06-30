@@ -1,14 +1,14 @@
 class OrdersController < ApplicationController
   def create
-  teddy = Teddy.find(params[:teddy_id])
-  order  = Order.create!(teddy: teddy, teddy_sku: teddy.sku, amount: teddy.price, state: 'pending', user: current_user)
+  premium_subscription = PremiumSubscription.find(params[:premium_subscription_idid])
+  order = Order.create!(premium_subscription: premium_subscription, premium_subscription_sku: premium_subscription.sku, amount: premium_subscription.price_cents, state: 'pending', user: current_user)
 
   session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
     line_items: [{
-      name: teddy.sku,
-      images: [teddy.photo_url],
-      amount: teddy.price_cents,
+      name: premium_subscription.sku,
+      images: [premium_subscription.photo_url],
+      amount: premium_subscription.price_cents,
       currency: 'eur',
       quantity: 1
     }],

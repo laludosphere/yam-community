@@ -41,8 +41,6 @@ gem 'simple_form'
 gem 'stripe'
 gem 'stripe_event'
 
-
-
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
