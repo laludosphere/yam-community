@@ -15,3 +15,23 @@
 .green-detail{
     color:$green;
 }
+
+.dash-card-top{
+    display:flex;
+    margin-bottom:5%;
+}
+
+.dash-card-top-detail{
+    margin-left: 5%;
+}
+
+.dash-card-top-detail-reviews{
+    display:flex;
+    flex-direction: column;
+}
+
+
+.dash-detail p {
+    color: #8F9BB3;
+    padding:2%;
+}

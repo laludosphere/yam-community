@@ -4,3 +4,25 @@
   right: 16px;
   z-index: 1000;
 }
+
+
+.alert-message{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+    background-color:$blue-third;
+    border-radius:15px;
+    padding-top: 25px;
+    padding-left:5%;
+    margin-bottom: 2%;
+    color:$blue-second;
+}
+
+
+.alert-message p{
+  color:$blue-second;
+  font-size: 15px;
+  margin-left:2%;
+}
+
