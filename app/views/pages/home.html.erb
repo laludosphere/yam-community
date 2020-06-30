@@ -1,89 +1,87 @@
 <div class="container-fluid home-container">
   <div class="banner-content">
-
     <div class="banner-top-left">
-            <h1>La communauté de <span class="special-word-title">confiance</span> pour trouver son logement étudiant.</h1>
-                 <p> Yam, c’est l’application qui favorise vos chances de trouver l’appartement idéal grâce à votre réseau étudiant ! <p>
-                <div class="banner-bottom">
-                  <p class="btn-inscription">S'inscrire</p>
-                  <p class="btn-video"><a href="https://www.youtube.com/watch?v=1-SkIIbjiuk&feature=youtu.be" target="_blank">Regarder la vidéo</a></p>
-                </div>
+      <h1 class="text-secondary">La communauté de <span class="special-word-title">confiance</span> pour trouver son logement étudiant.</h1>
+         <p class="text-left mt-4"> Yam, c’est l’application qui favorise vos chances de trouver l’appartement idéal grâce à votre réseau étudiant ! <p>
+      <div class="banner-bottom">
+        <p class="btn-inscription">S'inscrire</p>
+        <p class="btn-video"><a href="https://www.youtube.com/watch?v=1-SkIIbjiuk&feature=youtu.be">Regarder la vidéo</a></p>
+      </div>
     </div>
     <div class="banner-top-right">
-       <%= image_tag "droit.svg" %>
+      <%= image_tag "droit.svg" %>
     </div>
   </div>
-    <div class="search-home">
+  
+  <div class="search-home">
 
-      <h2>Trouver un <span class="special-word-premium">appartement</span> près de votre école</h2>
-        <%=  form_tag root_path, id: "flat-form", method: :get do %>
-          <%= search_field_tag :query, params[:query], id: :autocomplete_address, class: "search_box" , placeholder: "What is your school ?" %> <span class="fas fa-search"></span>
-          <% end %>
-          <%= render 'shared/display_flats', flats: @flats %>
-    </div>
+    <h2>Trouver un <span class="special-word-premium">appartement</span> près de votre école</h2>
+      <%=  form_tag root_path, id: "flat-form", method: :get do %>
+        <div class="container">
+          <%= text_field_tag :query, params[:query],  class: "search_box", placeholder: "Quelle est votre école ?" %> <span class="fas fa-search"></span>
+        </div>
+        <%= render 'shared/display_flats'%>
+      <% end %>
+  </div>
 
     <div class="titre-home"><h2>Comment ça marche <span class="special-word-title">marche</span> ?</h2></div>
-    <div class="mde">
-
-        <div class="mde1">
-            <h2 class="mdr-title"><span class="dot">1</span>  Remplissez vos critères<h2>
-            <p>Your Apartment Mate utilise la force du réseau étudiant en mettant en relation locataire sortant et étudiant en recherche.</p>
-            <div class="mde1-details">
-                <div class="mde-details-left">
-                    <h2> Je cherche un logement </h2>
-                    <p class="txt-left">Soyez acteur de la communauté en postant l’appartement que vous libérez en trois clics. En retour, Yam s'occupe de votre préavis.</p>
-                </div>
-                <div class="mde-details-right">
-                    <h2>Je libère un logement</h2>
-                    <p class="txt-right">Finies les recherches interminables sur les centaines de sites.Remplissez, vos critères, et laissez Yam trouver l’appartement de vos rêves.</p>
-                </div>
-            </div>
-
-            <%= image_tag "match.png", alt: "alttext" %>
-
-        </div>
-        <div class="mde2">
-            <h2 class="mdr-title"><span class="dot">2</span> Choisissez parmi votre <span class="special-word-title">sélection</span> </h2>
-
-            <p>Yam vous propose uniquement les appartements qui vous correspondent. <br>Chattez avec les locataires actuels, visitez, et le tour est joué !</p>
-
-
-
-        </div>
-        <div class="mde3">
-            <h2 class="mdr-title"><span class="dot">3</span> Postulez et laissez parler votre  <span class="special-word-title">réputation </span> </h2>
-            <p>Envoyez votre profil ainsi que votre dossier complet. <br>Affichez votre bonne conduite grâce aux recommandations de vos anciens propriétaires et amis.</p>
-            <div class="mdr3-images">
-
-                <%= image_tag "dossier.png", alt: "alttext" %>
-
-            </div>
-        </div>
-        <div class="mde4">
-            <h2><span class="dot">4</span>Vous avez été <span class="special-word-title">choisi</span> par le propriétaire</h2>
-            <p><strong>Bravo ! </strong>Le propriétaire a sélectionné votre dossier. <br>Vous n’avez plus qu’à vous installer, et profiter des services d’une application entièrement digitale.</p>
-            <%= image_tag "4.png" %>
-        </div>
-         <div class="mde5" id="yam-premium">
-            <h2><span class="dot">5</span>Besoin d’aide ? Laissez <span class="special-word-premium">Yam Premium</span> faire le travail</h2>
-            <p>Des visites à la remise des clés, avec Yam premium nous vous proposons une solution simple et complète où nous gérons votre recherche. Et si vous ne trouvez pas votre appartement avec nous ? On vous rembourse.</p>
-            <div class="step-yam">
-               <div class="avec-Y"><p>Sans Yam</p><%= image_tag "sans-yam.png" %></div>
-               <div class="avec-Y"><p>Avec Yam</p> <%= image_tag "avec-yam.png" %></div>
-               <div class="avec-YP"><p>Yam Premium</p> <%= image_tag "yam_premium.png"%></div>
-            </div>
-        </div>
+  
+  <div class="mde">
+    <div class="mde1">
+      <h2 class="mdr-title"><span class="dot">1</span>Remplissez vos critères<h2>
+      <p>Your Apartment Mate utilise la force du réseau étudiant en mettant en relation locataire sortant et étudiant en recherche.</p>
+      <div class="mde1-details">
+          <div class="mde-details-left">
+              <h2> Je cherche un logement </h2>
+              <p class="txt-left">Soyez acteur de la communauté en postant l’appartement que vous libérez en trois clics. En retour, Yam s'occupe de votre préavis.</p>
+          </div>
+          <div class="mde-details-right">
+              <h2>Je libère un logement</h2>
+              <p class="txt-right">Finies les recherches interminables sur les centaines de sites.Remplissez, vos critères, et laissez Yam trouver l’appartement de vos rêves.</p>
+          </div>
+      </div>
+      <%= image_tag "match.png", alt: "alttext", id: "centered" %>
     </div>
-    <div class="home-contact">
-        <div class="home-contact-txt">
-        <p>Vous ne trouvez pas la réponse à votre question ? Vous souhaitez soutenir notre projet ? En savoir plus sur notre plateforme ?</p>
-        <br>
-        <p>Nous sommes à votre disposition via notre formulaire de contact ou par téléphone au : +33 6 73 55 95 36</p>
-        </div>
-        <div class="home-contact-form">
-      >>>>> FORM <<<<<
-          <p class="btn-inscription">Envoyer</p>
-        </div>
-    </div>
+  </div>
 
+  <div class="mde2">
+    <h2 class="mdr-title"><span class="dot">2</span> Choisissez parmi votre <span class="special-word-title">sélection</span> </h2>
+    <p>Yam vous propose uniquement les appartements qui vous correspondent. <br>Chattez avec les locataires actuels, visitez, et le tour est joué !</p>
+  </div>
+
+  <div class="mde3">
+    <h2 class="mdr-title"><span class="dot">3</span>Postulez et laissez parler votre<span class="special-word-title">réputation</span></h2>
+    <p>Envoyez votre profil ainsi que votre dossier complet. <br>Affichez votre bonne conduite grâce aux recommandations de vos anciens propriétaires et amis.</p>
+    <div class="mdr3-images">
+      <%= image_tag "dossier.png", alt: "alttext", id: "centered" %>
+    </div>
+  </div>
+
+  <div class="mde4">
+    <h2><span class="dot">4</span>Vous avez été <span class="special-word-title">choisi</span> par le propriétaire</h2>
+    <p><strong>Bravo ! </strong>Le propriétaire a sélectionné votre dossier. <br>Vous n’avez plus qu’à vous installer, et profiter des services d’une application entièrement digitale.</p>
+    <%= image_tag "4.png", id: "centered" %>
+  </div>
+
+  <div class="mde5" id="yam-premium">
+    <h2><span class="dot">5</span>Besoin d’aide ? Laissez<span class="special-word-premium">Yam Premium</span> faire le travail</h2>
+    <p>Des visites à la remise des clés, avec Yam premium nous vous proposons une solution simple et complète où nous gérons votre recherche. Et si vous ne trouvez pas votre appartement avec nous ? On vous rembourse.</p>
+    <div class="step-yam">
+       <div class="avec-Y"><p>Sans Yam</p><%= image_tag "sans-yam.png" %></div>
+       <div class="avec-Y"><p>Avec Yam</p> <%= image_tag "avec-yam.png" %></div>
+       <div class="avec-YP"><p>Yam Premium</p> <%= image_tag "yam_premium.png"%></div>
+    </div>
+  </div>
+  <div class="home-contact">
+    <div class="home-contact-txt">
+      <p>Vous ne trouvez pas la réponse à votre question ? Vous souhaitez soutenir notre projet ? En savoir plus sur notre plateforme ?</p>
+      <br>
+      <p>Nous sommes à votre disposition via notre formulaire de contact ou par téléphone au : +33 6 73 55 95 36</p>
+
+    </div>
+    <div class="home-contact-form">
+     <!--  >>>>> FORM <<<<< -->
+      <p class="btn-inscription">Envoyer</p>
+    </div>
+  </div>
 </div>

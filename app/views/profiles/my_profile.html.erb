@@ -24,9 +24,10 @@
                 </div>
               </div>
 
-              <div class="stars m-4">
+              <div class="stars m-2 mt-4">
                 <%= '<i class="fas fa-star"></i>'.html_safe * current_user.average_ratings %>
                 <%= '<i class="far fa-star"></i>'.html_safe * ( 5- current_user.average_ratings) %>
+                 <%= link_to 'Tous les avis', profile_reviews_path(current_user), class: "ml-3 text-secondary" %>
               </div>
 
             </div>
@@ -45,7 +46,6 @@
 
             <%= render 'shared/last_review' %>
 
-            <%= link_to 'Reviews', profile_reviews_path(current_user), class: "btn btn-primary" %>
           </div>
         </div>
       </div>
@@ -66,7 +66,7 @@
     <h2 class="page-h2">Mes préférences de recherche</h2>
 
     <div class="card card-form mb-5">
-      <%= simple_form_for @preference, url: root_path do |f| %>
+      <%= simple_form_for @preference, method: :patch do |f| %>
         <%= f.input :school_location, placeholder: "Indiquez l'adresse ici", label: "Adresse de votre école" %>
           <div class="pref-2">
             <%= f.input :flat_type,  placeholder: "T1 ou T2 ou T3 ...", label: "Nombre de pièces" %>
@@ -77,7 +77,7 @@
           <%= f.input :price_per_month, as: :range, label: "Prix par mois" %>
           <%= f.input :roomates, as: :radio_buttons, label: "En colocation ?" %>
           <div class="text-center">
-            <%= f.button :submit, value: "Enregistrer mes préferences", class: "btn btn-primary alicenter" %>
+            <%= f.button :submit, value: "Enregistrer mes préferences", class: "btn btn-primary align-center" %>
           </div>
       <% end %>
     </div>
