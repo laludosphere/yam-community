@@ -6,7 +6,7 @@
                  <p> Yam, c’est l’application qui favorise vos chances de trouver l’appartement idéal grâce à votre réseau étudiant ! <p>
                 <div class="banner-bottom">
                   <p class="btn-inscription">S'inscrire</p>
-                  <p class="btn-video"><a href="https://www.youtube.com/watch?v=1-SkIIbjiuk&feature=youtu.be">Regarder la vidéo</a></p>
+                  <p class="btn-video"><a href="https://www.youtube.com/watch?v=1-SkIIbjiuk&feature=youtu.be" target="_blank">Regarder la vidéo</a></p>
                 </div>
     </div>
     <div class="banner-top-right">
@@ -16,6 +16,16 @@
     <div class="search-home">
 
       <h2>Trouver un <span class="special-word-premium">appartement</span> près de votre école</h2>
+
+           <%=  form_tag root_path, id: "flat-form", method: :get do %>
+
+                <%= search_field_tag :query, params[:query], class: "search_box" , placeholder: "What is your school ?" %> <span class="fas fa-search"></span>
+             <% end %>
+
+                <%= @flats %>
+              <%= render 'shared/display_flats', flats: @flats %>
+
+
           <%= form_tag root_path, method: :get do %>
 
                 <%= text_field_tag :query, params[:query],  class: "search_box" , placeholder: "What is your school ?" %> <span class="fas fa-search"></span>
@@ -23,6 +33,7 @@
           <% if params[:query].present? %>
             <%= render 'shared/display_flats'%>
           <% end %>
+
     </div>
 
     <div class="titre-home"><h2>Comment ça marche <span class="special-word-title">marche</span> ?</h2></div>

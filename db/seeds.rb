@@ -58,6 +58,12 @@ Chatroom.create!(
 )
 puts "Chatroom created"
 
+Message.create!(
+  content: "Bonjour j'aimerai avoir plus d'information par rapport à votre appartement svp ",
+  user: louis,
+  chatroom: Chatroom.second,
+  seen: false
+  )
 
 puts "Message created"
 
