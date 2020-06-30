@@ -1,5 +1,4 @@
-<div class="container home-container">
-<!-- <div class="container mt-5">-->
+<div class="container-fluid home-container">
   <div class="banner-content">
 
     <div class="banner-top-left">
@@ -35,11 +34,11 @@
             <div class="mde1-details">
                 <div class="mde-details-left">
                     <h2> Je cherche un logement </h2>
-                    <p>Soyez acteur de la communauté en postant l’appartement que vous libérez en trois clics. En retour, Yam s'occupe de votre préavis.</p>
+                    <p class="txt-left">Soyez acteur de la communauté en postant l’appartement que vous libérez en trois clics. En retour, Yam s'occupe de votre préavis.</p>
                 </div>
                 <div class="mde-details-right">
                     <h2>Je libère un logement</h2>
-                    <p>Finies les recherches interminables sur les centaines de sites.Remplissez, vos critères, et laissez Yam trouver l’appartement de vos rêves.</p>
+                    <p class="txt-right">Finies les recherches interminables sur les centaines de sites.Remplissez, vos critères, et laissez Yam trouver l’appartement de vos rêves.</p>
                 </div>
             </div>
 
@@ -71,10 +70,10 @@
          <div class="mde5" id="yam-premium">
             <h2><span class="dot">5</span>Besoin d’aide ? Laissez <span class="special-word-premium">Yam Premium</span> faire le travail</h2>
             <p>Des visites à la remise des clés, avec Yam premium nous vous proposons une solution simple et complète où nous gérons votre recherche. Et si vous ne trouvez pas votre appartement avec nous ? On vous rembourse.</p>
-            <div class="step-yam">
-                <%= image_tag "sans-yam.png" %>
-                <%= image_tag "avec-yam.png" %>
-                <%= image_tag "yam_premium.png"%>
+            <div class="step-yam">           
+               <div class="avec-Y"><p>Sans Yam</p><%= image_tag "sans-yam.png" %></div>
+               <div class="avec-Y"><p>Avec Yam</p> <%= image_tag "avec-yam.png" %></div>
+               <div class="avec-YP"><p>Yam Premium</p> <%= image_tag "yam_premium.png"%></div>
             </div>
         </div>
     </div>
