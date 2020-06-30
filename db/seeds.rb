@@ -1,6 +1,6 @@
 puts "Destroy all datas"
 User.destroy_all
-premium_subscription.destroy_all
+PremiumSubscription.destroy_all
 Category.destroy_all
 
 puts 'Creating categories...'
@@ -8,7 +8,7 @@ premium_tenant = Category.create!(name: 'premium_tenant')
 premium_owner = Category.create!(name: 'premium_owner')
 
 puts 'Creating teddies...'
-PremiumSubscription.create!(sku: 'pack-premium-étudiant', name: 'Pack Prémium Étudiant', category: premium_tenant, photo_url: '../../app/assets/images/yam_premium.png' )
+PremiumSubscription.create!(sku: 'pack-premium-étudiant', name: 'Pack Prémium Étudiant', category: premium_tenant, photo_url: '../../app/assets/images/yam_premium.png', price: 189 )
 
 louis    = User.create!(name: ' Louis Adam', email:'louis@gmail.com', password:'password', born_at: '12/09/1989', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a laydy boy', user_type: 'student')
 lorraine = User.create!(name: ' Lorraine Lafayette', email:'lorraine@gmail.com', password:'password', born_at: '14/09/1999', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a graphist designer', user_type: 'student')

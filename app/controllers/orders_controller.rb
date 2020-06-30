@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
+  before_action :skip_authorization
+
   def create
-  premium_subscription = PremiumSubscription.find(params[:premium_subscription_idid])
+  premium_subscription = PremiumSubscription.find(params[:premium_subscription_id])
   order = Order.create!(premium_subscription: premium_subscription, premium_subscription_sku: premium_subscription.sku, amount: premium_subscription.price_cents, state: 'pending', user: current_user)
 
   session = Stripe::Checkout::Session.create(
