@@ -1,0 +1,85 @@
+<div class="background">
+  <div class="container">
+    <h2 class="page-h2">Mon Profil</h2>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-7">
+        <div class="card" style="height: 29.3rem;">
+          <div class="card-body">
+            <div class="card-top mb-3">
+              <div>
+                <%= image_tag "anonym.jpg", class: "avatar-large", alt: "avatar-large" %>
+              </div>
+              <div class="card-profil-name m-3">
+                <%= current_user.name%>
+                <div class="card-top-details">
+                  <span class="user_type"><%= current_user.user_type %></span>
+                  <% if current_user.status_verified  %>
+                    <span class="status-verified">PROFIL VÉRIFIÉ</span>
+                  <% else %>
+                    <span class="status-not-verified">PROFIL NON VÉRIFIÉ</span>
+                  <% end %>
+                </div>
+              </div>
+
+              <div class="stars m-4">
+                <%= '<i class="fas fa-star"></i>'.html_safe * current_user.average_ratings %>
+                <%= '<i class="far fa-star"></i>'.html_safe * ( 5- current_user.average_ratings) %>
+              </div>
+
+            </div>
+
+            <div class="title-profile">
+              À PROPOS
+            </div>
+
+            <div class="description">
+              <%= current_user.description %>
+            </div>
+
+            <div class="title-profile">
+              DERNIER AVIS
+            </div>
+
+            <%= render 'shared/last_review' %>
+
+            <%= link_to 'Reviews', profile_reviews_path(current_user), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+
+    <div class="col-12 col-lg-5">
+      <div class="mt-4 mt-lg-0" id="yam-pre" style="height: 18rem;">
+        <%= render 'shared/premium-proposal' %>
+      </div>
+
+      <div class="card mt-4 justify-content-center d-none d-md-block" style="height: 8rem;">
+        <%=  link_to subscribe_premium_path, "data-toggle" => "modal", 'data-target' => '#premiumModal' do %>
+          <%= render 'shared/create_student_file_card' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+    <h2 class="page-h2">Mes préférences de recherche</h2>
+
+    <div class="card card-form mb-5">
+      <%= simple_form_for @preference, url: root_path do |f| %>
+        <%= f.input :school_location, placeholder: "Indiquez l'adresse ici", label: "Adresse de votre école" %>
+          <div class="pref-2">
+            <%= f.input :flat_type,  placeholder: "T1 ou T2 ou T3 ...", label: "Nombre de pièces" %>
+            <%= f.input :surface_area, placeholder: "Par exemple : 30", label: "Surface (m²) ?" %>
+            <%= f.input :surrounding_area, placeholder: "Par exemple : 10", label: "Rayon de recherche (km)" %>
+          </div>
+          <%= f.input :moving_at, label: "Date d'installation"  %>
+          <%= f.input :price_per_month, as: :range, label: "Prix par mois" %>
+          <%= f.input :roomates, as: :radio_buttons, label: "En colocation ?" %>
+          <div class="text-center">
+            <%= f.button :submit, value: "Enregistrer mes préferences", class: "btn btn-primary alicenter" %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

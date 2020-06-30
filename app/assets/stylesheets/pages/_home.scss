@@ -1,9 +1,9 @@
 // Specific CSS for your home-page
 
-.home-container{
-    max-width: fit-content;
-    margin:5% 10% 10% 10%;
-}
+// .home-container{
+//     max-width: fit-content;
+//     margin:5% 10% 10% 10%;
+// }
 
 body {
     background-color: #ffffff;
@@ -11,13 +11,21 @@ body {
 
 .banner {
     margin-top: auto;
-
 }
+
 .banner-content {
     display:flex;
-    // justify-content: space-around;
+    padding-top: 5%;
 }
 
+.banner-top-right img{
+    width:900px;
+    padding-right:5%;
+}
+
+.banner-top-left {
+    padding-left : 5%;
+}
 
 h2{
     text-align: center;
@@ -83,18 +91,28 @@ h2{
 
 .mde1-details {
     display:flex;
-    margin: 10% 0% 10% 0%;
+    margin: 2% 0% 2% 0%;
 }
 
 .mde1{
     margin: 0px 50px 0px 0px;
 }
+
+.mde-details-left{
+    text-align: justify ;
+}
+
 .mde2{
     margin: 10% 0% 10% 0%;
 }
 
 .mde3{
     margin: 10% 0% 10% 0%;
+}
+
+.mde3 img{
+    display:flex;
+    justify-content: space-around;
 }
 
 .mde4{
@@ -148,6 +166,22 @@ h2{
     text-decoration: none;
 }
 
+.mde1 p {
+    font-weight: 100;
+}
+
+.txt-left{
+    margin:auto;
+    text-align:left;
+    width: 50%;
+}
+
+.txt-right{
+    margin:auto;
+    text-align:right;
+    width: 50%;
+}
+
 p {
     text-align: center;
     padding-bottom: 2%;
@@ -161,3 +195,6 @@ p {
     width: 50%;
 }
 
+.searched-flats{
+  display: none;
+}

@@ -1,5 +1,4 @@
-<div class="container home-container">
-<!-- <div class="container mt-5">-->
+<div class="container-fluid home-container">
   <div class="banner-content">
 
     <div class="banner-top-left">
@@ -7,7 +6,7 @@
                  <p> Yam, c’est l’application qui favorise vos chances de trouver l’appartement idéal grâce à votre réseau étudiant ! <p>
                 <div class="banner-bottom">
                   <p class="btn-inscription">S'inscrire</p>
-                  <p class="btn-video"><a href="https://www.youtube.com/watch?v=1-SkIIbjiuk&feature=youtu.be">Regarder la vidéo</a></p>
+                  <p class="btn-video"><a href="https://www.youtube.com/watch?v=1-SkIIbjiuk&feature=youtu.be" target="_blank">Regarder la vidéo</a></p>
                 </div>
     </div>
     <div class="banner-top-right">
@@ -17,13 +16,10 @@
     <div class="search-home">
 
       <h2>Trouver un <span class="special-word-premium">appartement</span> près de votre école</h2>
-          <%= form_tag root_path, method: :get do %>
-                
-                <%= text_field_tag :query, params[:query],  class: "search_box" , placeholder: "What is your school ?" %> <span class="fas fa-search"></span>
-              <% end %>
-          <% if params[:query].present? %>
-            <%= render 'shared/display_flats'%>
-          <% end %> 
+        <%=  form_tag root_path, id: "flat-form", method: :get do %>
+          <%= search_field_tag :query, params[:query], id: :autocomplete_address, class: "search_box" , placeholder: "What is your school ?" %> <span class="fas fa-search"></span>
+          <% end %>
+          <%= render 'shared/display_flats', flats: @flats %>
     </div>
 
     <div class="titre-home"><h2>Comment ça marche <span class="special-word-title">marche</span> ?</h2></div>
@@ -35,11 +31,11 @@
             <div class="mde1-details">
                 <div class="mde-details-left">
                     <h2> Je cherche un logement </h2>
-                    <p>Soyez acteur de la communauté en postant l’appartement que vous libérez en trois clics. En retour, Yam s'occupe de votre préavis.</p>
+                    <p class="txt-left">Soyez acteur de la communauté en postant l’appartement que vous libérez en trois clics. En retour, Yam s'occupe de votre préavis.</p>
                 </div>
                 <div class="mde-details-right">
                     <h2>Je libère un logement</h2>
-                    <p>Finies les recherches interminables sur les centaines de sites.Remplissez, vos critères, et laissez Yam trouver l’appartement de vos rêves.</p>
+                    <p class="txt-right">Finies les recherches interminables sur les centaines de sites.Remplissez, vos critères, et laissez Yam trouver l’appartement de vos rêves.</p>
                 </div>
             </div>
 
@@ -50,8 +46,8 @@
             <h2 class="mdr-title"><span class="dot">2</span> Choisissez parmi votre <span class="special-word-title">sélection</span> </h2>
 
             <p>Yam vous propose uniquement les appartements qui vous correspondent. <br>Chattez avec les locataires actuels, visitez, et le tour est joué !</p>
-           
-                
+
+
 
         </div>
         <div class="mde3">
@@ -68,13 +64,13 @@
             <p><strong>Bravo ! </strong>Le propriétaire a sélectionné votre dossier. <br>Vous n’avez plus qu’à vous installer, et profiter des services d’une application entièrement digitale.</p>
             <%= image_tag "4.png" %>
         </div>
-         <div class="mde5">
+         <div class="mde5" id="yam-premium">
             <h2><span class="dot">5</span>Besoin d’aide ? Laissez <span class="special-word-premium">Yam Premium</span> faire le travail</h2>
             <p>Des visites à la remise des clés, avec Yam premium nous vous proposons une solution simple et complète où nous gérons votre recherche. Et si vous ne trouvez pas votre appartement avec nous ? On vous rembourse.</p>
             <div class="step-yam">
-                <%= image_tag "sans-yam.png" %>
-                <%= image_tag "avec-yam.png" %>
-                <%= image_tag "yam_premium.png"%>
+               <div class="avec-Y"><p>Sans Yam</p><%= image_tag "sans-yam.png" %></div>
+               <div class="avec-Y"><p>Avec Yam</p> <%= image_tag "avec-yam.png" %></div>
+               <div class="avec-YP"><p>Yam Premium</p> <%= image_tag "yam_premium.png"%></div>
             </div>
         </div>
     </div>

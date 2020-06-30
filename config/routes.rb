@@ -6,14 +6,20 @@ Rails.application.routes.draw do
   get '/passer-premium', to: 'pages#premium'
   get '/subscribe-premium', to: 'pages#subscribe_premium'
 
+
   resources :flats do
     resources :chatrooms, only: :create
   end
+
   resources :profiles, only: :show do
     resources :reviews, only: [:index, :create, :new]
+    get '/my-profile', to: 'profiles#my_profile', as: :my_profile
   end
 
   resources :chatrooms, only: [:index, :show] do
     resources :messages, only: :create
   end
+  resources :autocompletes
+  get '/autocompletes-new', to: 'autocompletes#new'
+
 end

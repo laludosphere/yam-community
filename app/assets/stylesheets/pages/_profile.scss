@@ -1,7 +1,7 @@
 .card-top{
   display: flex;
-  justify-content: space-around;
-  // align-items: baseline;
+  justify-content: left;
+  align-items: top;
 }
 
 .description{
@@ -12,14 +12,16 @@
   border-radius: 15px;
   border-width: 2px;
   padding : 5px;
-  border-color: $blue-third;
+  border-color: $card-grey;
+  color: $card-grey;
   text-align: center;
+  min-height: 150px;
 }
 
 .fa-star:before {
   content: "\f005";
-  color: #F5A623;
-  font-size: 25px;
+  color: $premium;
+  font-size: 20px;
 }
 
 .description-right{
@@ -30,11 +32,13 @@
 .title-profile{
   margin-top:10px;
   margin-bottom:0px !important;
+  font-weight: 600;
+  color: $card-grey;
+  margin: 0.7rem 0rem !important;
 }
 
 .card-form{
-  margin: 2%;
-  padding: 5%;
+  padding: 3%;
   height: auto;
   display:flex;
   flex-direction: column;

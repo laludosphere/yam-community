@@ -1,0 +1,13 @@
+.description-review{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  border-style: solid;
+  border-radius: 15px;
+  border-width: 2px;
+  padding : 5px;
+  border-color: $card-grey;
+  color: $card-grey;
+  text-align: center;
+  max-height: 3rem;
+}
