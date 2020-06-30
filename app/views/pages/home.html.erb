@@ -18,12 +18,12 @@
 
       <h2>Trouver un <span class="special-word-premium">appartement</span> près de votre école</h2>
           <%= form_tag root_path, method: :get do %>
-                
+
                 <%= text_field_tag :query, params[:query],  class: "search_box" , placeholder: "What is your school ?" %> <span class="fas fa-search"></span>
               <% end %>
           <% if params[:query].present? %>
             <%= render 'shared/display_flats'%>
-          <% end %> 
+          <% end %>
     </div>
 
     <div class="titre-home"><h2>Comment ça marche <span class="special-word-title">marche</span> ?</h2></div>
@@ -50,8 +50,8 @@
             <h2 class="mdr-title"><span class="dot">2</span> Choisissez parmi votre <span class="special-word-title">sélection</span> </h2>
 
             <p>Yam vous propose uniquement les appartements qui vous correspondent. <br>Chattez avec les locataires actuels, visitez, et le tour est joué !</p>
-           
-                
+
+
 
         </div>
         <div class="mde3">
@@ -68,7 +68,7 @@
             <p><strong>Bravo ! </strong>Le propriétaire a sélectionné votre dossier. <br>Vous n’avez plus qu’à vous installer, et profiter des services d’une application entièrement digitale.</p>
             <%= image_tag "4.png" %>
         </div>
-         <div class="mde5">
+         <div class="mde5" id="yam-premium">
             <h2><span class="dot">5</span>Besoin d’aide ? Laissez <span class="special-word-premium">Yam Premium</span> faire le travail</h2>
             <p>Des visites à la remise des clés, avec Yam premium nous vous proposons une solution simple et complète où nous gérons votre recherche. Et si vous ne trouvez pas votre appartement avec nous ? On vous rembourse.</p>
             <div class="step-yam">
