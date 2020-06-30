@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_26_113500) do
+ActiveRecord::Schema.define(version: 2020_06_30_124949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,12 @@ ActiveRecord::Schema.define(version: 2020_06_26_113500) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "chatrooms", force: :cascade do |t|
@@ -103,6 +109,16 @@ ActiveRecord::Schema.define(version: 2020_06_26_113500) do
     t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
   end
 
+  create_table "teddies", force: :cascade do |t|
+    t.string "sku"
+    t.string "name"
+    t.bigint "category_id", null: false
+    t.string "photo_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_teddies_on_category_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -133,4 +149,5 @@ ActiveRecord::Schema.define(version: 2020_06_26_113500) do
   add_foreign_key "preferences", "users"
   add_foreign_key "reviews", "users", column: "receiver_id"
   add_foreign_key "reviews", "users", column: "reviewer_id"
+  add_foreign_key "teddies", "categories"
 end

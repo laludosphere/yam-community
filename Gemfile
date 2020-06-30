@@ -35,7 +35,8 @@ gem 'geocoder'
 gem 'pg_search', '~> 2.3.0'
 gem "figaro"
 gem 'jquery-rails'
-
+gem 'money-rails'
+gem 'stripe'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'

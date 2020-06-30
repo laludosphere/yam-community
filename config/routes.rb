@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/search', to: 'pages#search', as: :home_search
   get '/passer-premium', to: 'pages#premium'
   get '/subscribe-premium', to: 'pages#subscribe_premium'
+  resources :teddies, only: [:index, :show]
 
   resources :flats do
     resources :chatrooms, only: :create
