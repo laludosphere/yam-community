@@ -17,13 +17,14 @@
     <div class="search-home">
 
       <h2>Trouver un <span class="special-word-premium">appartement</span> près de votre école</h2>
-           <%=  form_tag '#', id: "flat-form", method: :get do %>
+           <%=  form_tag root_path, id: "flat-form", method: :get do %>
 
                 <%= search_field_tag :query, params[:query], class: "search_box" , placeholder: "What is your school ?" %> <span class="fas fa-search"></span>
              <% end %>
-            <div class="searched-flats" id="flats-modal">
-               <%= render 'shared/display_flats' %>
-            </div>
+
+<%= @flats %>
+              <%= render 'shared/display_flats', flats: @flats %>
+
     </div>
 
     <div class="titre-home"><h2>Comment ça marche <span class="special-word-title">marche</span> ?</h2></div>
