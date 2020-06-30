@@ -21,12 +21,23 @@
                 </div>
                   <div class="stars m-2 mt-4">
                     <%= '<i class="fas fa-star"></i>'.html_safe * current_user.average_ratings %>
-                    <%= '<i class="far fa-star"></i>'.html_safe * ( 5- current_user.average_ratings) %>
-                    <%= link_to 'Tous les avis', profile_reviews_path(current_user), class: "ml-3 text-secondary" %>
+                    <div class="dash-card-top-detail-reviews">
+                      <div><%= '<i class="far fa-star"></i>'.html_safe * ( 5- current_user.average_ratings) %></div>
+                      <%# <%= link_to 'Tous les avis', profile_reviews_path(current_user), class: "ml-3 text-secondary"%>
+                    </div>
                 </div>
               </div>
               <div class="dash-detail"><p><i class="fas fa-at" style="color:#00D7A7;"></i><small> <%= current_user.email %></small></p></div>
-              <p><i class="fas fa-mobile-alt" style="color:#00D7A7;"></i><small> <%= current_user.phone_number %></small></p>
+              <div class="dash-detail"><p><i class="fas fa-mobile-alt" style="color:#00D7A7;"></i><small> <%= current_user.phone_number %></small></p></div>
+              <div class="alert-message">
+                <div class="last-message"><i class="far fa-envelope"></i></div>
+                <p>Votre dernier message date d'il y a 2 heures</p>
+              </div>
+              <div class="alert-message">
+                <div class="last-message"><i class="fas fa-eye"></i></div>
+                <p>Votre profil a été consulté par 2 propriétaires</p>
+                <div style="color:#396CAA;"><i class="fas fa-times close"></i></div>
+              </div>              
             </div>
           </div>
         </div>
