@@ -27,16 +27,19 @@
                     </div>
                 </div>
               </div>
-              <div class="dash-detail"><p><i class="fas fa-at" style="color:#00D7A7;"></i><small> <%= current_user.email %></small></p></div>
-              <div class="dash-detail"><p><i class="fas fa-mobile-alt" style="color:#00D7A7;"></i><small> <%= current_user.phone_number %></small></p></div>
+              <div class="dash-detail-group d-flex">
+                <p class="dash-detail"><i class="fas fa-at" style="color:#00D7A7;"></i><small> <%= current_user.email %></small></p>
+                <p class="dash-detail"><i class="fas fa-mobile-alt" style="color:#00D7A7;"></i><small> <%= current_user.phone_number %></small></p>
+              </div>
               <div class="alert-message">
                 <div class="last-message"><i class="far fa-envelope"></i></div>
                 <p>Votre dernier message date d'il y a 2 heures</p>
+                <div style="color:#396CAA;"><i class="ml-5 fas fa-times fa-1x"></i></div>
               </div>
               <div class="alert-message">
                 <div class="last-message"><i class="fas fa-eye"></i></div>
                 <p>Votre profil a été consulté par 2 propriétaires</p>
-                <div style="color:#396CAA;"><i class="fas fa-times close"></i></div>
+                <div style="color:#396CAA;"><i class="ml-5 fas fa-times fa-1x "></i></div>
               </div>              
             </div>
           </div>
