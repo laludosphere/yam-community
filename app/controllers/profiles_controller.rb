@@ -9,13 +9,17 @@ class ProfilesController < ApplicationController
     @last_review = @user.received_reviews.last
     @reviewer = @last_review.reviewer
     @reviews = Review.where(receiver_id: @user)
+    @premium_subscription = PremiumSubscription.find(1)
   end
 
   def my_profile
-    @user = User.find(params[:id])
+
+    @user = current_user
+    @preference = current_user.preference
     @reviews = Review.where(receiver_id: current_user)
     @last_review = Review.where(receiver_id: current_user).last
     @reviewer = User.find(@last_review.reviewer_id)
+    @premium_subscription = PremiumSubscription.find(1)
   end
 
   private

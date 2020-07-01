@@ -1,7 +1,29 @@
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="premiumModal">
   <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-    <h1>test</h1>
+    <div class="modal-content modal-content-premium">
+      <div class="container container-premium">
+        <% @premium_subscription = PremiumSubscription.find(1) %>
+
+        <h2 class="pack-premium">
+          <%= @premium_subscription.name %>
+        </h2>
+
+        <p class="card-text m-3 text-center">Postulez directement, constituez votre dossier de candidature certifié, faites confiance à un agent en ligne qui s'occupe de vos visites & récuperez vos clés de votre futur appartement chez vous..</p>
+
+        <%= image_tag "yam_premium.png"%>
+
+        <h2 class="pack-premium m-3">189€</h2>
+
+
+        <%= form_tag orders_path do %>
+        <%= hidden_field_tag 'premium_subscription_id', @premium_subscription.id %>
+        <div class="text-center">
+          <%= submit_tag 'Souscrire', class: 'btn btn-premium' %>
+        </div>
+        <% end %>
+
+      </div>
     </div>
   </div>
 </div>
+

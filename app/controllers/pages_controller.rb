@@ -10,6 +10,7 @@ class PagesController < ApplicationController
 
   def dashboard
     filter_flats
+    @premium_subscription = PremiumSubscription.find(1)
   end
 
   def premium
