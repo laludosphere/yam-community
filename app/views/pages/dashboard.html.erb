@@ -80,9 +80,14 @@
     <div class="container-fluid w-75">
       <%= render 'shared/display_flats', flats: @flats %>
     </div>
-  <div id="map">
+  <div
+    class="mt-4"
+    id="map"
+    style="width: 90%;
+    height: 350px;"
+    data-markers="<%= @markers.to_json %>"
 
-  </div>
+  ></div>
   </div>
 
 </div>

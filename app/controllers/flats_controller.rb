@@ -4,6 +4,10 @@ class FlatsController < ApplicationController
   def index
     @flats = policy_scope(Flat)
     filter_flats_by_user_preferences
+    @flats = Flat.where.not(latitude: nil, longitude: nil)
+    @markers = @flats.map do |flat|
+      { lat: flat.latitude, lng: flat.longitude }
+    end
   end
 
   def show
