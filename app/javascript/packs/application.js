@@ -32,6 +32,7 @@ import {initChatroomCable} from '../channels/chatroom_channel';
 import {initStopCarousel} from '../plugins/init_stop_carousel';
 import {initPremiumModal} from '../plugins/init_premium_modal';
 import {initFlatModal} from '../plugins/init_flat_modal';
+import {initMapbox} from '../plugins/init_mapbox';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -41,5 +42,6 @@ document.addEventListener('turbolinks:load', () => {
   initFlatModal();
   initStopCarousel();
   initChatroomCable();
+  initMapbox();
 
 });
