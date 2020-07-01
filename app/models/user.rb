@@ -8,7 +8,6 @@ class User < ApplicationRecord
   has_many :flats, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many_attached :photos
-  has_many :reviews, dependent: :destroy
   has_many :orders
 
   def received_reviews

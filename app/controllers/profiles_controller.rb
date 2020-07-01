@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
     @reviewer = @last_review.reviewer
     @review = Review.new
     @reviews = Review.where(receiver_id: @user)
-    @premium_subscription = PremiumSubscription.find(1)
+    @premium_subscription = PremiumSubscription.last
   end
 
   def my_profile
@@ -20,7 +20,7 @@ class ProfilesController < ApplicationController
     @reviews = Review.where(receiver_id: current_user)
     @last_review = Review.where(receiver_id: current_user).last
     @reviewer = User.find(@last_review.reviewer_id)
-    @premium_subscription = PremiumSubscription.find(1)
+    @premium_subscription = PremiumSubscription.last
   end
 
   private

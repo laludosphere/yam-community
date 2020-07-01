@@ -3,12 +3,22 @@ class FlatsController < ApplicationController
 
   def index
     @flats = policy_scope(Flat)
-    filter_flats
-    @preference = current_user.preference
+    filter_flats_by_user_preferences
+    @flats = @flats.where.not(latitude: nil, longitude: nil)
+
+    @markers = @flats.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        # Uncomment the above line if you want each of your markers to display a info window when clicked
+        # (you will also need to create the partial "/flats/map_box")
+      }
+    end
   end
 
   def show
-    @premium_subscription = PremiumSubscription.find(1)
+    @premium_subscription = PremiumSubscription.last
     @flat = Flat.find(params[:id])
     authorize @flat
   end
@@ -53,9 +63,9 @@ class FlatsController < ApplicationController
     redirect_to flat_path(@flat)
   end
 
-  def filter_flats
+  def filter_flats_by_user_preferences
     @preference = current_user.preference
-    @flats = Flat.where(flat_type: @preference.flat_type)
+    @flats      = @flats.where(flat_type: @preference.flat_type)
   end
 
   private
