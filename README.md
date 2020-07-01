@@ -8,6 +8,6 @@
 
 ### Sign In
 
-- [Link](#)
+- [Link](https://yam-community.herokuapp.com/users/sign_in)
 - `gasp@mgail.com`
 - `password`
