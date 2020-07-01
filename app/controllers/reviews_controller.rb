@@ -14,11 +14,20 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @receiver = User.find(params[:profile_id])
+    @review = Review.new(review_params)
+    @review.receiver = @receiver
+    @review.reviewer = current_user
+    if @review.save
+      redirect_to profile_path(@receiver)
+    else
+      render :reviews_button
+    end
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:user, :profile_id, :receiver, :reviewer)
+    params.require(:review).permit(:user, :profile_id, :receiver, :reviewer, :content, :rating)
   end
 end
