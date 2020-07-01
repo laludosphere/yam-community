@@ -14,10 +14,10 @@
   </div>
 
   <div class="search-home">
-    <h2>Trouver un <span class="special-word-premium">appartement</span> près de votre école</h2>
-      <%=  form_tag root_path, id: "flat-form", method: :get do %>
+    <h2>Trouver un <span class="special-word-premium">appartement</span>près de votre école</h2>
+      <%=  form_tag root_path, id: "flat-form", method: :get  do %>
         <div class="container">
-          <%= text_field_tag :query, params[:query],  class: "search_box", placeholder: "Quelle est votre école ?" %> <span class="fas fa-search"></span>
+          <%= text_field_tag :query, params[:query], id: :autocomplete_address, class: "search_box", placeholder: "Quelle est votre école ?" %> <span class="fas fa-search"></span>
         </div>
         <%= render 'shared/display_flats', flats: @flats%>
       <% end %>
@@ -66,9 +66,9 @@
     <h2><span class="dot">5</span>Besoin d’aide ? Laissez<span class="special-word-premium">Yam Premium</span> faire le travail</h2>
     <p>Des visites à la remise des clés, avec Yam premium nous vous proposons une solution simple et complète où nous gérons votre recherche. Et si vous ne trouvez pas votre appartement avec nous ? On vous rembourse.</p>
     <div class="step-yam">
-       <div class="avec-Y"><p>Sans Yam</p><%= image_tag "sans-yam.png" %></div>
-       <div class="avec-Y"><p>Avec Yam</p> <%= image_tag "avec-yam.png" %></div>
-       <div class="avec-YP"><p>Yam Premium</p> <%= image_tag "yam_premium.png"%></div>
+       <div class="sans-Y"><p>SANS Yam</p><%= image_tag "sans-yam.png" %></div>
+       <div class="avec-Y"><p>AVEC Yam</p> <%= image_tag "avec-yam.png" %></div>
+       <div class="avec-YP"><p>AVEC Yam Premium</p> <%= image_tag "yam_premium.png"%></div>
     </div>
   </div>
   <div class="home-contact">

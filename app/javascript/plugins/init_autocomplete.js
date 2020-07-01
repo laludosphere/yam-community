@@ -9,6 +9,8 @@ function initializeAutocomplete(id) {
 function onPlaceChanged() {
   const place = this.getPlace();
 
+  console.log(place);
+
   for (const i in place.address_components) {
     const component = place.address_components[i];
     for (const j in component.types) {

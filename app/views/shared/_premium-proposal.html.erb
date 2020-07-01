@@ -7,11 +7,14 @@
         <p class="card-text mr-3 mt-5">Des visites à la remise des clés, avec Yam premium nous vous proposons une solution simple et complète où nous gérons votre recherche.  Et c’est satisfait ou remboursé.</p>
       </div>
       <div class="m-4">
-        <!-- #ici modifier le code et dire current page  -->
-        <!-- <a href="#" class="btn btn-premium m-2">Postuler directement</a> -->
-        <%= link_to "C'est parti !", subscribe_premium_path, class: "btn btn-premium mr-2", "data-toggle" => "modal", 'data-target' => '#premiumModal'%>
-        <%# end %>
+
+      <%# current_page?(flat_path) %>
+        <%# link_to "Postulez directement", premium_subscription_path(@premium_subscription), class: "btn btn-premium mr-2", "data-toggle" => "modal", 'data-target' => '#premiumModal'%>
+      <%# else %>
+        <%= link_to "C'est parti !", premium_subscription_path(@premium_subscription), class: "btn btn-premium mr-2", "data-toggle" => "modal", 'data-target' => '#premiumModal'%>
+      <%# end %>
         <%= link_to "En savoir +",  root_path(anchor: 'yam-premium'), class: "btn btn-secondary"  %>
+
       </div>
     </div>
 </div>

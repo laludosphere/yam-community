@@ -11,3 +11,26 @@
 #yam-pre{
   position: relative;
 }
+
+.pack-premium {
+  color: $premium;
+}
+
+.container-premium {
+  width: 100%;
+  padding: 5%;
+  border: 2rem;
+  display:flex;
+  align-self: center;
+  flex-direction: column;
+}
+
+.container-premium img {
+  padding: 0% 20%;
+}
+
+.modal-content-premium {
+  border-radius: 30px !important;
+  border: 0.2rem solid !important;
+  color: $premium;
+}

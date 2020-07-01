@@ -9,6 +9,7 @@ class FlatsController < ApplicationController
   end
 
   def show
+    @premium_subscription = PremiumSubscription.find(1)
     @flat = Flat.find(params[:id])
     authorize @flat
   end
