@@ -9,5 +9,5 @@
 ### Sign In
 
 - [Link](https://yam-community.herokuapp.com/users/sign_in)
-- `gasp@mgail.com`
+- `gasp@gmail.com`
 - `password`
