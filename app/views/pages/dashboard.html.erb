@@ -61,15 +61,21 @@
         <div class="card mb-4" style="height: 4rem;">
            <%= render 'shared/preferences_card' %>
         </div>
+        <div class="btn-switch">
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
     </div>
   </div>
-
-
 
   <div class="container-fluid w-75">
     <%= render 'shared/display_flats', flats: @flats %>
   </div>
 
 </div>
+
+       
 
 
