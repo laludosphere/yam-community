@@ -39,7 +39,7 @@
               <div class="alert-message">
                 <div class="last-message"><i class="fas fa-eye"></i></div>
                 <p>Votre profil a été consulté par 2 propriétaires</p>
-                <div style="color:#396CAA;"><i class="ml-5 fas fa-times fa-1x "></i></div>
+                <div style="color:#396CAA;"><i class="ml-5 fas fa-times fa-1x"></i></div>
               </div>              
             </div>
           </div>
@@ -61,15 +61,21 @@
         <div class="card mb-4" style="height: 4rem;">
            <%= render 'shared/preferences_card' %>
         </div>
+        <div class="btn-switch">
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
     </div>
   </div>
-
-
 
   <div class="container-fluid w-75">
     <%= render 'shared/display_flats', flats: @flats %>
   </div>
 
 </div>
+
+       
 
 
