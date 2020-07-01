@@ -1,7 +1,7 @@
 ### Useful Links
 
 - [Trello](https://trello.com/b/Ufl8eVM1/yam-dev)
-- [Heroku](#)
+- [Heroku](https://yam-community.herokuapp.com)
 - [Whemisical](https://whimsical.com/MTz4JKuQPNuku4yVofFFSC)
 - [Anima Maquette](https://projects.animaapp.com/#/p/7NxBqIi)
 
@@ -9,5 +9,5 @@
 ### Sign In
 
 - [Link](#)
-- `demo@mgail.com`
-- `azerty`
+- `gasp@mgail.com`
+- `password`
