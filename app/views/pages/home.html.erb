@@ -14,16 +14,29 @@
   </div>
 
   <div class="search-home">
-    <h2>Trouver un <span class="special-word-premium">appartement</span>près de votre école</h2>
+    <h2>Trouver un <span class="special-word-premium">appartement</span> près de votre école</h2>
       <%=  form_tag root_path, id: "flat-form", method: :get  do %>
-        <div class="container">
-          <%= text_field_tag :query, params[:query], id: :autocomplete_address, class: "search_box", placeholder: "Quelle est votre école ?" %> <span class="fas fa-search"></span>
-        </div>
+          <div class="container">
+            <div class="search-form-control form-group">
+              <%= text_field_tag :query, params[:query], id: :autocomplete_address, class: "search_box form-control string required", placeholder: "Quelle est votre école ?" %>
+              <button name="button" type="submit" class="btn btn-flat">
+                <i class="fas  fa-search"></i> Rechercher
+              </button>
+            </div>
+          </div>
+      <% end %>
+
+      <% if params[:query].present? %>
         <%= render 'shared/display_flats', flats: @flats%>
+        <div class="text-center">
+          <span class="btn btn-primary mt-4">
+            Inscrivez vous pour en voir plus !
+          </span>
+        </div>
       <% end %>
   </div>
 
-    <div class="titre-home"><h2>Comment ça marche <span class="special-word-title">marche</span> ?</h2></div>
+  <div class="titre-home"><h2>Comment ça marche <span class="special-word-title">marche</span> ?</h2></div>
 
   <div class="mde">
     <div class="mde1">

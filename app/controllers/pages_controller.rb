@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 
   def home
     if params[:query].present?
-      @flats = Flat.near(params[:query], 10).limit(3)
+      @flats = Flat.all.limit(2)
     end
   end
 
