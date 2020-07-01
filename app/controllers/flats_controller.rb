@@ -3,9 +3,8 @@ class FlatsController < ApplicationController
 
   def index
     @flats = policy_scope(Flat)
-    # filter_flats
+    filter_flats
     @preference = current_user.preference
-    # @flats = Flat.all
   end
 
   def show
