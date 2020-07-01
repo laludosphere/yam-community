@@ -2,7 +2,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content modal-content-premium">
       <div class="container container-premium">
-        <% @premium_subscription = PremiumSubscription.find(1) %>
+        <% @premium_subscription = PremiumSubscription.last %>
 
         <h2 class="pack-premium">
           <%= @premium_subscription.name %>

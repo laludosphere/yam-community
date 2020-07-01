@@ -32,6 +32,7 @@ import {initChatroomCable} from '../channels/chatroom_channel';
 import {initStopCarousel} from '../plugins/init_stop_carousel';
 import {initPremiumModal} from '../plugins/init_premium_modal';
 import {initFlatModal} from '../plugins/init_flat_modal';
+import {initMap} from '../plugins/init_map';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -40,4 +41,5 @@ document.addEventListener('turbolinks:load', () => {
   initFlatModal();
   initStopCarousel();
   initChatroomCable();
+  initMap();
 });

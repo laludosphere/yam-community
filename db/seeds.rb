@@ -1,4 +1,5 @@
 puts "Destroy all datas"
+Review.destroy_all
 User.destroy_all
 PremiumSubscription.destroy_all
 Category.destroy_all
