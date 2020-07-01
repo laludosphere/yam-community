@@ -46,7 +46,6 @@
                 <p>Votre profil a été consulté par 4 propriétaires</p>
                 <div style="color:#396CAA;"><i class="ml-5 fas fa-times fa-1x "></i></div>
               </div>
-
             </div>
           </div>
         </div>
@@ -63,14 +62,18 @@
           </div>
         </div>
       </div>
-
-      <div>
-        <h2 class="page-h2">Votre séléction d'appartements à <%= current_user.preference.city%></h2>
-      </div>
-
-      <div class="card mb-4" style="height: 4rem;">
-         <%= render 'shared/preferences_card' %>
-      </div>
+        <div>
+          <h2 class="page-h2">Votre selection d'appartements à <%= current_user.preference.city%></h2>
+        </div>
+        <div class="card mb-4" style="height: 4rem;">
+           <%= render 'shared/preferences_card' %>
+        </div>
+        <div class="btn-switch">
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
     </div>
   </div>
 
@@ -78,5 +81,7 @@
     <%= render 'shared/display_flats', flats: @flats %>
   </div>
 </div>
+
+       
 
 
