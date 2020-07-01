@@ -16,9 +16,9 @@
   <div class="search-home">
 
     <h2>Trouver un <span class="special-word-premium">appartement</span>près de votre école</h2>
-      <%=  form_tag root_path, id: "flat-form", method: :get do %>
+      <%=  form_tag root_path, id: "flat-form", method: :get  do %>
         <div class="container">
-          <%= text_field_tag :query, params[:query],  class: "search_box", placeholder: "Quelle est votre école ?" %> <span class="fas fa-search"></span>
+          <%= text_field_tag :query, params[:query], id: :autocomplete_address, class: "search_box", placeholder: "Quelle est votre école ?" %> <span class="fas fa-search"></span>
         </div>
         <%= render 'shared/display_flats', flats: @flats%>
       <% end %>
