@@ -13,7 +13,7 @@
                 <%= image_tag "anonym.jpg", class: "avatar-large", alt: "avatar-large" %>
               </div>
               <div class="card-profil-name m-3">
-                <%= current_user.name%>
+                <%= current_user.first_name%>
                 <div class="card-top-details">
                   <span class="user_type"><%= current_user.user_type %></span>
                   <% if current_user.status_verified  %>

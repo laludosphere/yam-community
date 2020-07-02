@@ -5,7 +5,7 @@
         <%= image_tag "anonym.jpg", class: "avatar-large", alt: "avatar-large" %>
       </div>
       <div class="header-card-name">
-        <p><small> <%= @flat.user.name %></small></p>
+        <p><small> <%= @flat.user.first_name %></small></p>
       </div>
       <div class="owner-stars">
           <%= '<i class="fas fa-star"></i>'.html_safe * @flat.user.average_ratings %>

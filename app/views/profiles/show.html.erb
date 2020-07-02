@@ -1,6 +1,6 @@
 <div class="background">
   <div class="container profile-container fixed-footer">
-      <h2 class="page-h2">Profil de <%=  @user.name %></h2>
+      <h2 class="page-h2">Profil de <%=  @user.first_name %></h2>
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-6">
@@ -11,7 +11,7 @@
                   <%= image_tag "anonym.jpg", class: "avatar-large", alt: "avatar-large" %>
                 </div>
                 <div class="header-card">
-                  <h2><small> <%= @user.name %></small></h2>
+                  <h2><small> <%= @user.first_name %></small></h2>
                       <div class="card-top-details">
                         <span class ="user_type"><%= @reviewer.user_type %></span>
                         <span class="status-verifed"><%= @reviewer.status_verified %></span>

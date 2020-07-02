@@ -20,7 +20,7 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.new
     @chatroom.user = current_user
     @chatroom.flat = @flat
-    @chatroom.name = @flat.user.name
+    @chatroom.name = @flat.user.first_name
     authorize @chatroom
     @chatroom.save
     redirect_to chatroom_path(@chatroom)

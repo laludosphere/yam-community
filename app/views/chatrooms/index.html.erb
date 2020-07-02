@@ -3,9 +3,9 @@
     <h2 class="page-h2">Vos messages</h2>
     <% @chatrooms.each do |chatroom| %>
       <% if current_user == chatroom.user %>
-        <%= link_to chatroom.flat.user.name, chatroom_path(chatroom, anchor: "envoie") %></li>
+        <%= link_to chatroom.flat.user.first_name, chatroom_path(chatroom, anchor: "envoie") %></li>
       <% else %>
-        <%= link_to chatroom.user.name,chatroom_path(chatroom, anchor: "envoie") %></li>
+        <%= link_to chatroom.user.first_name,chatroom_path(chatroom, anchor: "envoie") %></li>
       <% end %>
     <% end %>
   </div>

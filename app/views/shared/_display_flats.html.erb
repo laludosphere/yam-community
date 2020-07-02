@@ -4,11 +4,15 @@
         <% @flats.each do |flat| %>
           <a class=text href=<%= flat_path(flat)%>>
             <div class="card-flat">
-              <div class="card-img">
                 <% if flat.photos.attached? %>
-                  <%= cl_image_tag flat.photos.key, width: 400, height: 300, crop: :fill  %>
+                  <div
+                    class="card-img"
+                    style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path flat.photos.first.key %>');"
+                  >
+                  </div>
                 <% else %>
-                  <%= image_tag 'https://assets.savills.com/awaiting/ENAwaitingImage_Card_L.jpg' %>
+                  <div class="card-img"
+                       style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://assets.savills.com/awaiting/ENAwaitingImage_Card_L.jpg')">
                 <% end %>
               </div>
 

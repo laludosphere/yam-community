@@ -15,8 +15,8 @@
 
   <div class="search-home">
     <h2>Trouver un <span class="special-word-premium">appartement</span> près de votre école</h2>
-      <%=  form_tag root_path, id: "flat-form", method: :get  do %>
-          <div class="container">
+      <%=  form_tag root_path(anchor: "search"), id: "flat-form", method: :get  do %>
+          <div id="search" class="container">
             <div class="search-form-control form-group">
               <%= text_field_tag :query, params[:query], id: :autocomplete_address, class: "search_box form-control string required", placeholder: "Quelle est votre école ?" %>
               <button name="button" type="submit" class="btn btn-flat">

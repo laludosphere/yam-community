@@ -30,6 +30,7 @@ class PagesController < ApplicationController
 
   def filter_flats
     @preference = current_user.preference
-    @flats = Flat.where(flat_type: @preference.flat_type)
+    @flats = Flat.all
+    # @flats = Flat.where(flat_type: @preference.flat_type)
   end
 end

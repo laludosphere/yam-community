@@ -1,18 +1,25 @@
+require "open-uri"
+
 puts "Destroy all datas"
 Review.destroy_all
+Preference.destroy_all
 User.destroy_all
 PremiumSubscription.destroy_all
 Category.destroy_all
 
+
 puts 'Creating categories...'
+
 premium_tenant = Category.create!(name: 'premium_tenant')
 premium_owner = Category.create!(name: 'premium_owner')
 
 puts 'Creating Pack Premium étudiant...'
+
 PremiumSubscription.create!(sku: 'pack-premium-étudiant', name: 'Pack Prémium Étudiant', category: premium_tenant, photo_url: '../../app/assets/images/yam_premium.png', price: 189 )
 
 
 puts 'Creating Students...'
+
 louis    = User.create!(first_name: 'Louis',last_name: "Adam", email:'louis@gmail.com', password:'password', born_at: '12/09/1989', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a laydy boy', user_type: 'student')
 lorraine = User.create!(first_name: 'Lorraine',last_name: "Bayard", email:'lorraine@gmail.com', password:'password', born_at: '14/09/1999', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a graphist designer', user_type: 'student')
 ludo     = User.create!(first_name: 'Ludo',last_name: "Fourcroy", email:'ludo@gmail.com', password:'password', born_at: '13/09/2000', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a hockey professional player ', user_type: 'student')
@@ -28,7 +35,6 @@ sam      = User.create!(first_name: 'Sam',last_name: "Les Brises", email:'sam@gm
 puts 'Creating Flats'
 city = "Lille"
 flat_type = ['t1','t2','t3','t4','t5']
-adresses
 owners = [aurel,sam]
 adresses = ["32 rue Roland",
   "12 rue Cormontaigne",
@@ -75,23 +81,27 @@ adress_item = 0
   Flat.create!(
   city:           city,
   flat_type:       flat_type.sample,
-  available_at:    rand(10.years).from_now,
-  surface_area:    rand(18..50)*,
+  available_at:    DateTime.now + (rand * 21),
+  surface_area:    rand(18..50),
   user:            owners.sample,
-  zip_code:        59000,
+  zip_code:        "59000",
   price_per_month: 1200,
   address:         adresses[adress_item]
   )
+
 adress_item += 1
 end
 
-5.times do
+puts 'Creating Preferences'
+user_preferences = [louis,lorraine,ludo,flix,remi,simon,demo,aurel,sam]
+user_preferences_item = 0
+9.times do
   Preference.create!(
-    flat_type:'t2'
+    flat_type:'t2',
     price_per_month: 1200,
     roomates: 2,
     surface_area: 39,
-    user: yann,
+    user: user_preferences[user_preferences_item],
     school_location: '3 rue de la digue, Lille',
     school_longitude: 2.2757516,
     school_latitude: 48.8714403,
@@ -100,6 +110,7 @@ end
     surrounding_area: 9,
     city: 'Lille'
   )
+  user_preferences_item += 1
 end
 
 owner_review_contents = ["Etudiant très serieux", "Etudiant un petit peu bruyant", "Cet étudiant est super sympa ","Cet étudiant est très mignon et sexy ", "Cet étudiant est très réservé et un petit peu chelou"]
@@ -108,10 +119,10 @@ student_review_contents = [
   "Propriétaire agréable, facile de communiquer et de trouver des solutions rapidement",
   "Si je devais avoir un deuxième père, c'est lui",
   "Madame Lefèbvre est une personne disponible, et réactive.",
-  "Très bonne expérience, même si c'était un peu bizarre de le retrouver nu dans mon salon après les vacances"
-  "Rien à redire"
-  "J'avais une ampoule à changer, cela à été fait rapidement"
-  "Le propriétaire à utilisé Find&Trust pour rénover le parquet pendant mes vacances, super !"
+  "Très bonne expérience, même si c'était un peu bizarre de le retrouver nu dans mon salon après les vacances",
+  "Rien à redire",
+  "J'avais une ampoule à changer, cela à été fait rapidement",
+  "Le propriétaire à utilisé Find&Trust pour rénover le parquet pendant mes vacances, super !",
   "Proprio dispo"
 ]
 
@@ -124,10 +135,10 @@ student_review_contents_item = 0
 puts 'Creating Reviews for Sam'
 
   5.times do
-    Review.create! (
-      content: student_review_contents[student_review_contents_item]
-      rating: rand(3..5)
-      reviewer: students_reviewer[reviewer_item]
+    Review.create!(
+      content: student_review_contents[student_review_contents_item],
+      rating: rand(3..5),
+      reviewer: students_reviewer[reviewer_item],
       receiver: sam
     )
   reviewer_item += 1
@@ -140,37 +151,60 @@ reviewer_item = 0
 student_review_contents_item = 6
 
   5.times do
-  Review.create! (
-    content:
-    rating: rand(3..5)
-    reviewer: students_reviewer[reviewer_item]
+  Review.create!(
+    content: student_review_contents[student_review_contents_item],
+    rating: rand(3..5),
+    reviewer: students_reviewer[reviewer_item],
     receiver: aurel
   )
   reviewer_item += 1
   student_review_contents_item += 1
   end
 
+puts 'Creating Reviews for Students'
+  students = User.where(user_type: 'student')
+  students.each do |student|
+    Review.create!(
+      content: "",
+      rating: 0,
+      reviewer: aurel,
+      receiver: student
+    )
+  end
 
 puts 'Creating Photos for Flats'
 
 flat_pictures = []
 
-Dir.glob('/assets/images/flats/*.jpg') do |photo_filepath|
+Dir.glob('app/assets/images/flats/*.jpg') do |photo_filepath|
   flat_pictures << photo_filepath
 end
 
-Flats.each_with_index do |path, index|
-  rand(2..3).times do
-    Photo.create(flat_id: Flat.all[index].id, path: flat_pictures[index])
+puts "#{flat_pictures} ================="
+item = 0
+
+Flat.all.each_with_index do |flat, index|
+  2.times do
+    file = URI.open(flat_pictures[item])
+    flat.photos.attach(io: file, filename: flat.id, content_type: 'image/png')
+    flat.save
+    item += 1
   end
 end
 
 
 puts 'Creating Photos for Users'
 
-User.each_with_index do |user,index|
+# Photo.create!(user: louis,  path: "/assets/images/louis.png")
+# Photo.create!(user: lorraine,  path: "/assets/images/lorraine.png")
+# Photo.create!(user: ludo,  path: "/assets/images/yann.png")
+# Photo.create!(user: sam,  path: "/assets/images/sami.png")
+# Photo.create!(user: remi,  path: "/assets/images/yann.png")
+# Photo.create!(user: aurel,  path: "/assets/images/aurel.png")
+# Photo.create!(user: simon,  path: "/assets/images/simon.png")
+# Photo.create!(user: flix,  path: "/assets/images/yann.png")
 
-end
+# Photo.create!(user: demo,  path: "/assets/images/yann.png")
 
 #students = User.where(user_type: 'student')
 # owners   = User.where(user_type: 'owner')
@@ -191,3 +225,5 @@ end
 #     )
 #   end
 #end
+
+puts "Done !"
