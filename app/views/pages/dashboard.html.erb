@@ -80,17 +80,6 @@
     <div class="container-fluid w-75">
       <%= render 'shared/display_flats', flats: @flats %>
     </div>
-    <div
-      id="map"
-      style="width: 50%;
-      height: 300px;"
-      data-mapbox-api-key="<%= ENV['MAP_BOX_API_KEY']%>"
-      data-markers="<%= @markers.to_json %>"
-    ></div>
   </div>
 
 </div>
-
-
-
-

@@ -2,7 +2,7 @@ class Flat < ApplicationRecord
   belongs_to :user
   has_many_attached :photos
   has_one :flat
-  geocoded_by :address
+  geocoded_by :full_address
   after_validation :geocode, if: :will_save_change_to_address?
   include PgSearch::Model
   pg_search_scope :search_by_address_and_city,
