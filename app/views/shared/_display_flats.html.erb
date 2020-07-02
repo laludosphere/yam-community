@@ -4,17 +4,22 @@
         <% @flats.each do |flat| %>
           <a class=text href=<%= flat_path(flat)%>>
             <div class="card-flat">
-                <% if flat.photos.attached? %>
-                  <div
-                    class="card-img"
-                    style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path flat.photos.first.key %>');"
-                  >
-                  </div>
-                <% else %>
-                  <div class="card-img"
-                       style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://assets.savills.com/awaiting/ENAwaitingImage_Card_L.jpg')">
-                <% end %>
-              </div>
+              <%# if false %>
+              <% if flat.photos.attached? %>
+                <div
+                  class="card-img"
+                  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path flat.photos.first.key, height: 200, width: 350, crop: :fill; %>');"
+
+                >
+
+                </div>
+              <% else %>
+                <div
+                  class="card-img"
+                  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://assets.savills.com/awaiting/ENAwaitingImage_Card_L.jpg')"
+                >
+                </div>
+              <% end %>
 
               <h4 class="card-title mt-3 ml-3"> <%= flat.flat_type %> | <%= flat.surface_area %> M2 | <%= flat.city %> </h4>
                 <% if flat.available_at < Date.today %>
