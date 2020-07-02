@@ -1,36 +1,38 @@
 <div id= "current_user" data-id="<%= current_user.id %>"></div>
 <div class="background">
-  <div class="container">
-    <h2 class="page-h2">Mes Messages</h2>
-  </div>
-  <div class="container d-flex space-between">
-    <div class="mes-messages">
-      <div class="d-flex mt-4 mb-4">
-        <h4>Discussions</h4>
+  <div class="fixed-footer">
+    <div class="container">
+      <h2 class="page-h2">Mes Messages</h2>
+    </div>
+    <div class="container d-flex space-between">
+      <div class="mes-messages">
+        <div class="d-flex mt-4 mb-4">
+          <h4>Discussions</h4>
+        </div>
+        <div class="mes-chatrooms d-flex">
+          <% @chatrooms.each do |chatroom| %>
+            <div class="d-flex align-item-center">
+              <% if current_user == chatroom.user  %>
+                <%=link_to chatroom.flat.user.first_name, chatroom_path(chatroom, anchor: "envoie") %></li>
+            </div>
+            <div class="d-flex center align-item-center">
+              <% else %>
+                <%= link_to chatroom.user.name,chatroom_path(chatroom, anchor: "envoie") %></li>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
       </div>
-      <div class="mes-chatrooms d-flex">
-        <% @chatrooms.each do |chatroom| %>
-          <div class="d-flex align-item-center">
-            <% if current_user == chatroom.user  %>
-              <%=link_to chatroom.flat.user.first_name, chatroom_path(chatroom, anchor: "envoie") %></li>
-          </div>
-          <div class="d-flex center align-item-center">
-            <% else %>
-              <%= link_to chatroom.user.name,chatroom_path(chatroom, anchor: "envoie") %></li>
-            <% end %>
-          </div>
+
+      <div  id="messages" data-chatroom-id="<%= @chatroom.id %>">
+        <% @chatroom.messages.each do |message| %>
+           <%= render 'shared/my_message', message: message %>
+        <% end %>
+        <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+          <%= f.input :content, label: false, placeholder: "Envoyer un message à #{@chatroom.name}" %>
+          <%= f.button :submit, value:"Envoyer",class: "btn-primary", id: "envoie" %>
         <% end %>
       </div>
-    </div>
-
-    <div  id="messages" data-chatroom-id="<%= @chatroom.id %>">
-      <% @chatroom.messages.each do |message| %>
-         <%= render 'shared/my_message', message: message %>
-      <% end %>
-      <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-        <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-        <%= f.button :submit, value:"Envoyer",class: "btn-primary", id: "envoie" %>
-      <% end %>
     </div>
   </div>
 </div>
