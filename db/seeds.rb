@@ -62,7 +62,6 @@ adresses = ["32 rue Roland",
   "29 Rue Meurein",
   "65 Michel Servet",
   "98 Montebello",
-  "89 Moselle",
   "34 Rue Nationale",
   "45 Rue Panckoucke",
   "2 Avenue du Petit Paradis",
@@ -77,7 +76,7 @@ adresses = ["32 rue Roland",
 
 adress_item = 0
 
-30.times do
+29.times do
   Flat.create!(
   city:           city,
   flat_type:       flat_type.sample,

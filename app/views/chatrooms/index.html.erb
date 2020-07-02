@@ -1,12 +1,18 @@
 <div class="background">
   <div class="container">
-    <h2 class="page-h2">Vos messages</h2>
-    <% @chatrooms.each do |chatroom| %>
-      <% if current_user == chatroom.user %>
-        <%= link_to chatroom.flat.user.first_name,
-                    chatroom_path(chatroom, anchor: "envoie") %>
-      <% else %>
-        <%= link_to chatroom.user.first_name,chatroom_path(chatroom, anchor: "envoie") %>
+    <% if @chatrooms.empty? %>
+      <h2 class="page-h2">
+      Vous n'avez pas de messages
+      </h2>
+    <% else %>
+      <h2 class="page-h2">Vos messages</h2>
+      <% @chatrooms.each do |chatroom| %>
+        <% if current_user == chatroom.user %>
+          <%= link_to chatroom.flat.user.first_name,
+                      chatroom_path(chatroom, anchor: "envoie") %>
+        <% else %>
+          <%= link_to chatroom.user.first_name,chatroom_path(chatroom, anchor: "envoie") %>
+        <% end %>
       <% end %>
     <% end %>
   </div>

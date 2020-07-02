@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
     @last_review = @user.received_reviews.last
     @reviewer = @last_review.reviewer
     @review = Review.new
-    @reviews = Review.where(receiver_id: @user)
+    @reviews = Review.where(receiver_id: @user).order(created_at: :desc)
     @premium_subscription = PremiumSubscription.last
   end
 
