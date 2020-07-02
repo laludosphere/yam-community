@@ -4,26 +4,30 @@
     <div class="card mb-4" style="height: 4rem;">
       <div class="container"><%= render 'shared/preferences_card' %></div>
     </div>
-    <!--
-    TODO: tabs
     <div class="btn-group btn-group-toggle m-4" data-toggle="buttons">
-      <label class="btn btn-primary active">
-        <input type="radio" name="options" id="option1" autocomplete="off" checked> Liste
+      <label class="btn btn-primary <%= 'active' if params[:display_map].nil? %>">
+        <%= link_to flats_path, class: "link-without-style" do %>
+          <input type="radio" name="options" id="option1" autocomplete="off" checked> Liste
+        <% end %>
       </label>
-      <label class="btn btn-primary">
-        <input type="radio" name="options" id="option2" autocomplete="off"> Carte
+      <label class="btn btn-primary <%= 'active' unless params[:display_map].nil? %>">
+        <%= link_to flats_path(display_map: "true"), class: "link-without-style" do %>
+          <input type="radio" name="options" id="option2" autocomplete="off"> Carte
+        <% end %>
       </label>
     </div>
-    -->
-    <%= render 'shared/display_flats', flats: @flats %>
-    <div class="m-4">
-      <div
-        id="map"
-        style="width: 100%; height: 600px; border-radius: 20px;"
-        data-mapbox-api-key="<%= ENV['MAP_BOX_API_KEY']%>"
-        data-markers="<%= @markers.to_json %>"
-      ></div>
-    </div>
+    <% if params[:display_map].nil? %>
+      <%= render 'shared/display_flats', flats: @flats %>
+    <% else %>
+      <div class="m-4">
+        <div
+          id="map"
+          style="width: 100%; height: 600px; border-radius: 20px;"
+          data-mapbox-api-key="<%= ENV['MAP_BOX_API_KEY']%>"
+          data-markers="<%= @markers.to_json %>"
+        ></div>
+      </div>
+    <% end %>
 
   </div>
 </div>
