@@ -1,28 +1,29 @@
 <div class="card mt-3 justify-content-center d-none d-md-block" style="height: 12rem;">
- <div class="card-body h-100 align-items-center justify-content-center">
+  <div class="card-body h-100 align-items-center justify-content-center">
     <div class="card-top d-flex">
       <div class="avatar-bubble-owner ml-3px mb-4">
         <%= image_tag "anonym.jpg", class: "avatar-large", alt: "avatar-large" %>
       </div>
-      <div class="card-profil-name">
-        <small class="flat-user-name ml-4 mb-5"> <%= @flat.user.name %></small>
+      <div class="header-card-name">
+        <p><small> <%= @flat.user.first_name %></small></p>
       </div>
       <div class="owner-stars mt-2 ml-3">
           <%= '<i class="fas fa-star"></i>'.html_safe * @flat.user.average_ratings %>
           <%= '<i class="far fa-star"></i>'.html_safe * ( 5- @flat.user.average_ratings) %>
       </div>
     </div>
-        <div class="status-ver mt-29px">
-          <% if @flat.user.status_verified  %>
-            <span class="status-verified">PROFIL VÉRIFIÉ</span>
-          <% else %>
-            <span class="status-not-verified">PROFIL NON VÉRIFIÉ</span>
-          <% end %>
-            <span class="user_type"><%= @flat.user .user_type %></span>
-        </div><hr>
-        <div class="btn-show-owner d-flex justify-content-center mt-4">
-            <%= link_to 'Voir le profil', profile_path(@flat.user), class: "btn btn-primary" %>
-            <%= link_to 'Message', flat_chatrooms_path(@flat), method: :post, class: 'btn btn-primary' %>
-        </div>
+    <div class="status-ver mt-29px">
+      <% if @flat.user.status_verified  %>
+        <span class="status-verified">PROFIL VÉRIFIÉ</span>
+      <% else %>
+        <span class="status-not-verified">PROFIL NON VÉRIFIÉ</span>
+      <% end %>
+        <span class="user_type"><%= @flat.user .user_type %></span>
+    </div><hr>
+    <div class="btn-show-owner d-flex justify-content-center mt-4">
+        <%= link_to 'Voir le profil', profile_path(@flat.user), class: "btn btn-primary" %>
+        <%= link_to 'Message', flat_chatrooms_path(@flat), method: :post, class: 'btn btn-primary' %>
+    </div>
+  </div>
 </div>
 

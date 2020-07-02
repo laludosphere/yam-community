@@ -1,5 +1,6 @@
 class ChatroomsController < ApplicationController
   before_action :skip_authorization
+
   def index
     @chatrooms = policy_scope(Chatroom).where(user: current_user).or(Chatroom.where(flat: current_user.flats))
     @last_chatroom = Message.last.chatroom
@@ -15,15 +16,11 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    # @chatroom = Chatroom.new(params[:user_id, :flat_id, name: "chatroom"])
-    # besoin d'un flat
     @flat = Flat.find(params[:flat_id])
-
     @chatroom = Chatroom.new
     @chatroom.user = current_user
     @chatroom.flat = @flat
-    @chatroom.name = @flat.user.name
-
+    @chatroom.name = @flat.user.first_name
     authorize @chatroom
     @chatroom.save
     redirect_to chatroom_path(@chatroom)

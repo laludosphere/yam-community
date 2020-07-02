@@ -1,107 +1,209 @@
+require "open-uri"
+
 puts "Destroy all datas"
 Review.destroy_all
+Preference.destroy_all
 User.destroy_all
 PremiumSubscription.destroy_all
 Category.destroy_all
 
+
 puts 'Creating categories...'
+
 premium_tenant = Category.create!(name: 'premium_tenant')
 premium_owner = Category.create!(name: 'premium_owner')
 
-puts 'Creating teddies...'
+puts 'Creating Pack Premium étudiant...'
+
 PremiumSubscription.create!(sku: 'pack-premium-étudiant', name: 'Pack Prémium Étudiant', category: premium_tenant, photo_url: '../../app/assets/images/yam_premium.png', price: 189 )
 
-louis    = User.create!(name: ' Louis Adam', email:'louis@gmail.com', password:'password', born_at: '12/09/1989', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a laydy boy', user_type: 'student')
-lorraine = User.create!(name: ' Lorraine Lafayette', email:'lorraine@gmail.com', password:'password', born_at: '14/09/1999', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a graphist designer', user_type: 'student')
-ludo     = User.create!(name: ' Ludo Chong', email:'ludo@gmail.com', password:'password', born_at: '13/09/2000', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a hockey professional player ', user_type: 'student')
-yann     = User.create!(name: ' Yann Ching', email:'yann@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a such a serious guy', user_type: 'student')
-demo     = User.create!(name: 'John Doe', email:'demo@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a such a serious guy', user_type: 'student')
-demo     = User.create!(name: ' Yann Parigo', email:'gasp@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: true, phone_number: '0689827381', gender: 'male', description: 'I am a such a serious guy', user_type: 'owner')
-aurel    = User.create!(name: ' Aurel Glee', email:'aurel@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: true, phone_number: '0689827381', gender: 'male', description: 'I am a such a serious guy', user_type: 'owner')
-sam      = User.create!(name: ' Sam Lesbrises', email:'sam@gmail.com', password:'password', born_at: '04/09/1954', yam_premium: true, phone_number: '0689827381', gender: 'male', description: 'My name is sasa', user_type: 'owner')
-edouard  = User.create!(name: ' Edouard', email:'edouard@gmail.com', password:'password', born_at: '04/09/1954', yam_premium: true, phone_number: '0689827381', gender: 'male', description: 'My name is ed', user_type: 'owner')
-jean     = User.create!(name: ' Jean', email:'jean@gmail.com', password:'password', born_at: '04/09/1954', yam_premium: true, phone_number: '0689827381', gender: 'male', description: 'My name is jeanot', user_type: 'owner')
 
-Flat.create!(
-  city:            'Lille',
-  flat_type:       't4',
+puts 'Creating Students...'
+
+louis    = User.create!(first_name: 'Louis',last_name: "Adam", email:'louis@gmail.com', password:'password', born_at: '12/09/1989', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a laydy boy', user_type: 'student')
+lorraine = User.create!(first_name: 'Lorraine',last_name: "Bayard", email:'lorraine@gmail.com', password:'password', born_at: '14/09/1999', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a graphist designer', user_type: 'student')
+ludo     = User.create!(first_name: 'Ludo',last_name: "Fourcroy", email:'ludo@gmail.com', password:'password', born_at: '13/09/2000', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a hockey professional player ', user_type: 'student')
+flix     = User.create!(first_name: 'Flix',last_name: "Net", email:'flix@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a such a serious guy', user_type: 'student')
+remi     = User.create!(first_name: 'Rémi',last_name: "Carotte", email:'remi@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a such a serious guy', user_type: 'student')
+simon    = User.create!(first_name: 'Simon',last_name: "Crétin", email:'simon@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a such a serious guy', user_type: 'student')
+demo     = User.create!(first_name: 'Yann',last_name: "Parigo", email:'demo@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: false, phone_number: '0689827381', gender: 'male', description: "I am a such a serious guy, from Paris. I am a professional golf player (at least I'm trying to...)", user_type: 'student')
+
+puts 'Creating Owners'
+aurel    = User.create!(first_name: 'Aurelien',last_name: "La descente", email:'aurel@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: true, phone_number: '0689827381', gender: 'male', description: 'Fan de bière, jeune actif et startuppeur #billionairemindset #laquestionelleestviterépondue', user_type: 'owner')
+sam      = User.create!(first_name: 'Sam',last_name: "Les Brises", email:'sam@gmail.com', password:'password', born_at: '04/09/1954', yam_premium: true, phone_number: '0689827381', gender: 'male', description: 'Propriétaire aguerri, aime les cerises et les grands espaces. Amateur du paté en croute. Souhaite un locataire sérieux', user_type: 'owner')
+
+puts 'Creating Flats'
+city = "Lille"
+flat_type = ['t1','t2','t3','t4','t5']
+owners = [aurel,sam]
+adresses = ["32 rue Roland",
+  "12 rue Cormontaigne",
+  "14 Boulevar Vauban",
+  "134 rue d'Isly",
+  "12 place Genevières",
+  "14 Rue Georges Bizet",
+  "30 rue de la Grande Brasserie",
+  "30 rue Gustave Testelin",
+  "12 rue Halévy",
+  "1 rue Hoche",
+  "23 rue Holbach",
+  "2 cour Hourdiaux",
+  "23 Rue Jean Levasseur",
+  "34 Avenue Avenue Léon Jouhaux",
+  "3 Place Leroux de Fauquemont",
+  "4 Rue Lestiboudois",
+  "7 Rue Loos",
+  "93 Boulevard de la Lorraine",
+  "21 Place du Marechal Leclerc",
+  "45 Rue de la Marmora",
+  "34 Allée des Marronniers",
+  "5 impasse Menu",
+  "1 cité Menu",
+  "29 Rue Meurein",
+  "65 Michel Servet",
+  "98 Montebello",
+  "89 Moselle",
+  "34 Rue Nationale",
+  "45 Rue Panckoucke",
+  "2 Avenue du Petit Paradis",
+  "1 Rue Pierre Martel",
+  "7 Rue du Port",
+  "72 Square du Portugal",
+  "3 Cour Pottier",
+  "29 Rue Roland",
+  "9 Rue du Sabot",
+  "73 Rue Saint-Jean-Baptiste de la Salle",
+  "10 Impasse Saint-Joseph"]
+
+adress_item = 0
+
+30.times do
+  Flat.create!(
+  city:           city,
+  flat_type:       flat_type.sample,
+  available_at:    DateTime.now + (rand * 21),
+  surface_area:    rand(18..50),
+  user:            owners.sample,
+  zip_code:        "59000",
   price_per_month: 1200,
-  available_at:    '12/09/2020',
-  surface_area:    50,
-  user:            demo,
-  zip_code:        59000,
-  address:         '60 boulevard vauban'
-)
-
-Flat.create!(city:'Lille', flat_type:'t2', price_per_month: 780, available_at: '12/11/2020', surface_area: 40, user: aurel, zip_code: 92100, address:'147 rue de silly', longitude: 2.23425, latitude: 48.833241)
-Flat.create!(city:'Lille', flat_type:'t1', price_per_month: 2200, available_at: '12/11/2020', surface_area: 40, user: edouard, zip_code: 92100, address:'147 rue de silly', longitude: 2.23425, latitude: 48.833241)
-Flat.create!(city:'boulogne', flat_type:'t2', price_per_month: 2200, available_at: '12/11/2020', surface_area: 40, user:  jean, zip_code: 92100, address:'147 rue de silly', longitude: 2.23425, latitude: 48.833241)
-Flat.create!(city:'boulogne', flat_type:'t3', price_per_month: 2200, available_at: '12/11/2020', surface_area: 40, user: demo, zip_code: 92100, address:'147 rue de silly', longitude: 2.23425, latitude: 48.833241)
-Flat.create!(city:'Paris', flat_type:'t5', price_per_month: 7200, available_at: '12/10/2020', surface_area: 100, user: sam, zip_code: 75008, address:'15 Avenue des Champs-Elisée', longitude: 2.308757, latitude: 48.869043)
-
-Preference.create!(flat_type:'t2', price_per_month: 1200, roomates: 2, surface_area: 39, user: yann, school_location: 'Place du Maréchal de Lattre de Tassigny, Paris, 75016', school_longitude: 2.2757516, school_latitude: 48.8714403, active:true, moving_at:'12/12/2020', surrounding_area: 10, city: 'Paris' )
-Preference.create!(flat_type:'t2', price_per_month: 1200, roomates: 2, surface_area: 39, user: demo, school_location: '3 rue de la digue', school_longitude: 2.2757516, school_latitude: 48.8714403, active:true, moving_at:'12/12/2020', surrounding_area: 10, city: 'Lille' )
-Preference.create!(flat_type:'t2', price_per_month: 1200, roomates: 2, surface_area: 39, user: louis, school_location: 'Place du Maréchal de Lattre de Tassigny, Paris, 75016', school_longitude: 2.2757516, school_latitude: 48.8714403, active:true, moving_at:'12/12/2020', surrounding_area: 10, city: 'Paris' )
-Preference.create!(flat_type:'t3', price_per_month: 1700, roomates: 1, surface_area: 45, user: lorraine, school_location: '147 rue de silly, Boulogne - Billancourt, 92100', school_longitude: 2.2342496, school_latitude: 48.8332407, active:true, moving_at:'12/12/2020', surrounding_area: 3, city:'Boulogne-billancourt' )
-Preference.create!(flat_type:'t4', price_per_month: 3200, roomates: 2, surface_area: 54, user: ludo,  school_location:  'Place du Maréchal de Lattre de Tassigny, Paris, 75016', school_longitude: 2.2757516, school_latitude: 48.8714403, active:true, moving_at:'12/12/2020', surrounding_area: 4, city: 'Paris' )
-
-Chatroom.create!(
-  name: 'yam',
-  flat: Flat.first,
-  user: louis
-)
-
-Chatroom.create!(
-  name: 'General',
-  flat: Flat.last,
-  user: yann
-)
-Chatroom.create!(
-  name: 'Imo',
-  flat: Flat.second,
-  user: louis
-)
-Chatroom.create!(
-  name: 'Imovert',
-  flat: Flat.last,
-  user: louis
-)
-puts "Chatroom created"
-
-Message.create!(
-  content: "Bonjour j'aimerai avoir plus d'information par rapport à votre appartement svp ",
-  user: louis,
-  chatroom: Chatroom.second,
-  seen: false
+  address:         adresses[adress_item]
   )
 
-puts "Message created"
+adress_item += 1
+end
 
-owner_review_contents = ["Etudiant très serieux ", "Etudiant un petit peu bruyant", "Cet étudiant est super sympa ","Cet étudiant est très mignon et sexy ", "Cet étudiant est très réservé et un petit peu chelou"]
+puts 'Creating Preferences'
+user_preferences = [louis,lorraine,ludo,flix,remi,simon,demo,aurel,sam]
+user_preferences_item = 0
+9.times do
+  Preference.create!(
+    flat_type:'t2',
+    price_per_month: 1200,
+    roomates: 2,
+    surface_area: 39,
+    user: user_preferences[user_preferences_item],
+    school_location: '3 rue de la digue, Lille',
+    school_longitude: 2.2757516,
+    school_latitude: 48.8714403,
+    active:true,
+    moving_at:'01/09/2020',
+    surrounding_area: 9,
+    city: 'Lille'
+  )
+  user_preferences_item += 1
+end
+
+owner_review_contents = ["Etudiant très serieux", "Etudiant un petit peu bruyant", "Cet étudiant est super sympa ","Cet étudiant est très mignon et sexy ", "Cet étudiant est très réservé et un petit peu chelou"]
 student_review_contents = [
-  "Monsieur Collmart sait se rendre disponible à tout moment",
-  "Mme Vuillemant est une propriétaire agréable, il est facile de communiquer avec elle et de trouver des solutions rapidement ",
+  "Monsieur sait se rendre disponible à tout moment",
+  "Propriétaire agréable, facile de communiquer et de trouver des solutions rapidement",
+  "Si je devais avoir un deuxième père, c'est lui",
   "Madame Lefèbvre est une personne disponible, et réactive.",
-  "Monsieur Cascou porte bien son nom, ce propriétaire s'invite à l'improviste sous prétexte de prendre des nouvelles (trop) souvent. #harceleur."
+  "Très bonne expérience, même si c'était un peu bizarre de le retrouver nu dans mon salon après les vacances",
+  "Rien à redire",
+  "J'avais une ampoule à changer, cela à été fait rapidement",
+  "Le propriétaire à utilisé Find&Trust pour rénover le parquet pendant mes vacances, super !",
+  "Proprio dispo"
 ]
 
-owners   = User.where(user_type: 'owner')
-students = User.where(user_type: 'student')
 
-User.all.each do |user|
-  rand(2...5).times do
-    if user.user_type == 'student'
-      content  = owner_review_contents[rand(0...4)]
-      reviewer = owners[rand(0...owners.length)]
-    else
-      content  = student_review_contents[rand(0...4)]
-      reviewer = students[rand(0...students.length)]
-    end
+puts 'Creating Reviews'
+students_reviewer = [louis,lorraine,ludo,flix,remi,simon]
+reviewer_item = 0
+student_review_contents_item = 0
+
+puts 'Creating Reviews for Sam'
+
+  5.times do
     Review.create!(
-      rating:    rand(1...5),
-      content:  content,
-      reviewer: reviewer,
-      receiver: user
+      content: student_review_contents[student_review_contents_item],
+      rating: rand(3..5),
+      reviewer: students_reviewer[reviewer_item],
+      receiver: sam
+    )
+  reviewer_item += 1
+  student_review_contents_item += 1
+  end
+
+puts 'Creating Reviews for Aurel'
+
+reviewer_item = 0
+student_review_contents_item = 6
+
+  5.times do
+  Review.create!(
+    content: student_review_contents[student_review_contents_item],
+    rating: rand(3..5),
+    reviewer: students_reviewer[reviewer_item],
+    receiver: aurel
+  )
+  reviewer_item += 1
+  student_review_contents_item += 1
+  end
+
+puts 'Creating Reviews for Students'
+  students = User.where(user_type: 'student')
+  students.each do |student|
+    Review.create!(
+      content: "",
+      rating: 0,
+      reviewer: aurel,
+      receiver: student
     )
   end
+
+puts 'Creating Photos for Flats'
+
+flat_pictures = []
+
+Dir.glob('app/assets/images/flats/*.jpg') do |photo_filepath|
+  flat_pictures << photo_filepath
 end
+
+puts "#{flat_pictures} ......."
+item = 0
+
+Flat.all.each_with_index do |flat, index|
+  2.times do
+    file = URI.open(flat_pictures[item])
+    flat.photos.attach(io: file, filename: flat.id, content_type: 'image/png')
+    flat.save
+    item += 1
+  end
+end
+
+
+puts 'Creating Photos for Users'
+
+# Photo.create!(user: louis,  path: "/assets/images/louis.png")
+# Photo.create!(user: lorraine,  path: "/assets/images/lorraine.png")
+# Photo.create!(user: ludo,  path: "/assets/images/yann.png")
+# Photo.create!(user: sam,  path: "/assets/images/sami.png")
+# Photo.create!(user: remi,  path: "/assets/images/yann.png")
+# Photo.create!(user: aurel,  path: "/assets/images/aurel.png")
+# Photo.create!(user: simon,  path: "/assets/images/simon.png")
+# Photo.create!(user: flix,  path: "/assets/images/yann.png")
+
+# Photo.create!(user: demo,  path: "/assets/images/yann.png")
+
+puts "Done !"

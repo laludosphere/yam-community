@@ -14,7 +14,7 @@
             <div class="d-flex align-item-center">
               <% if current_user == chatroom.user%>
                 <img class= "avatar-small" src="" alt="">
-                <%=link_to chatroom.flat.user.name, chatroom_path(chatroom, anchor: "envoie") %></li>
+                <%=link_to chatroom.flat.user.first_name, chatroom_path(chatroom, anchor: "envoie") %></li>
             </div>
             <div class="d-flex center align-item-center">
               <% else %>

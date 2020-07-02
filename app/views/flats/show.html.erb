@@ -5,76 +5,66 @@
       <div class="container">
         <div class="row">
           <div class="col-12 col-lg-6 mt-3">
-            <%= render 'shared/carousel' %>
+            <%= render 'shared/carousel', flat: @flat %>
           </div>
           <div class="col-12 col-lg-6">
             <%= render 'shared/owner-profile-card' %>
             <%= render 'shared/premium-proposal' %>
           </div>
-        </div>
           <div class="card-trip mx-4 mt-4 mb-4">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <div class="card-trip-infos">
-            <div>
-              <h2 class="">| Appartement | </h2>
-              <p><%= @flat.city %>, <%= @flat.address %> <%= @flat.zip_code %></p>
-            </div>
-            <div class="card-trip-infos-details ">
-              <div class="info-detail">
-                <p>
-                  <i class="fas fa-building"></i>
-                  <%= @flat.flat_type %>
-                </p>
-                <p>
-                  <i class="fas fa-cube"></i>
-                  <%= @flat.surface_area %>
-                  |m2
-                </p>
-                <p>
-                  <i class="fas fa-calendar-check"></i>
-                  <%= @flat.available_at %>
-                </p>
+            <div class="card-trip-infos">
+              <div>
+                <h2 class="">| Appartement | </h2>
+                <p><%= @flat.city %>, <%= @flat.address %> <%= @flat.zip_code %></p>
               </div>
-            </div>
+              <div class="card-trip-infos-details ">
+                <div class="info-detail">
+                  <p>
+                    <i class="fas fa-building"></i>
+                    <%= @flat.flat_type %>
+                  </p>
+                  <p>
+                    <i class="fas fa-cube"></i>
+                    <%= @flat.surface_area %>
+                    |m2
+                  </p>
+                  <p>
+                    <i class="fas fa-calendar-check"></i>
+                    <%= @flat.available_at %>
+                  </p>
+                </div>
+              </div>
               <h2 class="card-trip-pricing">
-              <strong><%= @flat.price_per_month %></strong>
-              <i class="fas fa-euro-sign"></i> /mois
+                <strong><%= @flat.price_per_month %></strong>
+                <i class="fas fa-euro-sign"></i> /mois
               </h2>
-          </div>
-          <div class="mb-2 ml-2">
-            <tr>
-              <td>
-                <% if policy(@flat).edit?  %>
-                  <%= link_to "Edit", edit_flat_path(@flat), class: 'btn btn-primary' %>
-                <% end %>
-              </td>
-              <td>
-                <% if policy(@flat).destroy? %>
-                  <%= link_to 'Destroy', flat_path(@flat), method: :delete, data: { confirm: 'are you sure ?'}, class: 'btn btn-primary' %>
-                <% end %>
-              </td>
-            </tr>
+            </div>
+            <div class="mb-2 ml-2">
+              <tr>
+                <td>
+                  <% if policy(@flat).edit?  %>
+                    <%= link_to "Edit", edit_flat_path(@flat), class: 'btn btn-primary' %>
+                  <% end %>
+                </td>
+                <td>
+                  <% if policy(@flat).destroy? %>
+                    <%= link_to 'Destroy', flat_path(@flat), method: :delete, data: { confirm: 'are you sure ?'}, class: 'btn btn-primary' %>
+                  <% end %>
+                </td>
+              </tr>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="">
-        <div
-          id="map"
-          style="width: 100%;height: 250px;"
-          data-mapbox-api-key="<%= ENV['MAP_BOX_API_KEY']%>"
-          data-markers="<%= @markers.to_json %>"
-        ></div>
+        <div class="">
+          <div
+            id="map"
+            style="width: 100%;height: 250px;"
+            data-mapbox-api-key="<%= ENV['MAP_BOX_API_KEY']%>"
+            data-markers="<%= @markers.to_json %>"
+          ></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<div class="d-flex">
-    <tbody>
-
-    <% @flat.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-  </tbody>
-
 </div>

@@ -1,6 +1,6 @@
 <div class="background">
   <div class="container">
-    <h2 class="page-h2">Bonjour <%= current_user.name %>,</h2>
+    <h2 class="page-h2">Bonjour <%= current_user.first_name %>,</h2>
 
     <div class="container">
       <div class="row">
@@ -13,7 +13,7 @@
                 </div>
 
                 <div class="card-profil-name m-3">
-                  <%= current_user.name %></small></h1>
+                  <%= current_user.first_name %></small></h1>
                   <div class="card-top-details">
                     <span class="user_type"><%= current_user.user_type %></span>
                     <% if current_user.status_verified  %>
@@ -73,10 +73,7 @@
         </div>
     </div>
   </div>
-  <div class = "d-flex ml-4 ">
-    <div class="container-fluid w-75">
-      <%= render 'shared/display_flats', flats: @flats %>
-    </div>
+  <div class="container-fluid w-75">
+    <%= render 'shared/display_flats', flats: @flats %>
   </div>
-
 </div>

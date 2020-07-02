@@ -1,30 +1,35 @@
-<% unless flats.blank?  %>
+<% unless flats.blank? %>
   <div class="main-container">
     <div class="cards-container">
       <% @flats.each do |flat| %>
-        <%= link_to flat_path(flat), class: "text" do %>
+        <a class=text href="<%= flat_path(flat)%>">
           <div class="card-flat">
-            <div class="card-img">
-              <% if flat.photos.attached? %>
-                <%= cl_image_tag flat.photos.key, width: 400, height: 300, crop: :fill  %>
-              <% else %>
-                <%= image_tag 'https://assets.savills.com/awaiting/ENAwaitingImage_Card_L.jpg' %>
-              <% end %>
-            </div>
-
+            <% if flat.photos.attached? %>
+              <div
+                class="card-img"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path flat.photos.first.key, height: 200, width: 350, crop: :fill; %>');"
+              >
+              </div>
+            <% else %>
+              <div
+                class="card-img"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://assets.savills.com/awaiting/ENAwaitingImage_Card_L.jpg')"
+              >
+              </div>
+            <% end %>
             <h4 class="card-title mt-3 ml-3"> <%= flat.flat_type %> | <%= flat.surface_area %> M2 | <%= flat.city %> </h4>
-              <% if flat.available_at < Date.today %>
-            <div class="card-text mt-2 ml-3"> Disponible dès maintenant</div>
-              <% else flat.available_at < Date.today %>
-            <div class="card-text mt-2 ml-3"> Disponible dès le <%= flat.available_at.strftime("%d %b %y") %> </div>
-              <% end %>
+            <% if flat.available_at < Date.today %>
+              <div class="card-text mt-2 ml-3"> Disponible dès maintenant</div>
+            <% else flat.available_at < Date.today %>
+              <div class="card-text mt-2 ml-3"> Disponible dès le <%= flat.available_at.strftime("%d %b %y") %> </div>
+            <% end %>
             <div class="container d-flex align-self-end mt-4">
               <p class="card-price mt-1"><i class="fas fa-euro-sign"></i> <%= flat.price_per_month %></p><p id="per-month" class="card-text ml-1 mr-2 mt-3">/mois</p>
               <%= button_to "En savoir plus", flat_path(flat), class: "btn-flats ml-2" %>
             </div>
           </div>
-        <% end %>
-      <% end%>
+        </a>
+      <% end %>
     </div>
   </div>
 <% end %>
