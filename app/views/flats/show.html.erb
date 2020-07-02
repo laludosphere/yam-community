@@ -5,7 +5,7 @@
         <div class="container">
           <div class="row">
             <div class="col-12 col-lg-6 mt-3">
-              <%= render 'shared/carousel' %>
+              <%= render 'shared/carousel', flat: @flat %>
             </div>
             <div class="col-12 col-lg-6">
               <%= render 'shared/owner-profile-card' %>
@@ -60,14 +60,3 @@
       </div>
     </div>
   </div>
-
-<tbody>
-  <% @flat.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-</tbody>
-
-
-
-
-
