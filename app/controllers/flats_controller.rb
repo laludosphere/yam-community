@@ -18,8 +18,7 @@ class FlatsController < ApplicationController
     @premium_subscription = PremiumSubscription.last
     @flat = Flat.find(params[:id])
     authorize @flat
-    @flats = Flat.where.not(latitude: nil, longitude: nil)
-    @markers = @flats.map do |flat|
+    @markers = [@flat].map do |flat|
       {
         lat: flat.latitude,
         lng: flat.longitude,

@@ -2,7 +2,7 @@
   <div class="main-container">
      <div class="cards-container">
         <% @flats.each do |flat| %>
-          <a class=text href=<%= flat_path(flat)%>>
+          <%= link_to flat_path(flat), class: "text" do %>
             <div class="card-flat">
               <div class="card-img">
                 <% if flat.photos.attached? %>
@@ -23,7 +23,8 @@
                 <%= button_to "En savoir plus", flat_path(flat), class: "btn-flats ml-2" %>
               </div>
             </div>
-          <%end%>
+          <% end %>
+        <%end%>
       </div>
   </div>
 <% end %>
