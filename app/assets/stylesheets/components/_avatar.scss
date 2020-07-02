@@ -3,6 +3,16 @@
   border-radius: 50%;
 }
 
+#nav-avatar {
+  border: 3px solid;
+  border-color: $primary;
+  width: 40px;
+  height: 40px;
+  margin-left: 0.3rem;
+  object-fit: cover;
+
+}
+
 .avatar-large {
   width: 100px;
   height: 100px;

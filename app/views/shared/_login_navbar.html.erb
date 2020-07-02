@@ -22,7 +22,7 @@
 
        <li class="nav-item dropdown">
         <%  if current_user.photos.attached? %>
-            <%= cl_image_tag current_user.photo.key, width: 400, height: 300, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag current_user.photos.first.key, class: "avatar dropdown-toggle", id: "navbarDropdown", id: "nav-avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% else %>
             <%= image_tag "user_photo_nil", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% end %>
