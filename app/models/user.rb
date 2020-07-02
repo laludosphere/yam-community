@@ -26,4 +26,12 @@ class User < ApplicationRecord
     end
     rating /= receive_reviews.length
   end
+
+  def is_student?
+    self.user_type == "student"
+  end
+
+  def is_owner?
+    self.user_type == "owner"
+  end
 end
