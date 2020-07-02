@@ -206,24 +206,4 @@ puts 'Creating Photos for Users'
 
 # Photo.create!(user: demo,  path: "/assets/images/yann.png")
 
-#students = User.where(user_type: 'student')
-# owners   = User.where(user_type: 'owner')
-# User.all.each do |user|
-#   rand(2...5).times do
-#     if user.user_type == 'student'
-#       content  = owner_review_contents[rand(0...4)]
-#       reviewer = owners[rand(0...owners.length)]
-#     else
-#       content  = student_review_contents[rand(0...4)]
-#       reviewer = students[rand(0...students.length)]
-#     end
-#     Review.create!(
-#       rating:    rand(1...5),
-#       content:  content,
-#       reviewer: reviewer,
-#       receiver: user
-#     )
-#   end
-#end
-
 puts "Done !"
