@@ -11,10 +11,10 @@
                   <%= image_tag "anonym.jpg", class: "avatar-large", alt: "avatar-large" %>
                 </div>
                 <div class="header-card">
-                  <h2 class="card-profil-name"><small> <%= @user.first_name %></small></h2>
+                  <div class="card-profil-name mt-3"><%= @user.first_name %></div>
                   <div class="card-top-details">
-                    <span class ="user_type"><%= @reviewer.user_type %></span>
-                    <% if @reviewer.status_verified  %>
+                    <span class ="user_type"><%= @user.user_type %></span>
+                    <% if @user.status_verified  %>
                       <span class="status-verified">PROFIL VÉRIFIÉ</span>
                     <% else %>
                       <span class="status-not-verified">PROFIL NON VÉRIFIÉ</span>
@@ -22,8 +22,8 @@
                   </div>
                 </div>
               </div>
-                <div >
-                  <p class="title-profile">COURTE DESCRIPTION</p>
+                <div class="title-profile">
+                  À PROPOS
                 </div>
 
                 <div class="description">
@@ -34,10 +34,12 @@
         </div>
         <div class="col-12 col-lg-6">
           <div class="card mt-4 mt-lg-0 p-3" id="yam-pre" style="height: 28rem; height: auto;">
-            <h5 class="m-3 text-center">Avis à propos de <strong><%= @user.name %></strong></h5>
+            <h5 class="m-3 text-center">Les avis de <strong><%= @user.first_name %></strong></h5>
             <% @reviews.each do |review| %>
-              <div class="display-flex">
-                <%= review.reviewer.first_name %>
+              <div class="display-flex mb-2">
+                <strong class="mr-3">
+                  <%= review.reviewer.first_name %>
+                </strong>
                 <%= review.reviewer.name %>
                 <%= '<i class="fas fa-star"></i>'.html_safe * review.rating %>
                 <%= '<i class="far fa-star"></i>'.html_safe * ( 5- review.rating) %>

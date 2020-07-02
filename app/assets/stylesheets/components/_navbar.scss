@@ -35,8 +35,7 @@
 }
 
 .fixed-footer{
-  min-height: calc(100vh)
-  // footer à ajouter puis calculer les bons pixels
+  min-height: calc(100vh - 168px)
 }
 
 .nav-active  {

@@ -1,7 +1,10 @@
 .card-trip {
   overflow: hidden;
+  width: 100%;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 22px 0 rgba(90,97,105,0.10) !important;
+  border-radius: 20px;
+  padding: 1rem;
 }
 
 .card-trip > img {
@@ -11,7 +14,7 @@
 }
 
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 30px;
   font-weight: bold;
   margin: 0;
 }
@@ -19,7 +22,7 @@
 .card-trip p {
   font-size: 18px;
   opacity: .5;
-  margin: 0px 5px;
+  margin: 0px 9px;
 }
 
 
