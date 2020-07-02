@@ -21,10 +21,9 @@ class User < ApplicationRecord
     rating = 0
     receive_reviews = self.received_reviews
     receive_reviews.each do |review|
-        rating += review.rating
-        puts rating
+      rating += review.rating
+      puts rating
     end
     rating /= receive_reviews.length
   end
-
 end

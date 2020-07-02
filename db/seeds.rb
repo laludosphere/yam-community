@@ -1,7 +1,6 @@
 require "open-uri"
 
 puts "Destroy all datas"
-Payment.destroy_all
 Order.destroy_all
 Review.destroy_all
 Preference.destroy_all
