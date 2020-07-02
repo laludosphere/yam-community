@@ -1,19 +1,18 @@
 <div class="background" style="height: 100%;">
   <div class="container">
     <h2 class="page-h2">L'appartement</h2>
-      <div class="main-card mb-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-lg-6 mt-3">
-              <%= render 'shared/carousel', flat: @flat %>
-            </div>
-            <div class="col-12 col-lg-6">
-              <%= render 'shared/owner-profile-card' %>
-              <%= render 'shared/premium-proposal' %>
-            </div>
+    <div class="main-card mb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-6 mt-3">
+            <%= render 'shared/carousel', flat: @flat %>
           </div>
-            <div class="card-trip mx-4 mt-4 mb-4">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="col-12 col-lg-6">
+            <%= render 'shared/owner-profile-card' %>
+            <%= render 'shared/premium-proposal' %>
+          </div>
+          <div class="card-trip mx-4 mt-4 mb-4">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
             <div class="card-trip-infos">
               <div>
                 <h2 class="">| Appartement | </h2>
@@ -36,10 +35,10 @@
                   </p>
                 </div>
               </div>
-                <h2 class="card-trip-pricing">
+              <h2 class="card-trip-pricing">
                 <strong><%= @flat.price_per_month %></strong>
                 <i class="fas fa-euro-sign"></i> /mois
-                </h2>
+              </h2>
             </div>
             <div class="mb-2 ml-2">
               <tr>
@@ -57,6 +56,15 @@
             </div>
           </div>
         </div>
+        <div class="">
+          <div
+            id="map"
+            style="width: 100%;height: 250px;"
+            data-mapbox-api-key="<%= ENV['MAP_BOX_API_KEY']%>"
+            data-markers="<%= @markers.to_json %>"
+          ></div>
+        </div>
       </div>
     </div>
   </div>
+</div>

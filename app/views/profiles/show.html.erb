@@ -11,11 +11,11 @@
                   <%= image_tag "anonym.jpg", class: "avatar-large", alt: "avatar-large" %>
                 </div>
                 <div class="header-card">
-                  <h2><small> <%= @user.first_name %></small></h2>
-                      <div class="card-top-details">
-                        <span class ="user_type"><%= @reviewer.user_type %></span>
-                        <span class="status-verifed"><%= @reviewer.status_verified %></span>
-                      </div>
+                  <h2 class="card-profil-name"><small> <%= @user.first_name %></small></h2>
+                  <div class="card-top-details">
+                    <span class ="user_type"><%= @reviewer.user_type %></span>
+                    <span class="status-verifed"><%= @reviewer.status_verified %></span>
+                  </div>
                 </div>
                   <%= '<i class="fas fa-star"></i>'.html_safe * @reviewer.average_ratings %>
                   <%= '<i class="far fa-star"></i>'.html_safe * ( 5- @reviewer.average_ratings) %>

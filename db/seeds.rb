@@ -180,7 +180,7 @@ Dir.glob('app/assets/images/flats/*.jpg') do |photo_filepath|
   flat_pictures << photo_filepath
 end
 
-puts "#{flat_pictures} ================="
+puts "#{flat_pictures} ......."
 item = 0
 
 Flat.all.each_with_index do |flat, index|
