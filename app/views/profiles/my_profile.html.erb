@@ -10,7 +10,8 @@
           <div class="card-body">
             <div class="card-top mb-3">
               <div>
-                <%= image_tag "anonym.jpg", class: "avatar-large", alt: "avatar-large" %>
+                <%= cl_image_tag current_user.photos.first.key, class: "avatar-large", alt: "avatar-large" %>
+                <!-- < image_tag "anonym.jpg", class: "avatar-large", alt: "avatar-large" %> -->
               </div>
               <div class="card-profil-name m-3">
                 <%= current_user.first_name%>

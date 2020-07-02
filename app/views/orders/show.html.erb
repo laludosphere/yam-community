@@ -1,16 +1,18 @@
 <div class="background" style="height: 100%;">
   <div class="fixed-footer">
     <div class="container">
-      <div class="row py-4">
-        <div class="col">
-          <h1>Commande #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
-          <ul class="list-unstyled">
-            <li><strong>Souscription Premium</strong> <%= @order.premium_subscription.name %> [<%= @order.premium_subscription_sku %>]</li>
-            <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
-            </li>
-          </ul>
+      <h2 class="page-h2">Bravo ! Vous êtes maintenant <span class="special-word-premium">Premium</span></h2>
+        <div class="card confirm-order">
+          <h2>Commande #<%= @order.id %> <small><span class="badge badge-primary mt-5"><%= @order.state %></span></small></h2>
+            <ul class="list-unstyled text-center">
+              <div>
+                <li ><strong class="ml-5 mr-2">Souscription Premium</strong> <%= @order.premium_subscription.name %></li>
+                <li><strong  class="ml-5 mr-2">TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
+              </div>
+              </li>
+            </ul>
         </div>
-      </div>
     </div>
   </div>
 </div>
+

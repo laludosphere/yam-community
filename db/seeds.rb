@@ -27,7 +27,7 @@ ludo     = User.create!(first_name: 'Ludo',last_name: "Fourcroy", email:'ludo@gm
 flix     = User.create!(first_name: 'Flix',last_name: "Net", email:'flix@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a such a serious guy', user_type: 'student')
 remi     = User.create!(first_name: 'Rémi',last_name: "Carotte", email:'remi@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a such a serious guy', user_type: 'student')
 simon    = User.create!(first_name: 'Simon',last_name: "Crétin", email:'simon@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: false, phone_number: '0689827381', gender: 'male', description: 'I am a such a serious guy', user_type: 'student')
-demo     = User.create!(first_name: 'Yann',last_name: "Parigo", email:'demo@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: false, phone_number: '0689827381', gender: 'male', description: "I am a such a serious guy, from Paris. I am a professional golf player (at least I'm trying to...)", user_type: 'student')
+demo     = User.create!(first_name: 'Yann',last_name: "Parigo", email:'demo@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: false, phone_number: '0689827381', gender: 'male', description: "Je suis un gars si sérieux, de Paris. Je suis un joueur de golf professionnel (du moins j'essaye...) ", user_type: 'student')
 
 puts 'Creating Owners'
 aurel    = User.create!(first_name: 'Aurelien',last_name: "La descente", email:'aurel@gmail.com', password:'password', born_at: '04/09/1994', yam_premium: true, phone_number: '0689827381', gender: 'male', description: 'Fan de bière, jeune actif et startuppeur #billionairemindset #laquestionelleestviterépondue', user_type: 'owner')
@@ -193,17 +193,10 @@ Flat.all.each_with_index do |flat, index|
 end
 
 
-puts 'Creating Photos for Users'
+puts 'Creating Photos for Yann'
 
-# Photo.create!(user: louis,  path: "/assets/images/louis.png")
-# Photo.create!(user: lorraine,  path: "/assets/images/lorraine.png")
-# Photo.create!(user: ludo,  path: "/assets/images/yann.png")
-# Photo.create!(user: sam,  path: "/assets/images/sami.png")
-# Photo.create!(user: remi,  path: "/assets/images/yann.png")
-# Photo.create!(user: aurel,  path: "/assets/images/aurel.png")
-# Photo.create!(user: simon,  path: "/assets/images/simon.png")
-# Photo.create!(user: flix,  path: "/assets/images/yann.png")
-
-# Photo.create!(user: demo,  path: "/assets/images/yann.png")
+file = URI.open("app/assets/images/yann.png")
+demo.photos.attach(io: file, filename: demo.id, content_type: 'image/png')
+demo.save
 
 puts "Done !"
