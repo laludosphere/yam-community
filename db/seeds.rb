@@ -85,7 +85,7 @@ adress_item = 0
   surface_area:    rand(18..50),
   user:            owners.sample,
   zip_code:        "59000",
-  price_per_month: 1200,
+  price_per_month: rand(400...800),
   address:         adresses[adress_item]
   )
 
